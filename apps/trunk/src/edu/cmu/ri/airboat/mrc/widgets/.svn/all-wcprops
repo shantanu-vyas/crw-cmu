@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/918/apps/trunk/src/edu/cmu/ri/airboat/mrc/widgets
+END
+RegistryListenerWidget.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/804/apps/trunk/src/edu/cmu/ri/airboat/mrc/widgets/RegistryListenerWidget.java
+END
+RegistryListenerWidget.form
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/804/apps/trunk/src/edu/cmu/ri/airboat/mrc/widgets/RegistryListenerWidget.form
+END
+WWLocationMarkerLayer.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/804/apps/trunk/src/edu/cmu/ri/airboat/mrc/widgets/WWLocationMarkerLayer.java
+END
+BoatStatusWidget.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/804/apps/trunk/src/edu/cmu/ri/airboat/mrc/widgets/BoatStatusWidget.java
+END
+WorldWindWidget.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/918/apps/trunk/src/edu/cmu/ri/airboat/mrc/widgets/WorldWindWidget.java
+END

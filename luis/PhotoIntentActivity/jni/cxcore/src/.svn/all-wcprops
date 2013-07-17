@@ -1,0 +1,203 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cxcore/src
+END
+cxlut.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cxcore/src/cxlut.cpp
+END
+cxmatrix.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cxcore/src/cxmatrix.cpp
+END
+cxprecomp.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cxcore/src/cxprecomp.cpp
+END
+cxcopy.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cxcore/src/cxcopy.cpp
+END
+cxtables.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cxcore/src/cxtables.cpp
+END
+cxouttext.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cxcore/src/cxouttext.cpp
+END
+cxarray.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cxcore/src/cxarray.cpp
+END
+cxmean.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cxcore/src/cxmean.cpp
+END
+cximage.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cxcore/src/cximage.cpp
+END
+cxrand.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cxcore/src/cxrand.cpp
+END
+cxpersistence.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cxcore/src/cxpersistence.cpp
+END
+cxswitcher.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cxcore/src/cxswitcher.cpp
+END
+cxerror.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cxcore/src/cxerror.cpp
+END
+cxsumpixels.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cxcore/src/cxsumpixels.cpp
+END
+cxdrawing.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cxcore/src/cxdrawing.cpp
+END
+cxsvd.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cxcore/src/cxsvd.cpp
+END
+cxmeansdv.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cxcore/src/cxmeansdv.cpp
+END
+cxlogic.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cxcore/src/cxlogic.cpp
+END
+cxdxt.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cxcore/src/cxdxt.cpp
+END
+dummy.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cxcore/src/dummy.cpp
+END
+cxdatastructs.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cxcore/src/cxdatastructs.cpp
+END
+cxnorm.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cxcore/src/cxnorm.cpp
+END
+cxcmp.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cxcore/src/cxcmp.cpp
+END
+cxconvert.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cxcore/src/cxconvert.cpp
+END
+cxjacobieigens.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cxcore/src/cxjacobieigens.cpp
+END
+cxarithm.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cxcore/src/cxarithm.cpp
+END
+cxminmaxloc.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cxcore/src/cxminmaxloc.cpp
+END
+cxmathfuncs.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cxcore/src/cxmathfuncs.cpp
+END
+cxalloc.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cxcore/src/cxalloc.cpp
+END
+_cxipp.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cxcore/src/_cxipp.h
+END
+_cxcore.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cxcore/src/_cxcore.h
+END
+cxmatmul.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cxcore/src/cxmatmul.cpp
+END
+cxutils.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cxcore/src/cxutils.cpp
+END

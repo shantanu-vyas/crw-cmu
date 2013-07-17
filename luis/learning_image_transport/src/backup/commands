@@ -1,0 +1,5 @@
+
+##This runs the opencv subcriber
+rosrun learni_image_transport my_subscriber _image_transport:=compressed
+
+rosrun beginner_tutorials listener __name:=listener

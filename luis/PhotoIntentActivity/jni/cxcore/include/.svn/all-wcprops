@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cxcore/include
+END
+cxtypes.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cxcore/include/cxtypes.h
+END
+cvwimage.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cxcore/include/cvwimage.h
+END
+cxcore.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cxcore/include/cxcore.hpp
+END
+cxcore.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cxcore/include/cxcore.h
+END
+cxerror.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cxcore/include/cxerror.h
+END
+cvver.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cxcore/include/cvver.h
+END
+cxmisc.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cxcore/include/cxmisc.h
+END

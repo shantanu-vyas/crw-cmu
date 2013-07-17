@@ -1,0 +1,149 @@
+<?xml version="1.1" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.7" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="2"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <Component id="positionLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="196" max="32767" attributes="0"/>
+          </Group>
+          <Component id="positionText" alignment="0" pref="255" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="orientationLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="pitchTitleLabel" alignment="0" max="32767" attributes="1"/>
+                  <Component id="rollTitleLabel" alignment="0" max="32767" attributes="1"/>
+                  <Component id="yawTitleLabel" alignment="0" max="32767" attributes="1"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="yawBar" pref="127" max="32767" attributes="1"/>
+                  <Component id="pitchBar" alignment="0" pref="127" max="32767" attributes="1"/>
+                  <Component id="rollBar" alignment="0" pref="127" max="32767" attributes="1"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                  <Component id="yawLabel" max="32767" attributes="1"/>
+                  <Component id="pitchLabel" alignment="1" max="32767" attributes="1"/>
+                  <Component id="rollLabel" alignment="1" max="32767" attributes="1"/>
+              </Group>
+          </Group>
+          <Component id="setPoseButton" alignment="1" pref="255" max="32767" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <Component id="positionLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="positionText" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="orientationLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="22" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="rollBar" min="-2" max="-2" attributes="1"/>
+                  <Component id="rollLabel" pref="22" max="32767" attributes="1"/>
+                  <Component id="rollTitleLabel" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="pitchLabel" pref="24" max="32767" attributes="1"/>
+                  <Component id="pitchTitleLabel" alignment="0" pref="24" max="32767" attributes="1"/>
+                  <Component id="pitchBar" alignment="1" min="-2" max="-2" attributes="1"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="yawTitleLabel" alignment="0" pref="26" max="32767" attributes="1"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                      <Component id="yawBar" min="-2" max="-2" attributes="1"/>
+                  </Group>
+                  <Component id="yawLabel" min="-2" pref="26" max="-2" attributes="1"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="setPoseButton" min="-2" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="positionLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Position:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="positionText">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="orientationLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Orientation:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JProgressBar" name="rollBar">
+    </Component>
+    <Component class="javax.swing.JLabel" name="rollTitleLabel">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="Roll"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="pitchTitleLabel">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="Pitch"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="yawTitleLabel">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="Yaw"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JProgressBar" name="pitchBar">
+    </Component>
+    <Component class="javax.swing.JProgressBar" name="yawBar">
+    </Component>
+    <Component class="javax.swing.JLabel" name="rollLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="0.000 rads"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="pitchLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="0.000 rads"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="yawLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="0.000 rads"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="setPoseButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Set pose from map"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="setPoseButtonActionPerformed"/>
+      </Events>
+    </Component>
+  </SubComponents>
+</Form>

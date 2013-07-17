@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/382/client/tags/stable-2011_10_25/src/edu/cmu/ri/airboat/client/gui
+END
+ConnectionPanel.form
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/382/client/tags/stable-2011_10_25/src/edu/cmu/ri/airboat/client/gui/ConnectionPanel.form
+END
+TeleopFrame.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/382/client/tags/stable-2011_10_25/src/edu/cmu/ri/airboat/client/gui/TeleopFrame.java
+END
+AirboatComponent.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/382/client/tags/stable-2011_10_25/src/edu/cmu/ri/airboat/client/gui/AirboatComponent.java
+END
+PosePanel.form
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/382/client/tags/stable-2011_10_25/src/edu/cmu/ri/airboat/client/gui/PosePanel.form
+END
+CameraPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/382/client/tags/stable-2011_10_25/src/edu/cmu/ri/airboat/client/gui/CameraPanel.java
+END
+DrivePanel.form
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/382/client/tags/stable-2011_10_25/src/edu/cmu/ri/airboat/client/gui/DrivePanel.form
+END
+WaypointPanel.form
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/382/client/tags/stable-2011_10_25/src/edu/cmu/ri/airboat/client/gui/WaypointPanel.form
+END
+PidPanel.form
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/382/client/tags/stable-2011_10_25/src/edu/cmu/ri/airboat/client/gui/PidPanel.form
+END
+ConnectionPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/382/client/tags/stable-2011_10_25/src/edu/cmu/ri/airboat/client/gui/ConnectionPanel.java
+END
+ConnectionDialog.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/382/client/tags/stable-2011_10_25/src/edu/cmu/ri/airboat/client/gui/ConnectionDialog.java
+END
+SimpleWorldPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/382/client/tags/stable-2011_10_25/src/edu/cmu/ri/airboat/client/gui/SimpleWorldPanel.java
+END
+ReadOnlyCheckBox.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/382/client/tags/stable-2011_10_25/src/edu/cmu/ri/airboat/client/gui/ReadOnlyCheckBox.java
+END
+AbstractAirboatPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/382/client/tags/stable-2011_10_25/src/edu/cmu/ri/airboat/client/gui/AbstractAirboatPanel.java
+END
+PosePanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/382/client/tags/stable-2011_10_25/src/edu/cmu/ri/airboat/client/gui/PosePanel.java
+END
+DrivePanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/382/client/tags/stable-2011_10_25/src/edu/cmu/ri/airboat/client/gui/DrivePanel.java
+END
+WaypointPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/382/client/tags/stable-2011_10_25/src/edu/cmu/ri/airboat/client/gui/WaypointPanel.java
+END
+CameraPanel.form
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/382/client/tags/stable-2011_10_25/src/edu/cmu/ri/airboat/client/gui/CameraPanel.form
+END
+WorldWindUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/382/client/tags/stable-2011_10_25/src/edu/cmu/ri/airboat/client/gui/WorldWindUtils.java
+END
+PidPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/382/client/tags/stable-2011_10_25/src/edu/cmu/ri/airboat/client/gui/PidPanel.java
+END

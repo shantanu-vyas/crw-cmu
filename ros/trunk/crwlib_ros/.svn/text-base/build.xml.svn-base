@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="crwlib" default="default">
+
+  <property file="ros.properties" />
+
+  <property name="dist" location="dist" />
+  <property name="build" location="build" />
+  <property name="src" location="src" />
+  
+  <path id="classpath">
+    <pathelement path="${ros.compile.classpath}" />
+  </path>
+  
+  <echo message="${toString:classpath}" />
+
+  <target name="default" depends="init, compile" />
+
+  <target name="init">
+    <fail unless="ros.compile.classpath" message="ros.properties is missing.  Please type 'rosmake' first "/>
+    <mkdir dir="${build}" />
+    <mkdir dir="${dist}" />
+  </target>
+
+  <target name="compile" depends="init">
+    <javac destdir="${build}" debug="on">
+      <classpath refid="classpath" />
+      <src path="${src}" />
+    </javac>
+  </target>
+
+  <target name="jar" depends="compile"
+        description="generate the distribution" >
+    <!-- Create the distribution directory -->
+    <mkdir dir="${dist}"/>
+
+    <!-- Put everything in ${build} into the jar file -->
+    <jar jarfile="${dist}/${ant.project.name}.jar" basedir="${build}"/>
+  </target>
+
+  <target name="fat-jar" depends="compile"
+        description="generate a standalone distribution" >
+    <!-- Create the distribution directory -->
+    <mkdir dir="${dist}"/>
+    <mkdir dir="${dist}/lib"/>
+
+    <!-- Copy all dependent jars to staging area -->
+    <copy todir="${dist}/lib" flatten="true">
+        <path refid="classpath" />
+    </copy>
+
+    <!-- Put everything in ${build}, ${src}, and ${dist}/lib into the jar file -->
+    <jar jarfile="${dist}/${ant.project.name}_all.jar">
+        <fileset dir="${build}">
+            <include name="**/*.class"/>
+        </fileset>
+        <fileset dir="${src}">
+            <include name="**/*.java"/>
+        </fileset>
+        <zipgroupfileset dir="${dist}/lib" includes="*.jar"/>
+    </jar>
+  </target>
+
+  <target name="clean">
+    <delete dir="${build}" />
+    <delete dir="${dist}" />
+  </target>
+
+  <!-- required entry point -->
+  <target name="test" />
+
+</project>
+

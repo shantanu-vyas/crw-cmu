@@ -1,0 +1,88 @@
+#summary Checklists for setting up boats
+
+== Comm Checklist ==	
+Mission Checklist – CRW-CMU, KSS	
+
+||	Phase	||	Task	||
+||		||	Check field equipment	||
+||	*M1*	||	Generator, Alternator, chairs, Umbrellas	||
+||	(Before Leaving)	||	Laptop, maaf wifi 	||
+||		||		||
+||		||		||
+||		||		||
+||		||	Initiate Communication with the Boat	||
+||	*M2*	||	Connect both computer and phone to the same network	||
+||	(At test location)	||	Connect Phone to the Arduino	||
+||		||	Run roscore on local machine (roscore)	||
+||		||	Start airboat server with local machine IP as host URI , port 11311	||
+||		||	Check Manual controls on debug app	||
+||		||	Check for rostopics generated on local server (rostopic list)	||
+||		||	Start test GUI on local machine (Netbeans->Client)	||
+||		||	Connect to localhost, port 11311	||
+||		||	Boat should appear on the applet.	||
+||		||	Check Manual controls on Control tab	||
+||		||		||
+||		||	Test data access	||
+||		||	rostopic echo all data streams	||
+||		||	start a waypoint 	||
+||		||	start a camera action	||
+||		||	Check output on adb logcat and rostopic echo	||
+||		||		||
+||	*M3*	||	Perform Actionlib Test tasks	||
+||	(Pre deployment)	||	IMAGERY	||
+||		||	Select start capture	||
+||		||	Images should appear on the topic	||
+||		||	--Check if Imagery code can access images published to topic	||
+||		||	- Check rosnode info or rxgraph	||
+||		||	- Check pings	||
+||		||	- Check topic name used in code	||
+||		||	- Check rosrun image_view image_view compressed	||
+||		||	Stop Capture	||
+||		||	Perform additional fault tolerance tests	||
+||		||	NAVIGATION	||
+||		||	a. Before deploying the boat	||
+||		||	Manually set state progressively closer to waypoint using Set Pose	||
+||		||	Check for termination of navigation and dead stick on completion	||
+||		||	Check for completed flag	||
+||		||	b. Initial Deployment	||
+||		||	Check for correct orientation (orientation on GUI)	||
+||		||	Set current waypoint to be 10m dead ahead 	||
+||		||	Check for GPS drift	||
+||		||	Confirm correct navigation	||
+||		||	c. Final test deployment	||
+||		||	Perform an approximate square test run	||
+||		||	Change waypoints on the fly	||
+||		||		||
+||		||	*****RESET ROSCORE AFTER EACH OPERATION*****	||
+||		||		||
+||		||	Test alternate Android platforms	||
+||		||	Enable USB host debugging on Android phone	||
+||		||	Tether phone to laptop	||
+||		||	check status (adb logcat)	||
+||		||	Run Eclipse->Android Activity	||
+||		||	The Android debug activity should fire up	||
+||		||	Perform Initial Communications test	||
+||		||		||
+||		||	Calibrate Controls and Filters 	||
+||		||	Test and calibrate PIDs	||
+||		||	Test and calibrate weights for heading and position updates	||
+||		||		||
+||		||		||
+||		||		||
+||		||	Test integration of Paul's code	||
+||		||	Eclipse -> gulfsim -> irrigation test	||
+||		||	Hook up the sensor data code	||
+||		||		||
+||	*M4*	||	monitor acquisition of data	||
+||	(Deployment ongoing)	||	check heading correlation between gUI and real world	||
+||		||	rosbag topic stream	||
+||		||		||
+||		||		||
+||		||		||
+||	*M5*	||	Check for damage to boat	||
+||	(Post Flight test)	||	Retrieve Data onto HD	||
+||		||	Shutdown airboat sever	||
+||		||	Shutdown Roscore	||
+||		||		||
+||	*M6*	||	Analyze postprocessing Data	||
+||	(Back in Lab)	||		||

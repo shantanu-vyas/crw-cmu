@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/386/luis/WaterRecognition
+END
+textFile.txt
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/294/luis/WaterRecognition/textFile.txt
+END
+main-BETA-61.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/294/luis/WaterRecognition/main-BETA-61.cpp
+END
+distance_equation.ods
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/294/luis/WaterRecognition/distance_equation.ods
+END
+640x480 res calibration.ods
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/294/luis/WaterRecognition/640x480%20res%20calibration.ods
+END
+pictureList.txt
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/294/luis/WaterRecognition/pictureList.txt
+END
+main.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/294/luis/WaterRecognition/main.cpp
+END
+KNN.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/294/luis/WaterRecognition/KNN.cpp
+END
+people.jpeg
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/294/luis/WaterRecognition/people.jpeg
+END
+contours.xml
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/294/luis/WaterRecognition/contours.xml
+END
+KNN.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/294/luis/WaterRecognition/KNN.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/294/luis/WaterRecognition/Makefile
+END
+.dep.inc
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/294/luis/WaterRecognition/.dep.inc
+END

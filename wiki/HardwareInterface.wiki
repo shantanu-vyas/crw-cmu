@@ -1,0 +1,47 @@
+#summary Vehicle hardware interface specifications.
+
+= Introduction =
+
+There are two primary types of connectors available on the vehicles, a *sensor* connector which provides a low-power logic supply and bidirectional IO of several types, and the *motor* connector which serves as both a charging connector and a high-power driver for a drive assembly. 
+
+= Sensor Connector =
+
+The sensor connector is a watertight DB9 male connector that contains +5V DC @ 100ma power, a 0-5V analog input, three digital control lines, and a bidirectional TTL serial port.
+
+*Note: The current connector implements a TTL-level serial port, and CANNOT handle RS-232 signal levels.  We may address RS-232 devices in future revisions, but currently, only TTL communication is supported.*
+
+https://docs.google.com/drawings/pub?id=11yK39E0AoaIxRG4ufvyOBV01eJktsC9YZTZWsP7ulxQ&w=253&h=181&fake.png
+
+|| *Pin* <wiki:comment>|| *Serial Port Function* </wiki:comment>|| *Description* ||
+|| 1 <wiki:comment>|| Data Carrier Detect </wiki:comment>|| GND ||
+|| 2 <wiki:comment>|| Received Data </wiki:comment>|| TTL TX (Output) ||
+|| 3 <wiki:comment>|| Transmitted Data </wiki:comment>|| TTL RX (Input) ||
+|| 4 <wiki:comment>|| Data Terminal Ready </wiki:comment>|| TTL GPIO 0 ||
+|| 5 <wiki:comment>|| Signal Ground </wiki:comment>|| TTL GPIO 1 ||
+|| 6 <wiki:comment>|| Data Set Ready </wiki:comment>|| GND ||
+|| 7 <wiki:comment>|| Request to Send </wiki:comment>|| +5V (@ 100 ma) ||
+|| 8 <wiki:comment>|| Clear to Send </wiki:comment>|| (0-5V) Analog Input ||
+|| 9 <wiki:comment>|| Ring Indicator </wiki:comment>|| TTL GPIO 2 ||
+
+= Motor Connector =
+
+The motor connector is a DB15 male connector that contains DC charging leads to the internal battery, three motor phases to drive a brushless DC motor (~12V @ 10A), and lines for a high-torque steeering servo (5V @ 2A).  In order to handle these currents, the pins on the connector are paired together, so each high-current load is split across two pins.
+
+https://docs.google.com/drawings/pub?id=1jsFHKE0brnlFZyxNS-Skf5F1FdUmvvuCyVaf7tB8klE&w=325&h=180&fake.png
+
+|| *Pin* || *Description* ||
+|| 1 || GND ||
+|| 2 || GND ||
+|| 3 || Motor Phase 1 ||
+|| 4 || Motor Phase 1 ||
+|| 5 || Motor Phase 2 ||
+|| 6 || Motor Phase 2 ||
+|| 7 || Motor Phase 3 ||
+|| 8 || Motor Phase 3 ||
+|| 9 || Battery (+) ||
+|| 10 || Battery (+) ||
+|| 11 || N/C ||
+|| 12 || N/C ||
+|| 13 || Servo Signal ||
+|| 14 || Servo +5V ||
+|| 15 || Servo Ground ||

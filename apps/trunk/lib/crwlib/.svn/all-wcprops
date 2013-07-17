@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/548/apps/trunk/lib/crwlib
+END
+crwlib_core.jar
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/790/snapshots/crwlib_core.jar
+END
+crwlib_client.jar
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/932/snapshots/crwlib_client.jar
+END

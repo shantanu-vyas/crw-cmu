@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/318/apps/tags/pre_ROS_final/lib/robotutils
+END
+robotutils.jar
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/318/apps/tags/pre_ROS_final/lib/robotutils/robotutils.jar
+END
+robotutils-sources.jar
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/318/apps/tags/pre_ROS_final/lib/robotutils/robotutils-sources.jar
+END
+robotutils-javadoc.jar
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/318/apps/tags/pre_ROS_final/lib/robotutils/robotutils-javadoc.jar
+END

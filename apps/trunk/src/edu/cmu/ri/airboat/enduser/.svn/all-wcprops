@@ -1,0 +1,173 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/996/apps/trunk/src/edu/cmu/ri/airboat/enduser
+END
+DataDisplay.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/912/apps/trunk/src/edu/cmu/ri/airboat/enduser/DataDisplay.java
+END
+ImagePanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/942/apps/trunk/src/edu/cmu/ri/airboat/enduser/ImagePanel.java
+END
+DataManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/996/apps/trunk/src/edu/cmu/ri/airboat/enduser/DataManager.java
+END
+SingleImagePanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/942/apps/trunk/src/edu/cmu/ri/airboat/enduser/SingleImagePanel.java
+END
+TaskPanel.form
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/910/apps/trunk/src/edu/cmu/ri/airboat/enduser/TaskPanel.form
+END
+IntelligencePanel.form
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/935/apps/trunk/src/edu/cmu/ri/airboat/enduser/IntelligencePanel.form
+END
+ImageViewer.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/901/apps/trunk/src/edu/cmu/ri/airboat/enduser/ImageViewer.java
+END
+DataDisplayPopup.form
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/996/apps/trunk/src/edu/cmu/ri/airboat/enduser/DataDisplayPopup.form
+END
+BoatPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/945/apps/trunk/src/edu/cmu/ri/airboat/enduser/BoatPanel.java
+END
+VirtualEarthLayer.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/942/apps/trunk/src/edu/cmu/ri/airboat/enduser/VirtualEarthLayer.java
+END
+AdvancedDataDisplay.form
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/996/apps/trunk/src/edu/cmu/ri/airboat/enduser/AdvancedDataDisplay.form
+END
+DataRepository.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/946/apps/trunk/src/edu/cmu/ri/airboat/enduser/DataRepository.java
+END
+SensingBoatSelect.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/901/apps/trunk/src/edu/cmu/ri/airboat/enduser/SensingBoatSelect.java
+END
+AutonomyPanel.form
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/901/apps/trunk/src/edu/cmu/ri/airboat/enduser/AutonomyPanel.form
+END
+OperatorConsole.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/996/apps/trunk/src/edu/cmu/ri/airboat/enduser/OperatorConsole.java
+END
+TaskPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/910/apps/trunk/src/edu/cmu/ri/airboat/enduser/TaskPanel.java
+END
+IntelligencePanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/935/apps/trunk/src/edu/cmu/ri/airboat/enduser/IntelligencePanel.java
+END
+DataDisplayPopup.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/996/apps/trunk/src/edu/cmu/ri/airboat/enduser/DataDisplayPopup.java
+END
+ImagePanel.form
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/942/apps/trunk/src/edu/cmu/ri/airboat/enduser/ImagePanel.form
+END
+AdvancedDataDisplay.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/996/apps/trunk/src/edu/cmu/ri/airboat/enduser/AdvancedDataDisplay.java
+END
+SingleImagePanel.form
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/942/apps/trunk/src/edu/cmu/ri/airboat/enduser/SingleImagePanel.form
+END
+ImageViewer.form
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/901/apps/trunk/src/edu/cmu/ri/airboat/enduser/ImageViewer.form
+END
+BoatMarker.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/914/apps/trunk/src/edu/cmu/ri/airboat/enduser/BoatMarker.java
+END
+ImageQueue.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/901/apps/trunk/src/edu/cmu/ri/airboat/enduser/ImageQueue.java
+END
+BoatPanel.form
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/945/apps/trunk/src/edu/cmu/ri/airboat/enduser/BoatPanel.form
+END
+AutonomyPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/901/apps/trunk/src/edu/cmu/ri/airboat/enduser/AutonomyPanel.java
+END
+IntelligenceAlgorithms.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/996/apps/trunk/src/edu/cmu/ri/airboat/enduser/IntelligenceAlgorithms.java
+END
+SensingBoatSelect.form
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/901/apps/trunk/src/edu/cmu/ri/airboat/enduser/SensingBoatSelect.form
+END

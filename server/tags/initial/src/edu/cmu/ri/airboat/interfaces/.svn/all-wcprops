@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/5/server/tags/initial/src/edu/cmu/ri/airboat/interfaces
+END
+AirboatCommand.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/5/server/tags/initial/src/edu/cmu/ri/airboat/interfaces/AirboatCommand.java
+END
+AirboatControl.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/5/server/tags/initial/src/edu/cmu/ri/airboat/interfaces/AirboatControl.java
+END
+AirboatController.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/5/server/tags/initial/src/edu/cmu/ri/airboat/interfaces/AirboatController.java
+END
+AirboatFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/5/server/tags/initial/src/edu/cmu/ri/airboat/interfaces/AirboatFilter.java
+END
+AirboatSensor.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/5/server/tags/initial/src/edu/cmu/ri/airboat/interfaces/AirboatSensor.java
+END

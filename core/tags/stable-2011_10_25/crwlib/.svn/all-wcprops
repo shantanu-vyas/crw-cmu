@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/381/core/tags/stable-2011_10_25/crwlib
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/381/core/tags/stable-2011_10_25/crwlib/manifest.xml
+END
+clear_msgs.sh
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/381/core/tags/stable-2011_10_25/crwlib/clear_msgs.sh
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/381/core/tags/stable-2011_10_25/crwlib/mainpage.dox
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/381/core/tags/stable-2011_10_25/crwlib/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/381/core/tags/stable-2011_10_25/crwlib/Makefile
+END
+build.xml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/381/core/tags/stable-2011_10_25/crwlib/build.xml
+END

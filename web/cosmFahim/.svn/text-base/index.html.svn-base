@@ -1,0 +1,657 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Airboats Visualization</title>
+	<style type="text/css">
+    	#slider { margin: 10px; }
+		/* css for timepicker */
+		.ui-timepicker-div .ui-widget-header { margin-bottom: 8px; }
+		.ui-timepicker-div dl { text-align: left; }
+		.ui-timepicker-div dl dt { height: 25px; margin-bottom: -25px; }
+		.ui-timepicker-div dl dd { margin: 0 10px 10px 65px; }
+		.ui-timepicker-div td { font-size: 90%; }
+		.ui-tpicker-grid-label { background: none; border: none; margin: 0; padding: 0; }
+		.ui-combobox { position: relative; display: inline-block; }
+		.ui-combobox-input { margin: 0; padding: 0.3em; }
+ 	</style>
+
+  	<script src="UTMConvertor.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+  	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+    <script src="jquery.csv.js"></script>
+    <script type="text/javascript" src="jquery-ui-timepicker-addon.js"></script>
+
+    
+  
+   	<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+ 	<link rel="stylesheet" media="all" type="text/css" href="http://code.jquery.com/ui/1.8.21/themes/ui-lightness/jquery-ui.css" />
+	
+  <script>
+		/* Combo box Stuff */
+		(function( $ ) {
+		$.widget( "ui.combobox", {
+			_create: function() {
+				var input,
+					self = this,
+					select = this.element.hide(),
+					selected = select.children( ":selected" ),
+					value = selected.val() ? selected.text() : "",
+					wrapper = this.wrapper = $( "<span>" )
+						.addClass( "ui-combobox" )
+						.insertAfter( select );
+
+				input = $( "<input>" )
+					.appendTo( wrapper )
+					.val( value )
+					.addClass( "ui-state-default ui-combobox-input" )
+					.autocomplete({
+						delay: 0,
+						minLength: 0,
+						source: function( request, response ) {
+							var matcher = new RegExp( $.ui.autocomplete.escapeRegex(request.term), "i" );
+							response( select.children( "option" ).map(function() {
+								var text = $( this ).text();
+								if ( this.value && ( !request.term || matcher.test(text) ) )
+									return {
+										label: text.replace(
+											new RegExp(
+												"(?![^&;]+;)(?!<[^<>]*)(" +
+												$.ui.autocomplete.escapeRegex(request.term) +
+												")(?![^<>]*>)(?![^&;]+;)", "gi"
+											), "<strong>$1</strong>" ),
+										value: text,
+										option: this
+									};
+							}) );
+						},
+						select: function( event, ui ) {
+							ui.item.option.selected = true;
+							self._trigger( "selected", event, {
+								item: ui.item.option
+							});
+						},
+						change: function( event, ui ) {
+							if ( !ui.item ) {
+								var matcher = new RegExp( "^" + $.ui.autocomplete.escapeRegex( $(this).val() ) + "$", "i" ),
+									valid = false;
+								select.children( "option" ).each(function() {
+									if ( $( this ).text().match( matcher ) ) {
+										this.selected = valid = true;
+										return false;
+									}
+								});
+								if ( !valid ) {
+									// remove invalid value, as it didn't match anything
+									$( this ).val( "" );
+									select.val( "" );
+									input.data( "autocomplete" ).term = "";
+									return false;
+								}
+							}
+						}
+					})
+					.addClass( "ui-widget ui-widget-content ui-corner-left" );
+
+					input.data( "autocomplete" )._renderItem = function( ul, item ) {
+						return $( "<li></li>" )
+							.data( "item.autocomplete", item )
+							.append( "<a>" + item.label + "</a>" )
+							.appendTo( ul );
+					};
+
+					$( "<a>" )
+						.attr( "tabIndex", -1 )
+						.attr( "title", "Show All Items" )
+						.appendTo( wrapper )
+						.button({
+							icons: {
+								primary: "ui-icon-triangle-1-s"
+							},
+							text: false
+						})
+						.removeClass( "ui-corner-all" )
+						.addClass( "ui-corner-right ui-combobox-toggle" )
+						.click(function() {
+							// close if already visible
+							if ( input.autocomplete( "widget" ).is( ":visible" ) ) {
+								input.autocomplete( "close" );
+								return;
+							}
+
+							// work around a bug (likely same cause as #5265)
+							$( this ).blur();
+
+							// pass empty string as value to search for, displaying all results
+							input.autocomplete( "search", "" );
+							input.focus();
+						});
+				},
+
+				destroy: function() {
+					this.wrapper.remove();
+					this.element.show();
+					$.Widget.prototype.destroy.call( this );
+				}
+			});
+		})( jQuery );
+		
+		/* Initializing UI elements */
+		$(function() {
+			$("#slider").slider({
+				value: 3,
+				min: 0.25,
+				max: 10,
+		slide: function(event, ui) {circleRadius = ui.value; redrawCircles(circleRadius); }
+			});
+			$("#controls").accordion({ autoHeight: false});
+			$("#datepickerStart").datetimepicker({ dateFormat: "yy-mm-dd", showSecond: true, timeFormat: 'hh:mm:ss', showButtonPanel: false });
+			$("#datepickerEnd").datetimepicker({ dateFormat: "yy-mm-dd", showSecond: true, timeFormat: 'hh:mm:ss', showButtonPanel: false });
+			$("#sourceSelector").combobox();
+
+			var $el = $("#sourceSelector");
+			$el.empty(); // remove old options
+			var newOptions = getAllFeeds();
+			for(i=0; i<newOptions.length; i++)
+			  $el.append($("<option></option>").attr("value", newOptions[i].value).text(newOptions[i].key));
+			
+		});
+  </script>
+  
+
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=visualization"></script>
+	<script type="text/javascript">
+		 
+		var hardCoded = false, useFakeTime = false;
+		var map, circleRadius = 3;
+		var circles = [], allData = [], allLat = [], allLon = [];
+
+		/* Initializing map */
+		function initialize() {
+			var myOptions = {
+				zoom: 19,
+				center: new google.maps.LatLng(39.49082204234965, -75.78827556766221), //Panther Hollow Coordinates : (40.436847,-79.948551)
+				mapTypeId: google.maps.MapTypeId.SATELLITE
+			};
+			map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+		}
+		
+		/* Function to get a list of feeds from cosm
+		*  This function gets all the feeds of a certain user on cosm, in this case 'crwcmu'	
+		*/
+		function getAllFeeds() {
+			// Requesting list of feeds in json format
+			var request = new XMLHttpRequest();
+			request.open("GET", "http://api.cosm.com/v2/feeds?per_page=1000&user=crwcmu&content=summary", false);
+			request.setRequestHeader("X-ApiKey", "R5USeoIXogxwJxP3L9wZjJo6imySAKw0VGtpZExrNHJyQT0g");
+			request.send(null);
+			
+			//Parsing the json result string
+			var feeds = eval('(' + request.responseText + ')');
+			var sources = [];
+			for(i=0; i<feeds.results.length; i++)
+				sources.push({key:feeds.results[i].title, value:feeds.results[i].id});
+			return sources;
+		}
+		
+		/* Function to check if a given year is a leap year */
+		function isLeap(year) {
+			if(year%400 == 0)
+				return true;
+			else if( year%100 == 0)
+				return false;
+			else if( year%4 == 0)
+				return true;
+			else
+				return false;
+		}
+		
+		/* Function to add 6 hours to the timeStamp passed in.
+		*  This function is required as one cannot make API requests on cosm which are longer than 6 hours(If the granuality of the data requested is highest). Thus this function enables us to request data in chunks of 6 hours
+		*/
+		function incrementTimestamp(timestamp, hInc, miInc, sInc) {
+			var y, m, d, h, mi, s, time;
+			y = parseInt(timestamp.substr(0,4), 10);
+			m = parseInt(timestamp.substr(5,2), 10);
+			d = parseInt(timestamp.substr(8,2), 10);
+			h = parseInt(timestamp.substr(11,2), 10);
+			mi = parseInt(timestamp.substr(14,2), 10);
+			s = parseInt(timestamp.substr(17,2), 10);
+			
+			// Add request hours, miutes, and sonds while checking if the miute, hour, day, month and year change as a result
+			s += Math.max(sInc, 0);
+			while(s >= 60) {
+				mi++;
+				s -= 60;
+			}
+			mi += Math.max(miInc, 0);
+			while(mi >= 60) {
+				h++;
+				mi -= 60;
+			}
+			h += Math.max(hInc, 0);
+			if( h >=24 ) {
+				h -= 24;
+				d += 1;		
+				if(d == 32) {
+					d = 1;
+					m++;
+				} else if(d == 31 && (m == 2 || m == 4 || m == 6 || m == 9 || m == 11)) {
+					d = 1;
+					m++;
+				} else if(d == 29 && m == 2 && !isLeap(y)) {
+					d = 1;
+					m++;
+				}
+				if(m > 12) {
+					m = 1;
+					y++;
+				}
+			}
+			return formatTimestamp(y, m, d, h, mi, s);
+		}
+		
+		function formatTimestamp(y, m, d, h, mi, s) {
+			// Format the new timestamp
+			var timestamp = y + "-";
+			if(m < 10)
+				timestamp += "0";
+			timestamp += m + "-";
+			if(d < 10)
+				timestamp += "0";
+			timestamp += d + "T";
+			if(h < 10)
+				timestamp += "0";
+			timestamp += h + ":";
+			if(mi < 10)
+				timestamp += "0";
+			timestamp += mi + ":";
+			if(s < 10)
+				timestamp += "0";
+			timestamp += s + ".000000Z";
+
+			return timestamp;
+		}
+		
+		/* Converts a timestamp received from the GUI to a Date object */
+		function timestampToDate(timestamp) {
+			// Example timestamp: 2012-07-08T23:00:00.000000Z
+			var y, m, d, h, mi, s, date;
+			y = timestamp.substr(0,4);
+			m = timestamp.substr(5,2) - 1; // January is 0, not 1, in Date format
+			d = timestamp.substr(8,2);
+			h = timestamp.substr(11,2);
+			mi = timestamp.substr(14,2);
+			s = timestamp.substr(17,2);
+			date = new Date(parseInt(y, 10), parseInt(m, 10), parseInt(d, 10), parseInt(h, 10), parseInt(mi, 10), parseInt(s));
+			
+			return date;
+		}
+		
+		/* Converts a timestamp received from the GUI to a Date object */
+		function dateToTimestamp(date) {
+			// Example timestamp: 2012-07-08T23:00:00.000000Z
+			var y, m, d, h, mi, s, timestamp;
+			y = date.getFullYear();
+			m = date.getMonth() + 1;
+			d = date.getDate();
+			h = date.getHours();
+			mi = date.getMinutes();
+			s = date.getSeconds();
+			
+			return formatTimestamp(y, m, d, h, mi, s);
+		}
+		
+		/* Function to grab the time period data from the gui and make the actual API requests to draw sensor data on the map */ 
+		function startDataRetreival() {
+			var feed, dataType, intervalStartTimestamp, intervalEndTimestamp, startTime, endTime;
+			if(!hardCoded) {
+				// Get all the request parameters(date, type, source etc)
+				feed = $("#sourceSelector").val();
+				dataType = $("input:checked[name=dataType]").val();
+				intervalStartTimestamp = $.datepicker.formatDate('yy-mm-dd', $("#datepickerStart").datetimepicker("getDate"));
+				intervalEndTimestamp = $.datepicker.formatDate('yy-mm-dd', $("#datepickerEnd").datetimepicker("getDate"));
+				startTime = $('#datepickerStart').datetimepicker('getDate') + "";
+				endTime = $('#datepickerEnd').datetimepicker('getDate') + "";
+			} else {
+				// Hard coded values for testing dataset without entering GUI values each time
+				feed = "68677";
+				//feed = "66719";
+				dataType = $("input:checked[name=dataType]").val();
+				intervalStartTimestamp = "2012-07-08";
+				intervalEndTimestamp = "2012-07-09";
+				startTime = "Sun Jul 08 2012 00:00:00 GMT-0400 (Eastern Daylight Time)";
+				endTime = "Sun Jul 09 2012 00:00:00 GMT-0400 (Eastern Daylight Time)";
+			}
+
+			var debugBox = document.getElementById("debugInfo");			
+			debugBox.value = "Box values: " + feed + "," + intervalStartTimestamp+","+intervalEndTimestamp+","+startTime+","+endTime;
+			intervalStartTimestamp += "T" + startTime.substr(16,8) + ".000000Z";
+			intervalEndTimestamp += "T" + endTime.substr(16,8) + ".000000Z";
+			debugBox.value += "\nStart Time: " + intervalStartTimestamp + "\nEnd Time: " + intervalEndTimestamp; 
+			console.log("Start Time: " + intervalStartTimestamp + ", End Time: " + intervalEndTimestamp);
+					
+			var intervalStartDate = timestampToDate(intervalStartTimestamp);	// Beginning Date of the requested time period
+			var intervalEndDate = timestampToDate(intervalEndTimestamp);	// Ending Date of the requested time period
+			var latestTimestamp = intervalStartTimestamp;
+			var latestDate = timestampToDate(latestTimestamp);	// Latest Date we have requested data for	
+			
+			clearCircles();	// Remove any data points that have been previously drawn
+			allData = [], allLat = [], allLon = [];	// Data storage objects
+			var startIndex = 0;	// Reset drawing start index
+			var minVal = 100000;	// Reset min value
+			var maxVal = -100000;	// Reset max value
+			
+			var currentDate;
+			if(!useFakeTime) {
+				currentDate = new Date();
+			} else {
+				// Hard coded timestamps for testing real-time polling from an old data set
+				var fakeTimestamp = "2012-07-08";			
+				var fakeTime = "Sun Jul 08 2012 17:00:00 GMT-0400 (Eastern Daylight Time)";
+				fakeTimestamp += "T" + fakeTime.substr(16,8) + ".000000Z";
+				currentDate = timestampToDate(fakeTimestamp);
+			}
+			
+			if(intervalEndDate.getTime() > currentDate.getTime()) {
+				// First we want to grab all the data that is currently available in large request(s)
+				// Then we will make small, frequent requests to get real-time data
+				lastDate = currentDate;
+				console.log("Real-time polling");
+			} else {
+				lastDate = intervalEndDate;
+				console.log("No real-time-data polling needed");
+			}
+		
+			// Get number of seconds between the starting date and the ending date
+			var diff = parseInt((lastDate.getTime() - intervalStartDate.getTime()) / 1000, 10);
+			console.log("diff is " + diff);
+			while(diff > 0) {
+				// Request data segments of up to 6 hours at a time
+				results = getData(feed, dataType, latestTimestamp, Math.min(diff, 60*60*6), minVal, maxVal);
+				latestTimestamp = results[0];
+				minVal = results[1];
+				maxVal = results[2];
+				redraw = results[3];
+				if(redraw) {
+					// Min/max value changed, so erase the circles and reset the drawing index
+					clearCircles();
+					startIndex = 0;
+				}
+				debugBox.value += "\nRequested timeStamp: " + latestTimestamp;
+				latestDate = timestampToDate(latestTimestamp);
+				diff = parseInt((lastDate.getTime() - latestDate.getTime()) / 1000, 10);
+			}
+			debugBox.value += "\nTotal Number of elements fetched: " + allData.length;
+			// Done retrieving data taken in the past, go ahead and draw
+			drawCircles(minVal, maxVal, startIndex);
+			
+			if(lastDate.getTime() != intervalEndDate.getTime()) {
+				// Need to continue polling to get real time data, wait 10 seconds (this is an arbitrary number) between poll requests
+				setTimeout(function(){continuePolling(latestDate, intervalEndDate, feed, dataType, minVal, maxVal, allData.length)}, 10000);
+			}
+		}
+		
+		/* After timeout triggers, grab the data received between current time and lastest time and draw it */
+		function continuePolling(latestDate, intervalEndDate, feed, dataType, minVal, maxVal, startIndex) {
+			var diff ;
+			if(!useFakeTime) {
+				var currentDate = new Date();			
+				diff = parseInt((currentDate.getTime() - latestDate.getTime()) / 1000, 10);
+			} else {
+				// Hard coded diff for testing real-time polling from an old data set
+				diff = 60 * 60;
+			}
+
+			var debugBox = document.getElementById("debugInfo");
+			if(diff > 0) {
+				var latestTimestamp = dateToTimestamp(latestDate);
+				// Request data segments of up to 6 hours at a time
+				results = getData(feed, dataType, latestTimestamp, Math.min(diff, 60*60*6), minVal, maxVal);
+				latestTimestamp = results[0];
+				minVal = results[1];
+				maxVal = results[2];
+				redraw = results[3];
+				if(redraw) {
+					// Min/max value changed, so erase the circles and reset the drawing index
+					clearCircles();
+					startIndex = 0;
+				}
+				latestDate = timestampToDate(latestTimestamp);
+			}
+			debugBox.value += "\nTotal Number of elements fetched: " + allData.length;
+			drawCircles(minVal, maxVal, startIndex);
+			
+			if(latestDate.getTime() != intervalEndDate.getTime()) {
+				// Still need to continue polling to get real time data, wait 10 seconds (this is an arbitrary number) between poll requests
+				setTimeout(function(){continuePolling(latestDate, intervalEndDate, feed, dataType, minVal, maxVal, allData.length)}, 10000);
+			}
+		}
+
+		/* Appends the data received during the specified time period to our data storage lists */
+		function getData(feed, dataType, startTimestamp, elapsedSeconds, minVal, maxVal) {
+			var x, y, temp;
+			var debugBox = document.getElementById("debugInfo");
+			var redraw = false;
+			var h = Math.floor(elapsedSeconds / 3600);
+			var mi = Math.floor((elapsedSeconds % 3600) / 60);
+			var s = Math.floor((elapsedSeconds % 3600) % 60);
+			
+			// Request Cosm for the data
+			var request = new XMLHttpRequest();
+			var requestString = "https://api.cosm.com/v2/feeds/" + feed + ".csv?datastreams=x,y," + dataType + "&start="+ startTimestamp +"&duration=";
+			if(h != 0) {
+				requestString += h + "hours";
+			}
+			if(mi != 0) {
+				requestString += mi + "minutes";
+			}
+			if(s != 0) {
+				requestString += s + "seconds";
+			}
+			requestString += "&interval=30&per_page=1000";
+			
+			console.log("Making request: " + requestString);
+			
+			request.open("GET", requestString, false);
+			request.setRequestHeader("X-ApiKey", "R5USeoIXogxwJxP3L9wZjJo6imySAKw0VGtpZExrNHJyQT0g");
+			request.send(null);
+						
+			// Parse the data received
+			boatData = $.csv2Array(request.responseText);
+			
+			for(i=0; i<boatData.length; i++) {
+				// Every line of data can correspond to either (i) actual data (ii) X position or (iii) Y position
+				if(boatData[i][0] == dataType) {
+					temp = boatData[i][2];
+				}
+				else if(boatData[i][0] == "x") {
+					x = boatData[i][2];
+				}
+				else if(boatData[i][0] == "y") {
+					debugBox.value += "\n" + temp;
+					y = boatData[i][2];
+					
+					// Convert UTM to Lat/Lon
+					var res = ToLL(y,x,18);
+					
+					// Store all data in an array and set minVal/maxVal so that data can be normalized later
+					//console.log("Data point: " + temp + ",\t" + res.lat + "\t" + res.lon);
+					allData.push(temp);
+					allLat.push(res.lat);
+					allLon.push(res.lon);
+					if(temp < minVal) {
+						minVal = temp;
+						redraw = true;
+					}
+					if(temp > maxVal) {
+						maxVal = temp;
+						redraw = true;
+					}
+				}
+			}
+			// We need to return the last time that was requested
+			endTimestamp = incrementTimestamp(startTimestamp, h, mi, s);
+
+			return new Array(endTimestamp, minVal, maxVal, redraw);
+		}
+			
+		function drawCircles(minVal, maxVal, startIndex) {
+			var debugBox = document.getElementById("debugInfo");
+			var dataCircle;
+			for(var i=startIndex; i<allData.length; i++) {
+				var circleOptions = {
+					strokeOpacity: 0,
+					fillColor: numToRgb(allData[i], minVal, maxVal),
+					fillOpacity: 0.35,
+					map: map,
+					center: new google.maps.LatLng(allLat[i], allLon[i]),
+					radius: circleRadius
+				};
+				dataCircle = new google.maps.Circle(circleOptions);
+				circles.push(dataCircle);
+			}
+		}
+		
+		function clearCircles() {
+			console.log("clearCircles()");
+			while(circles.length != 0) {
+				circle = circles.pop();
+				circle.setMap(null);
+			}	
+		}
+		
+		function redrawCircles(radius) {
+			console.log("redrawCircles()");
+			for(i=0; i<circles.length; i++) {
+				circles[i].setRadius(radius);
+			}	
+		}
+		
+		/* Function to convert a number value to a heatmap color value based on the value's minVal/maxVal range
+		*  http://stackoverflow.com/questions/2374959/algorithm-to-convert-any-positive-integer-to-an-rgb-value
+		*/
+		function numToRgb(val, minVal, maxVal) {
+			var minWv = 380.0, maxWv = 780.0;
+			var wv = (val - minVal) / (maxVal - minVal) * (maxWv - minWv) + minWv;
+			var r = 0, g = 0, b = 0, factor = 0;
+			
+			if(wv < 440) {
+				r = -(1.0 * wv - 440) / (440 - 380);
+				g = 0;
+				b = 1.0;
+			} else if(wv >= 440 && wv < 490) {
+				r = 0;
+				g = (1.0 * wv - 440) / (490 - 440);
+				b = 1.0;
+			} else if(wv >= 490 && wv < 510) {
+				r = 0;
+				g = 1.0;
+				b = -(1.0 * wv - 510) / (510 - 490);
+			} else if(wv >= 510 && wv < 580) {
+				r = (1.0 * wv - 510) / (580 - 510);
+				g = 1.0;
+				b = 0;
+			} else if(wv >= 580 && wv < 645) {
+				r = 1.0;
+				g = -(1.0 * wv - 645) / (645 - 580);
+				b = 0;
+			} else if(wv >= 645) {
+				r = 1.0;
+				g = 0;
+				b = 0;
+			}
+			// Let the intensity fall off near the vision limits
+			if(wv < 420) {
+				factor = 0.3 + 0.7 * (wv - 380) / (420 - 380);
+			} else if(wv >= 420 && wv < 701) { 
+				factor = 1;
+			}else if(wv >= 701) {
+				factor = 0.3 + 0.7 * (780 - wv) / (780 - 700)
+			}
+			r = adjust(r, factor);
+			g = adjust(g, factor);
+			b = adjust(b, factor);
+			color = rgbToHex(r*255, g*255, b*255);
+			
+			return color;
+		}
+
+		function adjust(color, factor) {
+			// Maybe implement this later...
+			return color;
+		}
+
+		/* http://www.javascripter.net/faq/rgbtohex.htm */
+		function rgbToHex(r, g, b) {
+			return numToHex(r) + numToHex(g) + numToHex(b);
+		}
+
+		/* http://www.javascripter.net/faq/rgbtohex.htm */
+		function numToHex(n) {
+			n = parseInt(n,10);
+			if (isNaN(n)) 
+				return "00";
+			n = Math.max(0,Math.min(n,255));
+			return "0123456789ABCDEF".charAt((n-n%16)/16) + "0123456789ABCDEF".charAt(n%16);
+		}
+
+
+	</script>
+	</head>
+
+
+		
+		<body onload="initialize()" style="font-size:65.5%;" bgcolor="gray">
+		  <style type="text/css">
+		#content {
+		width:1100px;
+		margin:0 auto;
+		}
+		#map_canvas {
+		float:left;
+		margin-left:10px;
+		}
+		#controls {
+		float:right;
+		margin-right:10px;
+		width:270px;
+		}
+		  </style>
+		  <div id="content">
+		<div id="map_canvas" style="height: 600px; width: 800px;"></div>
+		<div id="controls" style="width: 270px;">
+		  <h3><a href="#">Select Source</a></h3>
+		  <div>
+			<select id="sourceSelector">
+			  <option value="">Select one...</option>
+			  <option value="ActionScript">ActionScript</option>
+			</select>
+		  </div>
+		  <h3><a href="#">Start Date and Time</a></h3>
+		  <div id="datepickerStart"></div>
+		  <h3><a href="#">End Date and Time</a></h3>
+		  <div id="datepickerEnd"></div>
+		  <h3><a href="#">Get the Data!</a></h3>
+		  <div>
+			<form>
+			  <p><b>Type of Data:</b></p>
+			  <input type="radio" name="dataType" value="temperature" checked>Temperature<br>
+			  <input type="radio" name="dataType" value="conductivity">Conductivity<br>
+			</form>
+
+			<button onclick="startDataRetreival()">Retrieve Data</button>
+			<p><b>Adjust results: </b></p>
+			<div id="slider"></div>
+		  </div>
+		  <h3><a href="#">Debug Information</a></h3>
+		  <textarea id="debugInfo" rows="25" style="width: 218px;"></textarea>
+		</div>
+		  </div>
+		  
+		  -	
+
+		</body>
+	  </html>
+

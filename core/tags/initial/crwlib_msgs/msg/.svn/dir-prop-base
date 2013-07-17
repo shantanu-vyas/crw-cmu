@@ -1,0 +1,20 @@
+K 10
+svn:ignore
+V 443
+VehicleNavigationActionResult.msg
+VehicleNavigationAction.msg
+VehicleNavigationResult.msg
+VehicleNavigationActionGoal.msg
+VehicleNavigationActionFeedback.msg
+VehicleNavigationGoal.msg
+VehicleNavigationFeedback.msg
+VehicleImageCaptureActionResult.msg
+VehicleImageCaptureAction.msg
+VehicleImageCaptureResult.msg
+VehicleImageCaptureActionGoal.msg
+VehicleImageCaptureActionFeedback.msg
+VehicleImageCaptureGoal.msg
+VehicleImageCaptureFeedback.msg
+
+
+END

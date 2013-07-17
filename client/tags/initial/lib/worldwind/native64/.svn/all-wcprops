@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/5/client/tags/initial/lib/worldwind/native64
+END
+gluegen-rt-natives-linux-amd64.jar
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/5/client/tags/initial/lib/worldwind/native64/gluegen-rt-natives-linux-amd64.jar
+END
+jogl-natives-linux-amd64.jar
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/5/client/tags/initial/lib/worldwind/native64/jogl-natives-linux-amd64.jar
+END

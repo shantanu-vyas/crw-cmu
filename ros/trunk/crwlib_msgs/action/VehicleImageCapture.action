@@ -1,0 +1,13 @@
+# Goal
+int64 frames
+float32 interval
+int32 width
+int32 height
+---
+# Result
+Header header
+int8 status
+---
+# Feedback
+Header header
+int8 status

@@ -1,0 +1,7 @@
+K 13
+svn:externals
+V 93
+^/snapshots/crwlib_core.jar crwlib_core.jar 
+^/snapshots/crwlib_client.jar crwlib_client.jar
+
+END

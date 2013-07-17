@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/387/ros/trunk/crwlib_msgs/srv
+END
+CaptureImage.srv
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/387/ros/trunk/crwlib_msgs/srv/CaptureImage.srv
+END
+SetSensorType.srv
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/387/ros/trunk/crwlib_msgs/srv/SetSensorType.srv
+END
+GetWaypoint.srv
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/387/ros/trunk/crwlib_msgs/srv/GetWaypoint.srv
+END
+GetSensorType.srv
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/387/ros/trunk/crwlib_msgs/srv/GetSensorType.srv
+END
+GetCameraStatus.srv
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/387/ros/trunk/crwlib_msgs/srv/GetCameraStatus.srv
+END
+SetState.srv
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/387/ros/trunk/crwlib_msgs/srv/SetState.srv
+END
+GetNumSensors.srv
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/387/ros/trunk/crwlib_msgs/srv/GetNumSensors.srv
+END
+SetGains.srv
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/387/ros/trunk/crwlib_msgs/srv/SetGains.srv
+END
+GetVelocity.srv
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/387/ros/trunk/crwlib_msgs/srv/GetVelocity.srv
+END
+GetWaypointStatus.srv
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/387/ros/trunk/crwlib_msgs/srv/GetWaypointStatus.srv
+END
+GetState.srv
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/387/ros/trunk/crwlib_msgs/srv/GetState.srv
+END
+GetGains.srv
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/387/ros/trunk/crwlib_msgs/srv/GetGains.srv
+END
+SetAutonomous.srv
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/387/ros/trunk/crwlib_msgs/srv/SetAutonomous.srv
+END
+IsAutonomous.srv
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/387/ros/trunk/crwlib_msgs/srv/IsAutonomous.srv
+END

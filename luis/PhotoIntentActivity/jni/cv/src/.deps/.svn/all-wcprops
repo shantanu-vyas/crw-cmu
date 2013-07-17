@@ -1,0 +1,389 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps
+END
+cvthresh.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvthresh.Plo
+END
+cvinpaint.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvinpaint.Plo
+END
+dummy.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/dummy.Plo
+END
+cvderiv.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvderiv.Plo
+END
+cvcontourtree.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvcontourtree.Plo
+END
+cvdistransform.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvdistransform.Plo
+END
+cvcontours.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvcontours.Plo
+END
+cvkdtree.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvkdtree.Plo
+END
+cvcolor.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvcolor.Plo
+END
+cvshapedescr.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvshapedescr.Plo
+END
+cvadapthresh.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvadapthresh.Plo
+END
+cvrotcalipers.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvrotcalipers.Plo
+END
+cvconvhull.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvconvhull.Plo
+END
+cvgeometry.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvgeometry.Plo
+END
+cvdominants.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvdominants.Plo
+END
+cvsegmentation.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvsegmentation.Plo
+END
+cvhistogram.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvhistogram.Plo
+END
+cvcalibinit.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvcalibinit.Plo
+END
+cvcamshift.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvcamshift.Plo
+END
+cvposit.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvposit.Plo
+END
+cvcalccontrasthistogram.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvcalccontrasthistogram.Plo
+END
+cvcalcimagehomography.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvcalcimagehomography.Plo
+END
+cvimgwarp.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvimgwarp.Plo
+END
+cvcanny.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvcanny.Plo
+END
+cvoptflowbm.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvoptflowbm.Plo
+END
+cvapprox.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvapprox.Plo
+END
+cvfundam.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvfundam.Plo
+END
+cvsurf.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvsurf.Plo
+END
+cvmoments.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvmoments.Plo
+END
+cvcornersubpix.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvcornersubpix.Plo
+END
+cvsnakes.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvsnakes.Plo
+END
+cvmorph.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvmorph.Plo
+END
+cvsamplers.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvsamplers.Plo
+END
+cvsumpixels.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvsumpixels.Plo
+END
+cvcondens.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvcondens.Plo
+END
+cvlinefit.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvlinefit.Plo
+END
+cvundistort.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvundistort.Plo
+END
+cvlkpyramid.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvlkpyramid.Plo
+END
+cvkalman.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvkalman.Plo
+END
+cvemd.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvemd.Plo
+END
+cvhough.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvhough.Plo
+END
+cvfloodfill.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvfloodfill.Plo
+END
+cvhaar.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvhaar.Plo
+END
+cvpgh.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvpgh.Plo
+END
+cvstereobm.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvstereobm.Plo
+END
+cvsubdivision2d.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvsubdivision2d.Plo
+END
+cvcalibration.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvcalibration.Plo
+END
+cvcorner.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvcorner.Plo
+END
+cvpyramids.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvpyramids.Plo
+END
+cvtemplmatch.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvtemplmatch.Plo
+END
+cvutils.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvutils.Plo
+END
+cvprecomp.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvprecomp.Plo
+END
+cvsmooth.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvsmooth.Plo
+END
+cvtables.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvtables.Plo
+END
+cvstereogc.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvstereogc.Plo
+END
+cvmotempl.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvmotempl.Plo
+END
+cvoptflowlk.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvoptflowlk.Plo
+END
+cvfilter.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvfilter.Plo
+END
+cvoptflowhs.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvoptflowhs.Plo
+END
+cvswitcher.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvswitcher.Plo
+END
+cvaccum.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvaccum.Plo
+END
+cvpyrsegmentation.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvpyrsegmentation.Plo
+END
+cvmatchcontours.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvmatchcontours.Plo
+END
+cvfeatureselect.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/679/luis/PhotoIntentActivity/jni/cv/src/.deps/cvfeatureselect.Plo
+END

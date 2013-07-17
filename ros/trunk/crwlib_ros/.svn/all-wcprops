@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/387/ros/trunk/crwlib_ros
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/387/ros/trunk/crwlib_ros/manifest.xml
+END
+clear_msgs.sh
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/387/ros/trunk/crwlib_ros/clear_msgs.sh
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/387/ros/trunk/crwlib_ros/mainpage.dox
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/387/ros/trunk/crwlib_ros/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/387/ros/trunk/crwlib_ros/Makefile
+END
+build.xml
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/387/ros/trunk/crwlib_ros/build.xml
+END

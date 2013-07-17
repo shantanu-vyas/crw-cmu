@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/989/firmware/trunk/src/sensors
+END
+watercanary_sensor.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/858/firmware/trunk/src/sensors/watercanary_sensor.h
+END
+sensor.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/902/firmware/trunk/src/sensors/sensor.h
+END
+do_sensor.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/956/firmware/trunk/src/sensors/do_sensor.h
+END
+depth_sensor.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/958/firmware/trunk/src/sensors/depth_sensor.h
+END
+sampler.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/888/firmware/trunk/src/sensors/sampler.cpp
+END
+monitor_sensor.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/989/firmware/trunk/src/sensors/monitor_sensor.h
+END
+es2_sensor.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/955/firmware/trunk/src/sensors/es2_sensor.h
+END
+sampler.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/858/firmware/trunk/src/sensors/sampler.h
+END
+watercanary_sensor.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/888/firmware/trunk/src/sensors/watercanary_sensor.cpp
+END
+te5_sensor.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/949/firmware/trunk/src/sensors/te5_sensor.h
+END

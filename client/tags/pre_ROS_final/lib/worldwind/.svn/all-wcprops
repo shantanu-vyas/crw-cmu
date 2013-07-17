@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/274/client/tags/pre_ROS_final/lib/worldwind
+END
+gdal.jar
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/274/client/tags/pre_ROS_final/lib/worldwind/gdal.jar
+END
+gluegen-rt.jar
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/274/client/tags/pre_ROS_final/lib/worldwind/gluegen-rt.jar
+END
+worldwind.jar
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/274/client/tags/pre_ROS_final/lib/worldwind/worldwind.jar
+END
+jogl.jar
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/274/client/tags/pre_ROS_final/lib/worldwind/jogl.jar
+END

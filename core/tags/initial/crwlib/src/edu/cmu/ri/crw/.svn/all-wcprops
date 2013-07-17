@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/286/core/tags/initial/crwlib/src/edu/cmu/ri/crw
+END
+SimpleBoatSimulator.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/286/core/tags/initial/crwlib/src/edu/cmu/ri/crw/SimpleBoatSimulator.java
+END
+SimpleBoatController.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/286/core/tags/initial/crwlib/src/edu/cmu/ri/crw/SimpleBoatController.java
+END
+VehicleVelocityListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/286/core/tags/initial/crwlib/src/edu/cmu/ri/crw/VehicleVelocityListener.java
+END
+VehicleServer.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/286/core/tags/initial/crwlib/src/edu/cmu/ri/crw/VehicleServer.java
+END
+QuaternionUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/286/core/tags/initial/crwlib/src/edu/cmu/ri/crw/QuaternionUtils.java
+END
+CrwSecurityManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/286/core/tags/initial/crwlib/src/edu/cmu/ri/crw/CrwSecurityManager.java
+END
+VehicleSensorListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/286/core/tags/initial/crwlib/src/edu/cmu/ri/crw/VehicleSensorListener.java
+END
+WaypointObserver.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/286/core/tags/initial/crwlib/src/edu/cmu/ri/crw/WaypointObserver.java
+END
+ImagingObserver.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/286/core/tags/initial/crwlib/src/edu/cmu/ri/crw/ImagingObserver.java
+END
+VehicleController.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/286/core/tags/initial/crwlib/src/edu/cmu/ri/crw/VehicleController.java
+END
+VehicleFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/286/core/tags/initial/crwlib/src/edu/cmu/ri/crw/VehicleFilter.java
+END
+CrwNetworkUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/286/core/tags/initial/crwlib/src/edu/cmu/ri/crw/CrwNetworkUtils.java
+END
+VehicleStateListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/286/core/tags/initial/crwlib/src/edu/cmu/ri/crw/VehicleStateListener.java
+END
+VehicleImageListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/286/core/tags/initial/crwlib/src/edu/cmu/ri/crw/VehicleImageListener.java
+END
+AbstractVehicleServer.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/286/core/tags/initial/crwlib/src/edu/cmu/ri/crw/AbstractVehicleServer.java
+END

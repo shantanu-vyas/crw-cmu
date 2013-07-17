@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/993/server/branches/obstacle_dev/src/edu/cmu/ri/airboat/server
+END
+SimpleFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/746/server/branches/obstacle_dev/src/edu/cmu/ri/airboat/server/SimpleFilter.java
+END
+AirboatControlActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/746/server/branches/obstacle_dev/src/edu/cmu/ri/airboat/server/AirboatControlActivity.java
+END
+AirboatObstAvoidanceActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/775/server/branches/obstacle_dev/src/edu/cmu/ri/airboat/server/AirboatObstAvoidanceActivity.java
+END
+AirboatService.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/746/server/branches/obstacle_dev/src/edu/cmu/ri/airboat/server/AirboatService.java
+END
+AirboatImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/746/server/branches/obstacle_dev/src/edu/cmu/ri/airboat/server/AirboatImpl.java
+END
+AirboatController.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/746/server/branches/obstacle_dev/src/edu/cmu/ri/airboat/server/AirboatController.java
+END
+AirboatCameraActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/746/server/branches/obstacle_dev/src/edu/cmu/ri/airboat/server/AirboatCameraActivity.java
+END
+AirboatObstAvoidanceViewBase.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/775/server/branches/obstacle_dev/src/edu/cmu/ri/airboat/server/AirboatObstAvoidanceViewBase.java
+END
+ReadOnlyToggleButton.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/746/server/branches/obstacle_dev/src/edu/cmu/ri/airboat/server/ReadOnlyToggleButton.java
+END
+AirboatFailsafeService.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/746/server/branches/obstacle_dev/src/edu/cmu/ri/airboat/server/AirboatFailsafeService.java
+END
+AirboatActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/993/server/branches/obstacle_dev/src/edu/cmu/ri/airboat/server/AirboatActivity.java
+END
+AirboatObstAvoidanceView.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/775/server/branches/obstacle_dev/src/edu/cmu/ri/airboat/server/AirboatObstAvoidanceView.java
+END

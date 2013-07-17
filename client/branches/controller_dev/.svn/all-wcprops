@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/791/client/branches/controller_dev
+END
+manifest.mf
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/787/client/branches/controller_dev/manifest.mf
+END
+build.xml
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/787/client/branches/controller_dev/build.xml
+END
+build-before-profiler.xml
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/787/client/branches/controller_dev/build-before-profiler.xml
+END

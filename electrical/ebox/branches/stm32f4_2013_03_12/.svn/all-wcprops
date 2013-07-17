@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/978/electrical/ebox/branches/stm32f4_2013_03_12
+END
+platypus.lbr
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/978/electrical/ebox/branches/stm32f4_2013_03_12/platypus.lbr
+END
+eagle.epf
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/978/electrical/ebox/branches/stm32f4_2013_03_12/eagle.epf
+END
+ebox.sch
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/965/electrical/ebox/branches/stm32f4_2013_03_12/ebox.sch
+END

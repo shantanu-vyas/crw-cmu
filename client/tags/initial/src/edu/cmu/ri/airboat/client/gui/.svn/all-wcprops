@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/5/client/tags/initial/src/edu/cmu/ri/airboat/client/gui
+END
+ConnectionPanel.form
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/5/client/tags/initial/src/edu/cmu/ri/airboat/client/gui/ConnectionPanel.form
+END
+ControllerPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/5/client/tags/initial/src/edu/cmu/ri/airboat/client/gui/ControllerPanel.java
+END
+AirboatComponent.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/5/client/tags/initial/src/edu/cmu/ri/airboat/client/gui/AirboatComponent.java
+END
+PosePanel.form
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/5/client/tags/initial/src/edu/cmu/ri/airboat/client/gui/PosePanel.form
+END
+CameraPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/5/client/tags/initial/src/edu/cmu/ri/airboat/client/gui/CameraPanel.java
+END
+DrivePanel.form
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/5/client/tags/initial/src/edu/cmu/ri/airboat/client/gui/DrivePanel.form
+END
+WaypointPanel.form
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/5/client/tags/initial/src/edu/cmu/ri/airboat/client/gui/WaypointPanel.form
+END
+PidPanel.form
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/5/client/tags/initial/src/edu/cmu/ri/airboat/client/gui/PidPanel.form
+END
+ConnectionPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/5/client/tags/initial/src/edu/cmu/ri/airboat/client/gui/ConnectionPanel.java
+END
+SimpleWorldPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/5/client/tags/initial/src/edu/cmu/ri/airboat/client/gui/SimpleWorldPanel.java
+END
+ReadOnlyCheckBox.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/5/client/tags/initial/src/edu/cmu/ri/airboat/client/gui/ReadOnlyCheckBox.java
+END
+AbstractAirboatPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/5/client/tags/initial/src/edu/cmu/ri/airboat/client/gui/AbstractAirboatPanel.java
+END
+ControllerPanel.form
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/5/client/tags/initial/src/edu/cmu/ri/airboat/client/gui/ControllerPanel.form
+END
+PosePanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/5/client/tags/initial/src/edu/cmu/ri/airboat/client/gui/PosePanel.java
+END
+DrivePanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/5/client/tags/initial/src/edu/cmu/ri/airboat/client/gui/DrivePanel.java
+END
+WaypointPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/5/client/tags/initial/src/edu/cmu/ri/airboat/client/gui/WaypointPanel.java
+END
+CameraPanel.form
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/5/client/tags/initial/src/edu/cmu/ri/airboat/client/gui/CameraPanel.form
+END
+PidPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/5/client/tags/initial/src/edu/cmu/ri/airboat/client/gui/PidPanel.java
+END

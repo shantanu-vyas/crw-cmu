@@ -1,0 +1,26 @@
+#summary Descriptions of the materials used in vehicle construction
+
+= Introduction =
+
+This page contains notes on working with some of the materials that have been used in boat construction.
+
+= Marine Foam =
+
+  * Do not expose to silicone while casting.
+  * When using a polyethylene mold, use carnauba wax mold release compound.
+  * When using a polypropylene mold, no release compound appears necessary.
+
+= Plastics =
+
+== Polycarbonate (OtterBox) ==
+  * Cannot be lasercut: attempts required multiple passes and caused superficial burns over the surface of the box.
+  * CNC milling is the better strategy.
+
+= Acrylic = 
+  * When laser-cutting sliding contact surfaces, leave extra clearance.
+
+= Delrin =
+  * Do not use in components that should be glued.
+
+= ABS =
+  * Not UV-resistant by default, ensure stock is UV-stabilized.

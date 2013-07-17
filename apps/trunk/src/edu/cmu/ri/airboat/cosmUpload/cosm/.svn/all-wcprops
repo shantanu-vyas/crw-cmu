@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/792/apps/trunk/src/edu/cmu/ri/airboat/cosmUpload/cosm
+END
+CosmException.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/792/apps/trunk/src/edu/cmu/ri/airboat/cosmUpload/cosm/CosmException.java
+END
+Cosm.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/792/apps/trunk/src/edu/cmu/ri/airboat/cosmUpload/cosm/Cosm.java
+END
+Feed.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/792/apps/trunk/src/edu/cmu/ri/airboat/cosmUpload/cosm/Feed.java
+END
+Status.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/792/apps/trunk/src/edu/cmu/ri/airboat/cosmUpload/cosm/Status.java
+END
+Trigger.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/792/apps/trunk/src/edu/cmu/ri/airboat/cosmUpload/cosm/Trigger.java
+END
+Disposition.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/792/apps/trunk/src/edu/cmu/ri/airboat/cosmUpload/cosm/Disposition.java
+END
+TriggerType.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/792/apps/trunk/src/edu/cmu/ri/airboat/cosmUpload/cosm/TriggerType.java
+END
+DataPoints.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/792/apps/trunk/src/edu/cmu/ri/airboat/cosmUpload/cosm/DataPoints.java
+END
+Domain.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/792/apps/trunk/src/edu/cmu/ri/airboat/cosmUpload/cosm/Domain.java
+END
+Location.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/792/apps/trunk/src/edu/cmu/ri/airboat/cosmUpload/cosm/Location.java
+END
+CosmFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/792/apps/trunk/src/edu/cmu/ri/airboat/cosmUpload/cosm/CosmFactory.java
+END
+Data.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/792/apps/trunk/src/edu/cmu/ri/airboat/cosmUpload/cosm/Data.java
+END
+Exposure.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/792/apps/trunk/src/edu/cmu/ri/airboat/cosmUpload/cosm/Exposure.java
+END

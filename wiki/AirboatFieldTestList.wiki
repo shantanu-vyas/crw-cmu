@@ -1,0 +1,24 @@
+#summary Everything you need to do a field test.
+
+= List =
+
+==Airboat==
+    * Boat
+      * incl. hull, ebox & shroud
+      * Velcro straps to secure ebox
+    * Spare battery
+    * Fishing line
+==Control==
+    * Router
+    * Router power cable
+    * Laptop
+    * Battery pack
+==Documentation==
+    * Still camera
+    * Video camera
+    * Tripod
+==Misc==
+    * Extra tape
+    * Spare battery
+    * Screwdriver
+    * Scissors

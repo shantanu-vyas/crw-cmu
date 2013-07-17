@@ -1,0 +1,20 @@
+#summary Navigation sidebar.
+
+  * [http://code.google.com/p/crw-cmu/wiki/Home?tm=6 Home]
+
+How the boats work:
+  * [SystemArchitecture System Architecture]
+  * [HardwareInterface Hardware Interfaces]
+  * [CoordinateFrames Coordinate Frames] 
+  * [MaterialsOverview Materials Overview]
+  * [Sensors Sensors]
+
+
+Using the boats:
+  * [VehicleSetup Vehicle Setup / Teardown]
+  * [AirboatFieldTestList Field test list]
+
+Developing for the boats:
+  * [RepositoryLayout Repository Layout]
+  * [SetupInstructions Setup Instructions]
+  * [AirboatLibrary Airboat Library]

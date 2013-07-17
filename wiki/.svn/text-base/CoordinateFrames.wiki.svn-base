@@ -1,0 +1,21 @@
+#summary The coordinate frames used within the project.
+
+= Introduction =
+
+The 3D data that is exchanged by these vehicles will be expressed in one of two coordinate frames, a vehicle frame or a world frame.  Both frames follow two simple intuitions:  they are [http://en.wikipedia.org/wiki/Right-hand_rule right-handed], and what would be considered the "vertical" direction is labeled the *+Z* axis.
+
+= Vehicle Frame =
+
+The vehicle frame describes data relative to the position of the vehicle, and is aligned with centerlines of the vehicle in a *Forward-Left-Up* configuration.  The positive X axis extends forward, to the bow of the vehicle, while the positive Y axis extends left, off the port side of the vehicle.  Finally, the positive Z axis extends directly up from the vehicle.
+
+https://docs.google.com/drawings/pub?id=1Cp8XyXnCvbpLAt13qgthKnzq7LYvSt7oe8jalSjhL80&w=480&h=407&fake.png
+
+= World Frame =
+
+The world frame describes data in a global coordinate system.  Since we primarily operate near the ground on  the planet Earth, we use the [http://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system UTM coordinate system] with a WGS84 spheroid model.  
+
+This system divides the Earth into zones that project the curved surface of the Earth onto a flat plane.  This allows our global coordinates to be represented in SI units (meters), and use orthogonal axes, although it means that coordinates from different zones must be converted for use in a single local frame.
+
+Using the UTM coordinates, we use the *East-North-Up (ENU)* convention.  This means that the positive X axis is aligned with the _easting_ UTM coordinate, the positive Y axis is aligned with the _northing_ UTM coordinate, and the positive Z axis is aligned with the _up_ vector (pointing away from the center of the earth).  Note that under this convention, yaw angles (around +Z) increase in the opposite direction as typical compass headings.
+
+https://docs.google.com/drawings/pub?id=1SElL0uIkrBWN5enwFBAnEoP_o-pY4YZW6Mg5hDFwvPs&w=528&h=421&fake.png

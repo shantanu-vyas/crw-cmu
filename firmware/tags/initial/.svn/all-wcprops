@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/5/firmware/tags/initial
+END
+MeetAndroid.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/5/firmware/tags/initial/MeetAndroid.h
+END
+TimedAction.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/5/firmware/tags/initial/TimedAction.cpp
+END
+AirboatFirmware.pde
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/5/firmware/tags/initial/AirboatFirmware.pde
+END
+TimedAction.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/5/firmware/tags/initial/TimedAction.h
+END
+AirboatGyro.pde
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/5/firmware/tags/initial/AirboatGyro.pde
+END
+AirboatThruster.pde
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/5/firmware/tags/initial/AirboatThruster.pde
+END
+MeetAndroid.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/5/firmware/tags/initial/MeetAndroid.cpp
+END
+EEPROMHelper.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/5/firmware/tags/initial/EEPROMHelper.h
+END
+AirboatRudder.pde
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/5/firmware/tags/initial/AirboatRudder.pde
+END
+TE5sensor.pde
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/5/firmware/tags/initial/TE5sensor.pde
+END

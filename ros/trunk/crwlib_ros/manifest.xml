@@ -1,0 +1,26 @@
+<package>
+	<description brief="crwlib">
+
+		crwlib is the core library of the CRW project. It provides base
+		implementations of the client and server, as well as a number of
+		tools that simplify the development of CRW code.
+
+  </description>
+	<author>Prasanna Velagapudi</author>
+	<license>BSD</license>
+	<review status="unreviewed" notes="" />
+	<url>http://code.google.com/p/crw-cmu/</url>
+
+	<depend package="rosjava" />
+	<depend package="actionlib_java" />
+	<depend package="std_msgs" />
+	<depend package="sensor_msgs" />
+	<depend package="geometry_msgs" />
+	<depend package="crwlib_msgs" />
+
+	<export>
+		<rosjava-pathelement location="dist/crwlib.jar" built="true" />
+	</export>
+</package>
+
+

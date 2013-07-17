@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/318/apps/tags/pre_ROS_final/src/edu/cmu/ri/airboat/irrigationtest
+END
+AutonomyController.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/318/apps/tags/pre_ROS_final/src/edu/cmu/ri/airboat/irrigationtest/AutonomyController.java
+END
+InterfaceTester.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/318/apps/tags/pre_ROS_final/src/edu/cmu/ri/airboat/irrigationtest/InterfaceTester.java
+END
+IrrigationTestInterface.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/318/apps/tags/pre_ROS_final/src/edu/cmu/ri/airboat/irrigationtest/IrrigationTestInterface.java
+END
+GridDisplay.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/318/apps/tags/pre_ROS_final/src/edu/cmu/ri/airboat/irrigationtest/GridDisplay.java
+END
+Observation.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/318/apps/tags/pre_ROS_final/src/edu/cmu/ri/airboat/irrigationtest/Observation.java
+END
+IrrigationGUI.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/318/apps/tags/pre_ROS_final/src/edu/cmu/ri/airboat/irrigationtest/IrrigationGUI.java
+END
+IrrigationGUI.form
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/318/apps/tags/pre_ROS_final/src/edu/cmu/ri/airboat/irrigationtest/IrrigationGUI.form
+END

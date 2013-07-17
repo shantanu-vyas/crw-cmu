@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/925/server/branches/controller_dev/src/edu/cmu/ri/airboat/server
+END
+SimpleFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/925/server/branches/controller_dev/src/edu/cmu/ri/airboat/server/SimpleFilter.java
+END
+AirboatControlActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/925/server/branches/controller_dev/src/edu/cmu/ri/airboat/server/AirboatControlActivity.java
+END
+AirboatService.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/925/server/branches/controller_dev/src/edu/cmu/ri/airboat/server/AirboatService.java
+END
+AirboatImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/925/server/branches/controller_dev/src/edu/cmu/ri/airboat/server/AirboatImpl.java
+END
+AirboatController.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/925/server/branches/controller_dev/src/edu/cmu/ri/airboat/server/AirboatController.java
+END
+AirboatCameraActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/925/server/branches/controller_dev/src/edu/cmu/ri/airboat/server/AirboatCameraActivity.java
+END
+ReadOnlyToggleButton.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/925/server/branches/controller_dev/src/edu/cmu/ri/airboat/server/ReadOnlyToggleButton.java
+END
+AirboatFailsafeService.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/925/server/branches/controller_dev/src/edu/cmu/ri/airboat/server/AirboatFailsafeService.java
+END
+AirboatActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/925/server/branches/controller_dev/src/edu/cmu/ri/airboat/server/AirboatActivity.java
+END

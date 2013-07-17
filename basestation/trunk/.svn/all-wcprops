@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/785/basestation/trunk
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/782/basestation/trunk/.classpath
+END
+project.properties
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/782/basestation/trunk/project.properties
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/782/basestation/trunk/.project
+END
+lint.xml
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/782/basestation/trunk/lint.xml
+END
+proguard-project.txt
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/782/basestation/trunk/proguard-project.txt
+END
+AndroidManifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/782/basestation/trunk/AndroidManifest.xml
+END
+ic_launcher-web.png
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/782/basestation/trunk/ic_launcher-web.png
+END

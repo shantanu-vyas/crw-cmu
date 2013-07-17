@@ -1,0 +1,57 @@
+#summary A guide to setting up development for Airboat Server and Client
+#labels Phase-Implementation,Phase-Deploy,rosjava
+=Contents=
+<wiki:toc max_depth="3" />
+= Introduction =
+
+Development for the Airboat server and Android app is done on Eclipse Helios using the Android SDK. Instructions are pretty straightforward, and are accessible on http://developer.android.com/sdk/installing.html
+
+Development on the client side is done on Netbeans 6.9 IDE and doesn't require any major configuration. You should be good to go running airboat-client from netbeans. You might need to change the folder attributes however.
+
+= Compiling with rosjava =
+
+Follow the instructions on http://www.ros.org/wiki/rosjava/Overviewto download and setup rosjava.
+
+You might have issues in building rosjava initially. That can be 'fixed' by going to your rosjava_bootstrap/scripts folder and using the two python files (java_msgs.py and java_srvs.py) to generate .java files for the package test_ros. Use the format recommended by the readme file, but output it to ~/.ros/rosjava/gen. You will then be required to merge the two msg and srv folder contents to a single org/ros...namespace, and modify the three roscpp files (Empty, GetLoggers, SetLoggerLevel) to import org.ros.message.Service rather than org.ros.service.Service.
+
+Now, to develop any Android application  in Eclipse utilizing rosjava, you *need* to include the `~/ros/rosjava/android/library` android project and the `~/ros/rosjava/rosjava` project for hard coded dependencies. You will probably also need to add the libraries that are generated. These libraries should have been built in `~/.ros/rosjava/lib`.
+
+==Using the rosjava tutorials==
+
+===Making the code run on an Android device===
+  # In `~/ros/rosjava/android` goto `/tutorials` and `/library`, and modify `build_projects.sh` to point to android-10 (or whatever your target android sdk is) instead of (weirdly) android-9
+  # Open any `/tutorials` project in Eclipse. Library paths will be messed up, so delete them, and include them from `~/ros/rosjava/rosjava/lib`. Take care not to include `rosjava.jar` and `mockito-all-1.85.jar`
+  # Library (and project) issues - use File->Import existing project to include `~/ros/rosjava/android/library` and `~/ros/rosjava/rosjava`
+  # You will still have errors in the Manifest files for the tutorial and the android library project. Remove the argument `default="help"` from the tag {{{<project name="MainActivity" default="help">}}}, and the code should compile
+
+===Interacting with the topics on the Android device===
+
+Due to rosjava still being in alpha state the roscore seems to have issues in domain name resolution on the Android device. Hence the publishers are assigned local IPs that can't be resolved if accessed from outside the android machine. Hence as of now a workaround is used to access the topics running on the android machine, namely that a roscore instance is run on a terminal on the network and the publisher and receiver (or service and client) are attached to that roscore instance through a static URI
+
+To accomplish this, in the main activity class file edit the following code 
+
+{{{
+rosCore = RosCore.createPublic(11311);
+nodeConfiguration.setMasterUri(rosCore.getUri());
+}}}
+
+to be
+
+{{{
+rosCore = RosCore.createPublic("128.237.241.115",11311);
+nodeConfiguration.setMasterUri(new URI("http://syrah.cimds.ri.cmu.edu:11311"));
+}}}
+
+where 128.237.241.115 is the IP address of the android device on the network (e.g. WiFi). This can be replaced by a request for the current IP, eliminating the need for a static IP address. Instead of a static IP address you could also use ((code snippet here)) to generate a non loopback address, which does a better job.
+
+What the first line does is that it assigns the nodes to run on the local Android IP address which can be resolved by a rostopic command running on the network rather than the default localhost which cannot be resolved by an external rostopic, giving XML-RPC errors in the process.
+
+The second command simply tells the code which roscore is to be utilized.
+
+= Details =
+
+The above procedure has been tested to work on the following distributions
+
+Ubuntu 10.10, 11.04
+Fedora 15
+Mac OS X 10.6.7

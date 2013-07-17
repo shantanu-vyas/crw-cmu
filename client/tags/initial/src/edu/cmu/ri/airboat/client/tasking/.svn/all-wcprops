@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/5/client/tags/initial/src/edu/cmu/ri/airboat/client/tasking
+END
+SequencePlanOperator.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/5/client/tags/initial/src/edu/cmu/ri/airboat/client/tasking/SequencePlanOperator.java
+END
+RoleAgent.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/5/client/tags/initial/src/edu/cmu/ri/airboat/client/tasking/RoleAgent.java
+END
+Role.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/5/client/tags/initial/src/edu/cmu/ri/airboat/client/tasking/Role.java
+END
+TOP.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/5/client/tags/initial/src/edu/cmu/ri/airboat/client/tasking/TOP.java
+END
+ParallelPlanOperator.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/5/client/tags/initial/src/edu/cmu/ri/airboat/client/tasking/ParallelPlanOperator.java
+END
+TaskMarker.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/5/client/tags/initial/src/edu/cmu/ri/airboat/client/tasking/TaskMarker.java
+END
+PlanElement.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/5/client/tags/initial/src/edu/cmu/ri/airboat/client/tasking/PlanElement.java
+END
+PlanOperator.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/5/client/tags/initial/src/edu/cmu/ri/airboat/client/tasking/PlanOperator.java
+END
+PlanAgent.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/5/client/tags/initial/src/edu/cmu/ri/airboat/client/tasking/PlanAgent.java
+END
+TestTaskGenerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/5/client/tags/initial/src/edu/cmu/ri/airboat/client/tasking/TestTaskGenerator.java
+END

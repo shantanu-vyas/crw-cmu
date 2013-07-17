@@ -1,0 +1,28 @@
+#summary Startup and shutdown procedures for vehicles.
+
+= Boat 1 =
+
+== Startup ==
+
+  # Turn on the Android phone.
+    * After startup, make sure that bluetooth is enabled.
+    * If desired, connect to a wifi network.
+  # Connect the main battery pack to the motor controller to power up the Arduino and motor controller.
+    * The LEDs on the Bluetooth board on the Arduino should start flashing.
+  # Open the Amarino application on phone.
+  # Click "Connect" next to the Bluetooth address matching the Arduino.
+  # Open the Airboat Setup application.
+    * If wifi is being used, check that a valid IP address appears in the GUI.
+  # Enter the Bluetooth address of the Arduino into the drop-down box at the top.
+    * The drop-down should auto-complete after entering the first few characters of the address.
+  # Click "Start Service" to begin running the server.
+  # Click "Debug" to open the debugging interface.
+  # Check that the "Connected" checkbox is ticked.
+
+== Shutdown ==
+
+  # Open the Airboat Setup application.
+  # Click "Stop Service".
+  # (Optionally) Open the Amarino application.
+  # (Optionally) Disconnect from the Arduino device.
+  # For complete shutdown, disconnect the main battery from the motor controller.

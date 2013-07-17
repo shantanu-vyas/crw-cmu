@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/!svn/ver/910/apps/trunk/lib
+END
+crwlib_core.jar
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/704/apps/trunk/lib/crwlib_core.jar
+END
+crwlib_all.jar
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/704/apps/trunk/lib/crwlib_all.jar
+END
+nblibraries.properties
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/910/apps/trunk/lib/nblibraries.properties
+END
+crwlib_client.jar
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/704/apps/trunk/lib/crwlib_client.jar
+END

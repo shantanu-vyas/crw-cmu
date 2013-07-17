@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/505/core/trunk/src/edu/cmu/ri/crw/data
+END
+SensorData.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/473/core/trunk/src/edu/cmu/ri/crw/data/SensorData.java
+END
+Utm.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/473/core/trunk/src/edu/cmu/ri/crw/data/Utm.java
+END
+Twist.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/505/core/trunk/src/edu/cmu/ri/crw/data/Twist.java
+END
+UtmPose.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/473/core/trunk/src/edu/cmu/ri/crw/data/UtmPose.java
+END

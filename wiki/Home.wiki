@@ -1,0 +1,9 @@
+#summary A starting point for browsing the wiki
+
+= Introduction =
+
+The CRW project aims to provide a standard platform for small autonomous watercraft.  This wiki documents the setup of our code, electronics, mechanical design, as well as usage guidelines for CRW systems.
+
+= Related =
+
+  * [http://code.google.com/p/crw-cmu/w/list?can=2&q= View all Wiki pages]

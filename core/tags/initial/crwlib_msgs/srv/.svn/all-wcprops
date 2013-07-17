@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/286/core/tags/initial/crwlib_msgs/srv
+END
+CaptureImage.srv
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/286/core/tags/initial/crwlib_msgs/srv/CaptureImage.srv
+END
+GetWaypoint.srv
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/286/core/tags/initial/crwlib_msgs/srv/GetWaypoint.srv
+END
+GetSensorType.srv
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/286/core/tags/initial/crwlib_msgs/srv/GetSensorType.srv
+END
+GetNumSensors.srv
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/286/core/tags/initial/crwlib_msgs/srv/GetNumSensors.srv
+END
+SetGains.srv
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/286/core/tags/initial/crwlib_msgs/srv/SetGains.srv
+END
+GetWaypointStatus.srv
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/286/core/tags/initial/crwlib_msgs/srv/GetWaypointStatus.srv
+END
+GetState.srv
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/286/core/tags/initial/crwlib_msgs/srv/GetState.srv
+END
+ResetLog.srv
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/286/core/tags/initial/crwlib_msgs/srv/ResetLog.srv
+END
+SetAutonomous.srv
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/286/core/tags/initial/crwlib_msgs/srv/SetAutonomous.srv
+END
+SetSensorType.srv
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/286/core/tags/initial/crwlib_msgs/srv/SetSensorType.srv
+END
+SetState.srv
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/286/core/tags/initial/crwlib_msgs/srv/SetState.srv
+END
+GetCameraStatus.srv
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/286/core/tags/initial/crwlib_msgs/srv/GetCameraStatus.srv
+END
+GetVelocity.srv
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/286/core/tags/initial/crwlib_msgs/srv/GetVelocity.srv
+END
+GetGains.srv
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/286/core/tags/initial/crwlib_msgs/srv/GetGains.srv
+END
+IsAutonomous.srv
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/286/core/tags/initial/crwlib_msgs/srv/IsAutonomous.srv
+END
