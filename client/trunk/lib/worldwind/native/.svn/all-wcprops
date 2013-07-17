@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/276/client/trunk/lib/worldwind/native
+END
+jogl_awt.dll
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/276/client/trunk/lib/worldwind/native/jogl_awt.dll
+END
+libgluegen-rt.so
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/276/client/trunk/lib/worldwind/native/libgluegen-rt.so
+END
+gluegen-rt.dll
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/276/client/trunk/lib/worldwind/native/gluegen-rt.dll
+END
+WebView32.dll
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/276/client/trunk/lib/worldwind/native/WebView32.dll
+END
+libjogl.jnilib
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/276/client/trunk/lib/worldwind/native/libjogl.jnilib
+END
+WebView64.dll
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/276/client/trunk/lib/worldwind/native/WebView64.dll
+END
+libjogl_cg.jnilib
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/276/client/trunk/lib/worldwind/native/libjogl_cg.jnilib
+END
+libjogl.so
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/276/client/trunk/lib/worldwind/native/libjogl.so
+END
+libjogl_awt.jnilib
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/276/client/trunk/lib/worldwind/native/libjogl_awt.jnilib
+END
+jogl.dll
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/276/client/trunk/lib/worldwind/native/jogl.dll
+END
+libwebview.jnilib
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/276/client/trunk/lib/worldwind/native/libwebview.jnilib
+END
+libgluegen-rt.jnilib
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/276/client/trunk/lib/worldwind/native/libgluegen-rt.jnilib
+END
+libjogl_cg.so
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/276/client/trunk/lib/worldwind/native/libjogl_cg.so
+END
+libjogl_awt.so
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/276/client/trunk/lib/worldwind/native/libjogl_awt.so
+END
+jogl_cg.dll
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/276/client/trunk/lib/worldwind/native/jogl_cg.dll
+END

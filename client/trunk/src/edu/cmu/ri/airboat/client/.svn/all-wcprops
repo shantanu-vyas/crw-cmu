@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/941/client/trunk/src/edu/cmu/ri/airboat/client
+END
+TaskPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/276/client/trunk/src/edu/cmu/ri/airboat/client/TaskPanel.java
+END
+TaskPanel.form
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/276/client/trunk/src/edu/cmu/ri/airboat/client/TaskPanel.form
+END
+UtmUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/276/client/trunk/src/edu/cmu/ri/airboat/client/UtmUtils.java
+END
+BoatDebugger.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/711/client/trunk/src/edu/cmu/ri/airboat/client/BoatDebugger.java
+END
+BoatConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/711/client/trunk/src/edu/cmu/ri/airboat/client/BoatConfig.java
+END
+BoatDebugPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/711/client/trunk/src/edu/cmu/ri/airboat/client/BoatDebugPanel.java
+END
