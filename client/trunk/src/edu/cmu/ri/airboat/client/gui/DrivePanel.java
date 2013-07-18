@@ -17,13 +17,13 @@ import edu.cmu.ri.crw.VelocityListener;
 import edu.cmu.ri.crw.data.Twist;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.TimerTask;
-import java.util.concurrent.atomic.AtomicBoolean;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.Timer;
+import java.util.TimerTask;
+import java.util.concurrent.atomic.AtomicBoolean;
 import net.java.games.input.Controller;
 import net.java.games.input.ControllerEnvironment;
 
@@ -56,7 +56,6 @@ public class DrivePanel extends AbstractAirboatPanel {
     boolean controllerMode = false;
     static Controller Joystick;
     static boolean straight = false;
-    
     static boolean left = true;
     // Sets up a flag limiting the rate of velocity command transmission
     public AtomicBoolean _sentVelCommand = new AtomicBoolean(false);
@@ -311,7 +310,8 @@ public class DrivePanel extends AbstractAirboatPanel {
 
     public void controlSystem() { //possibly when mouse is in the field then apply the keys
 //        goStraight1(true);
-        _DrivePanel.requestFocus(); 
+        controllerMode = true;
+        _DrivePanel.requestFocus();
         jThrust.setFocusable(false);
         jRudder.setFocusable(false);
         keyArray = new int[4];
@@ -414,13 +414,37 @@ public class DrivePanel extends AbstractAirboatPanel {
                 public void actionPerformed(ActionEvent e) {
 
                     Controllers.loop();
-                    if (Controllers.isLeftBumperPressed())
-                    {
-//                        goStraight(true);
+                    if (Controllers.isLeftBumperPressed()) {
+                        straight = true;
+                        if (left == true) {
+
+                            if (jRudder.getValue() != 25) {
+                                if (jRudder.getValue() > 25) {
+                                    jRudder.setValue(jRudder.getValue() - 1);
+
+                                    if (jRudder.getValue() == 25) {
+                                        left = false;
+                                    }
+                                }
+                            }
+                        } else if (left == false) {
+                            if (jRudder.getValue() != 75) {
+                                if (jRudder.getValue() != 75) {
+                                    if (jRudder.getValue() < 75) {
+                                        jRudder.setValue(jRudder.getValue() + 1);
+                                        if (jRudder.getValue() == 75) {
+                                            left = true;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    } else {
+                        straight = false;
                     }
-                    
+
                     if (!Controllers.isLeftTriggerPressed()) {
-                        
+
                         if (Controllers.isRightTriggerPressed()) {
                             if (jThrust.getValue() != 80) {
                                 if (jThrust.getValue() <= 80) {
@@ -457,12 +481,14 @@ public class DrivePanel extends AbstractAirboatPanel {
                             }
                         }
                         if ((Controllers.returnJ1X() < .3) && (Controllers.returnJ1X() > -.3) || (Controllers.returnJ2X() < .3) && (Controllers.returnJ2X() > -.3)) {
-                            if (jRudder.getValue() != 50) {
-                                if (jRudder.getValue() > 50) {
-                                    jRudder.setValue(jRudder.getValue() - 1);
-                                }
-                                if (jRudder.getValue() < 50) {
-                                    jRudder.setValue(jRudder.getValue() + 1);
+                            if (straight == false) {
+                                if (jRudder.getValue() != 50) {
+                                    if (jRudder.getValue() > 50) {
+                                        jRudder.setValue(jRudder.getValue() - 1);
+                                    }
+                                    if (jRudder.getValue() < 50) {
+                                        jRudder.setValue(jRudder.getValue() + 1);
+                                    }
                                 }
                             }
                         }
@@ -487,62 +513,5 @@ public class DrivePanel extends AbstractAirboatPanel {
 //                System.out.println("not connected");
             return false;
         }
-
     }
-
-    public void goStraight() {
-        straight = true;
-        timer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                if (jRudder.getValue() != 25 && jRudder.getValue() != 75) {
-                    jRudder.setValue(25);
-                } else if (jRudder.getValue() == 25) {
-                    jRudder.setValue(75);
-                } else if (jRudder.getValue() == 75) {
-                    jRudder.setValue(25);
-                }
-            }
-        }, 2000, 2000);
-    }
-    
-
-    public void goStraight1(boolean on) {
-        jRudder.setValue(75);
-        timer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                if (jRudder.getValue() != 15 || jRudder.getValue() != 85)
-                {
-                    jRudder.setValue(25);
-                }
-             else if (left == true)
-                {
-                    if (jRudder.getValue() != 15)
-                    {
-                        if (jRudder.getValue() != 15){
-                            if (jRudder.getValue() > 15) {
-                                jRudder.setValue(jRudder.getValue() - 5);
-                                if (jRudder.getValue() == 15) {left = false;}
-                            }
-                        }
-                        
-                    }
-                }
-                else if (left == false)
-                {
-                    if (jRudder.getValue() != 85)
-                    {
-                        if (jRudder.getValue() != 85){
-                            if (jRudder.getValue() < 85) {
-                                jRudder.setValue(jRudder.getValue() + 5);
-                                if (jRudder.getValue() == 85) {left = true;}
-                            }
-                        }
-                    }
-                }
-                System.out.println(jRudder.getValue());
-            }
-        }, 2000, 200);
-        }
 }
