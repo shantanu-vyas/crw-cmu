@@ -21,11 +21,20 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.atomic.AtomicBoolean;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 import net.java.games.input.Controller;
 import net.java.games.input.ControllerEnvironment;
+
 
 /**
  *
@@ -55,6 +64,8 @@ public class DrivePanel extends AbstractAirboatPanel {
     boolean keyboardMode = true;
     boolean controllerMode = false;
     static Controller Joystick;
+    JButton ps3help;
+    
     static boolean straight = false;
     static boolean left = true;
     // Sets up a flag limiting the rate of velocity command transmission
@@ -65,16 +76,8 @@ public class DrivePanel extends AbstractAirboatPanel {
      * Creates new form DrivePanel
      */
     public DrivePanel() {
-        initComponents();
+        initComponents(); 
         setUpdateRate(DEFAULT_UPDATE_MS);
-        jThrust.setMinorTickSpacing(10);
-        jThrust.setMajorTickSpacing(50);
-        jRudder.setMajorTickSpacing(50); //put a tick so you know when the rudder is straight
-        jRudder.setPaintTicks(true);
-        jThrust.setPaintTicks(true);
-
-
-        controlSystem(); //keyboard control system 
     }
 
     /**
@@ -92,9 +95,28 @@ public class DrivePanel extends AbstractAirboatPanel {
         jThrustBar = new javax.swing.JProgressBar();
         jAutonomyBox = new ReadOnlyCheckBox();
         jConnectedBox = new ReadOnlyCheckBox();
+        ps3help = new JButton("Controller Help");
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-
+        
+        jThrust.setMinorTickSpacing(10); // move all this to init components 
+        jThrust.setMajorTickSpacing(50);
+        jRudder.setMajorTickSpacing(50); //put a tick so you know when the rudder is straight
+        jRudder.setPaintTicks(true);
+        jThrust.setPaintTicks(true);
+        
+        controlSystem(); //keyboard control system 
+        
+        add(ps3help);
+        ps3help.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+          //     resetButtonActionPerformed(evt);
+          ps3HelpFrame();
+        }
+      });
+        
+        
+        
         jRudder.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 jRudderStateChanged(evt);
@@ -151,6 +173,7 @@ public class DrivePanel extends AbstractAirboatPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addGap(12, 12, 12))))
+                .addComponent(ps3help, javax.swing.GroupLayout.Alignment.TRAILING) //i added this
                 .addComponent(jRudder, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE)
                 .addComponent(jRudderBar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE))
                 .addContainerGap()));
@@ -167,6 +190,8 @@ public class DrivePanel extends AbstractAirboatPanel {
                 .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jConnectedBox)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED) //i added this
+                .addComponent(ps3help) //i added this
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel2)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -174,6 +199,8 @@ public class DrivePanel extends AbstractAirboatPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jRudderBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap()));
+        
+        
     }// </editor-fold>                        
 
     private void jThrustStateChanged(javax.swing.event.ChangeEvent evt) {
@@ -409,10 +436,8 @@ public class DrivePanel extends AbstractAirboatPanel {
         });
         if (controllerConnected() == true) {
             Controllers.init();
-            System.out.println("is connected");
             new javax.swing.Timer(35, new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
-
                     Controllers.loop();
                     if (Controllers.isLeftBumperPressed()) {
                         straight = true;
@@ -503,7 +528,7 @@ public class DrivePanel extends AbstractAirboatPanel {
         for (Controller c : ControllerEnvironment.getDefaultEnvironment().getControllers()) {
             if (c.getType() == Controller.Type.STICK) {
                 Joystick = c;
-                System.out.println(Joystick.getName());
+                System.out.println(Joystick.getName() + " via " + Joystick.getPortType());
 //                System.out.println(Joystick.getName() + "is connected");//System.out.println(Joystick.getName())
             }
         }
@@ -514,4 +539,21 @@ public class DrivePanel extends AbstractAirboatPanel {
             return false;
         }
     }
+    public static void ps3HelpFrame() 
+    {
+        System.out.println(System.getProperty("user.dir")+"/src/edu/cmu/ri/airboat/client/controller.png");
+        BufferedImage image = null;
+        JFrame ps3HelpFrame = new JFrame("PS3 Controller Help");
+        try {
+            image = ImageIO.read(new File("/Users/svs/Desktop/shantanu/controller.png"));
+//            image = ImageIO.read(new File(System.getProperty("user.dir")+"/src/edu/cmu/ri/airboat/client/gui/controller.png"));
+        } catch (IOException e) {
+            System.out.println("not found");
+        }
+        JLabel picLabel = new JLabel(new ImageIcon(image));
+        ps3HelpFrame.add(picLabel);
+        ps3HelpFrame.pack();
+        ps3HelpFrame.setVisible(true);
+    }
+    
 }
