@@ -11,7 +11,7 @@ Relative to other types of vehicles, watercraft are inexpensive, simple, robust 
 The vision is to have large numbers of very inexpensive airboats provide situational awareness and deliver critical emergency supplies to victims, as well as low cost tools for environmental protection and monitoring. 
 
 
-License
+License (New BSD License)
 =======
 Copyright (c) <2013>, <Paul Scerri/Platypus LLC>
 All rights reserved.
