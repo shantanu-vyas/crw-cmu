@@ -73,7 +73,8 @@ public class BoatConfig {
 
             // Create a ROS proxy server that accesses the same object
             try {
-                SocketAddress serverAddr = CrwNetworkUtils.toInetSocketAddress(ipAddrStr);
+//                SocketAddress serverAddr = CrwNetworkUtils.toInetSocketAddress(ipAddrStr);
+                SocketAddress serverAddr = new InetSocketAddress("localhost",((InetSocketAddress)testServer.getSocketAddress()).getPort());
                 final AsyncVehicleServer vehicle = new UdpVehicleServer(serverAddr);
 
                 // Connect the new controller to the GUI panels

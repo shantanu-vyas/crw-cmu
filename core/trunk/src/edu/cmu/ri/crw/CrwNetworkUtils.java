@@ -146,23 +146,24 @@ public class CrwNetworkUtils {
     public static void injectHostname(InetAddress addr, String hostName) {
         
         // Use java reflection to inject the desired hostname into the address
-        try {
-            hostNameField.set(addr, hostName);
-        } catch (Exception e) {
-            throw new RuntimeException("Could not inject hostname.", e);
-        }
+//        try {
+//            hostNameField.set(addr, hostName);
+//        } catch (Exception e) {
+//            throw new RuntimeException("Could not inject hostname.", e);
+//        }
     }
 
     // Static initialization of reflection for injectHostname
     private static final Field hostNameField;
     static {
-        Field field = null;
-        try {
-            field = InetAddress.class.getDeclaredField("hostName");
-            field.setAccessible(true);
-        } catch (NoSuchFieldException e) {
-            throw new RuntimeException("Could not find hostname field.", e);
-        }
-        hostNameField = field;
+//        Field field = null;
+//        try {
+//            field = InetAddress.class.getDeclaredField("hostNaSme");
+//            field.setAccessible(true);
+//        } catch (NoSuchFieldException e) {
+//            throw new RuntimeException("Could not find hostname field.", e);
+//        }
+//        hostNameField = field;
+        hostNameField = null;
     }
 }

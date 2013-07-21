@@ -32,8 +32,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import net.java.games.input.Controller;
-import net.java.games.input.ControllerEnvironment;
+//import net.java.games.input.Controller;
+//import net.java.games.input.ControllerEnvironment;
 
 
 /**
@@ -63,7 +63,7 @@ public class DrivePanel extends AbstractAirboatPanel {
     int tempThrustMax = 40;
     boolean keyboardMode = true;
     boolean controllerMode = false;
-    static Controller Joystick;
+//    static Controller Joystick;
     JButton ps3help;
     
     static boolean straight = false;
@@ -105,7 +105,7 @@ public class DrivePanel extends AbstractAirboatPanel {
         jRudder.setPaintTicks(true);
         jThrust.setPaintTicks(true);
         
-        controlSystem(); //keyboard control system 
+//        controlSystem(); //keyboard control system 
         
         add(ps3help);
         ps3help.addActionListener(new java.awt.event.ActionListener() {
@@ -335,210 +335,211 @@ public class DrivePanel extends AbstractAirboatPanel {
         }
     }
 
-    public void controlSystem() { //possibly when mouse is in the field then apply the keys
-//        goStraight1(true);
-        controllerMode = true;
-        _DrivePanel.requestFocus();
-        jThrust.setFocusable(false);
-        jRudder.setFocusable(false);
-        keyArray = new int[4];
-        keyArray[0] = 0; //up
-        keyArray[1] = 0; //down
-        keyArray[2] = 0; //left
-        keyArray[3] = 0; //right
+//    public void controlSystem() { //possibly when mouse is in the field then apply the keys
+////        goStraight1(true);
+//        controllerMode = true;
+//        _DrivePanel.requestFocus();
+//        jThrust.setFocusable(false);
+//        jRudder.setFocusable(false);
+//        keyArray = new int[4];
+//        keyArray[0] = 0; //up
+//        keyArray[1] = 0; //down
+//        keyArray[2] = 0; //left
+//        keyArray[3] = 0; //right
+//
+//        _DrivePanel.addMouseListener(new MouseListener() { //mouse listener for making sure you click in the box before the key commands work
+//            public void mousePressed(MouseEvent e) {
+//            }
+//
+//            public void mouseReleased(MouseEvent e) {
+//            }
+//
+//            public void mouseEntered(MouseEvent e) {
+//            }
+//
+//            public void mouseExited(MouseEvent e) {
+//            }
+//
+//            public void mouseClicked(MouseEvent e) {
+//                output(e);
+//            }
+//
+//            void output(MouseEvent e) {
+//                //System.out.println("this is the frame" + e.getSource()); 
+//                if (e.getSource() == _DrivePanel) {
+//                    _DrivePanel.requestFocus();
+//                    inBox = true;
+//                } else {
+//                    inBox = false;
+//                }
+//            }
+//        });
+//
+//        _DrivePanel.addKeyListener(new KeyListener() //key listener for updating thrust and rudder 
+//        {
+//            public void keyTyped(KeyEvent e) {
+//            }
+//
+//            public void keyPressed(KeyEvent e) {
+//                keyCode = e.getKeyCode();  //when you press a key set its value to 1, the later if that value is 1 do something
+//                if (keyCode == UP) {
+//                    keyArray[0] = 1;
+//                }
+//                if (keyCode == DOWN) {
+//                    keyArray[1] = 1;
+//                }
+//                if (keyCode == LEFT) {
+//                    keyArray[2] = 1;
+//                }
+//                if (keyCode == RIGHT) {
+//                    keyArray[3] = 1;
+//                }
+//                displayInfo(e);
+//            }
+//
+//            public void keyReleased(KeyEvent e) {
+//                keyCode = e.getKeyCode();
+//                if (keyCode == UP) {
+//                    keyArray[0] = 0;
+//                } //if a key is lifted set that value to 0
+//                if (keyCode == DOWN) {
+//                    keyArray[1] = 0;
+//                }
+//                if (keyCode == LEFT) {
+//                    keyArray[2] = 0;
+//                }
+//                if (keyCode == RIGHT) {
+//                    keyArray[3] = 0;
+//                }
+//            }
+//
+//            public void displayInfo(KeyEvent e) {
+//                if (inBox == true) {  //makes sure you are in the box
+//                    if (keyArray[0] == 1 && keyArray[1] != 1) {  //up
+//                        jThrust.setValue(jThrust.getValue() + 2);
+//                        controllerMode = false;
+//                    }
+//                    if (keyArray[1] == 1 && keyArray[0] != 1) { //down
+//                        jThrust.setValue(jThrust.getValue() - 2);
+//                        controllerMode = false;
+//                    }
+//                    if (keyArray[2] == 1 && keyArray[3] != 1) { //left
+//                        jRudder.setValue(jRudder.getValue() - 10);
+//                        controllerMode = false;
+//                    }
+//                    if (keyArray[3] == 1 && keyArray[2] != 1) { //right
+//                        jRudder.setValue(jRudder.getValue() + 10);
+//                        controllerMode = false;
+//                    }
+//                }
+//            }
+//        });
+////        if (controllerConnected() == true) 
+//        {
+//            Controllers.init();
+//            new javax.swing.Timer(35, new ActionListener() {
+//                public void actionPerformed(ActionEvent e) {
+//                    Controllers.loop();
+//                    if (Controllers.isLeftBumperPressed()) {
+//                        straight = true;
+//                        if (left == true) {
+//
+//                            if (jRudder.getValue() != 25) {
+//                                if (jRudder.getValue() > 25) {
+//                                    jRudder.setValue(jRudder.getValue() - 1);
+//
+//                                    if (jRudder.getValue() == 25) {
+//                                        left = false;
+//                                    }
+//                                }
+//                            }
+//                        } else if (left == false) {
+//                            if (jRudder.getValue() != 75) {
+//                                if (jRudder.getValue() != 75) {
+//                                    if (jRudder.getValue() < 75) {
+//                                        jRudder.setValue(jRudder.getValue() + 1);
+//                                        if (jRudder.getValue() == 75) {
+//                                            left = true;
+//                                        }
+//                                    }
+//                                }
+//                            }
+//                        }
+//                    } else {
+//                        straight = false;
+//                    }
+//
+//                    if (!Controllers.isLeftTriggerPressed()) {
+//
+//                        if (Controllers.isRightTriggerPressed()) {
+//                            if (jThrust.getValue() != 80) {
+//                                if (jThrust.getValue() <= 80) {
+//                                    jThrust.setValue(jThrust.getValue() + 2);
+//                                }
+//                            }
+//                        }
+//                        if (jThrust.getValue() <= tempThrustMax) {
+//                            if (Controllers.returnJ1Y() < -.3) { //y ais is flippsed
+//                                jThrust.setValue(jThrust.getValue() + 1);
+//                                controllerMode = true;
+//                            }
+//                        }
+//                        if (Controllers.returnJ1Y() > .3) { //y ais is flippsedÏ
+//                            jThrust.setValue(jThrust.getValue() - 1);
+//                            controllerMode = true;
+//                        }
+//                    }
+//                    if (straight == false) {
+//                        if (Controllers.returnJ1X() < -.7 || Controllers.returnJ2X() < -.7) { //y ais is flippsed
+//                            jRudder.setValue(jRudder.getValue() - 5);
+//                        }
+//                        if (Controllers.returnJ1X() > .7 || Controllers.returnJ2X() > .7) { //y ais is flippsed
+//                            jRudder.setValue(jRudder.getValue() + 5);
+//                        }
+//                    }
+//                    //////////////////////////////////////////////////////////////
+//                    if (controllerMode) {
+//                        if (!Controllers.isLeftTriggerPressed()) {
+//                            if ((Controllers.returnJ1Y() < .3) && (Controllers.returnJ1Y() > -.3)) {
+//                                if (jThrust.getValue() != 0) {
+//                                    jThrust.setValue(jThrust.getValue() - 1);
+//                                }
+//                            }
+//                        }
+//                        if ((Controllers.returnJ1X() < .3) && (Controllers.returnJ1X() > -.3) || (Controllers.returnJ2X() < .3) && (Controllers.returnJ2X() > -.3)) {
+//                            if (straight == false) {
+//                                if (jRudder.getValue() != 50) {
+//                                    if (jRudder.getValue() > 50) {
+//                                        jRudder.setValue(jRudder.getValue() - 1);
+//                                    }
+//                                    if (jRudder.getValue() < 50) {
+//                                        jRudder.setValue(jRudder.getValue() + 1);
+//                                    }
+//                                }
+//                            }
+//                        }
+//                    }
+//                }
+//            }).start();
+//        }
+//    }
 
-        _DrivePanel.addMouseListener(new MouseListener() { //mouse listener for making sure you click in the box before the key commands work
-            public void mousePressed(MouseEvent e) {
-            }
-
-            public void mouseReleased(MouseEvent e) {
-            }
-
-            public void mouseEntered(MouseEvent e) {
-            }
-
-            public void mouseExited(MouseEvent e) {
-            }
-
-            public void mouseClicked(MouseEvent e) {
-                output(e);
-            }
-
-            void output(MouseEvent e) {
-                //System.out.println("this is the frame" + e.getSource()); 
-                if (e.getSource() == _DrivePanel) {
-                    _DrivePanel.requestFocus();
-                    inBox = true;
-                } else {
-                    inBox = false;
-                }
-            }
-        });
-
-        _DrivePanel.addKeyListener(new KeyListener() //key listener for updating thrust and rudder 
-        {
-            public void keyTyped(KeyEvent e) {
-            }
-
-            public void keyPressed(KeyEvent e) {
-                keyCode = e.getKeyCode();  //when you press a key set its value to 1, the later if that value is 1 do something
-                if (keyCode == UP) {
-                    keyArray[0] = 1;
-                }
-                if (keyCode == DOWN) {
-                    keyArray[1] = 1;
-                }
-                if (keyCode == LEFT) {
-                    keyArray[2] = 1;
-                }
-                if (keyCode == RIGHT) {
-                    keyArray[3] = 1;
-                }
-                displayInfo(e);
-            }
-
-            public void keyReleased(KeyEvent e) {
-                keyCode = e.getKeyCode();
-                if (keyCode == UP) {
-                    keyArray[0] = 0;
-                } //if a key is lifted set that value to 0
-                if (keyCode == DOWN) {
-                    keyArray[1] = 0;
-                }
-                if (keyCode == LEFT) {
-                    keyArray[2] = 0;
-                }
-                if (keyCode == RIGHT) {
-                    keyArray[3] = 0;
-                }
-            }
-
-            public void displayInfo(KeyEvent e) {
-                if (inBox == true) {  //makes sure you are in the box
-                    if (keyArray[0] == 1 && keyArray[1] != 1) {  //up
-                        jThrust.setValue(jThrust.getValue() + 2);
-                        controllerMode = false;
-                    }
-                    if (keyArray[1] == 1 && keyArray[0] != 1) { //down
-                        jThrust.setValue(jThrust.getValue() - 2);
-                        controllerMode = false;
-                    }
-                    if (keyArray[2] == 1 && keyArray[3] != 1) { //left
-                        jRudder.setValue(jRudder.getValue() - 10);
-                        controllerMode = false;
-                    }
-                    if (keyArray[3] == 1 && keyArray[2] != 1) { //right
-                        jRudder.setValue(jRudder.getValue() + 10);
-                        controllerMode = false;
-                    }
-                }
-            }
-        });
-        if (controllerConnected() == true) {
-            Controllers.init();
-            new javax.swing.Timer(35, new ActionListener() {
-                public void actionPerformed(ActionEvent e) {
-                    Controllers.loop();
-                    if (Controllers.isLeftBumperPressed()) {
-                        straight = true;
-                        if (left == true) {
-
-                            if (jRudder.getValue() != 25) {
-                                if (jRudder.getValue() > 25) {
-                                    jRudder.setValue(jRudder.getValue() - 1);
-
-                                    if (jRudder.getValue() == 25) {
-                                        left = false;
-                                    }
-                                }
-                            }
-                        } else if (left == false) {
-                            if (jRudder.getValue() != 75) {
-                                if (jRudder.getValue() != 75) {
-                                    if (jRudder.getValue() < 75) {
-                                        jRudder.setValue(jRudder.getValue() + 1);
-                                        if (jRudder.getValue() == 75) {
-                                            left = true;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    } else {
-                        straight = false;
-                    }
-
-                    if (!Controllers.isLeftTriggerPressed()) {
-
-                        if (Controllers.isRightTriggerPressed()) {
-                            if (jThrust.getValue() != 80) {
-                                if (jThrust.getValue() <= 80) {
-                                    jThrust.setValue(jThrust.getValue() + 2);
-                                }
-                            }
-                        }
-                        if (jThrust.getValue() <= tempThrustMax) {
-                            if (Controllers.returnJ1Y() < -.3) { //y ais is flippsed
-                                jThrust.setValue(jThrust.getValue() + 1);
-                                controllerMode = true;
-                            }
-                        }
-                        if (Controllers.returnJ1Y() > .3) { //y ais is flippsedÏ
-                            jThrust.setValue(jThrust.getValue() - 1);
-                            controllerMode = true;
-                        }
-                    }
-                    if (straight == false) {
-                        if (Controllers.returnJ1X() < -.7 || Controllers.returnJ2X() < -.7) { //y ais is flippsed
-                            jRudder.setValue(jRudder.getValue() - 5);
-                        }
-                        if (Controllers.returnJ1X() > .7 || Controllers.returnJ2X() > .7) { //y ais is flippsed
-                            jRudder.setValue(jRudder.getValue() + 5);
-                        }
-                    }
-                    //////////////////////////////////////////////////////////////
-                    if (controllerMode) {
-                        if (!Controllers.isLeftTriggerPressed()) {
-                            if ((Controllers.returnJ1Y() < .3) && (Controllers.returnJ1Y() > -.3)) {
-                                if (jThrust.getValue() != 0) {
-                                    jThrust.setValue(jThrust.getValue() - 1);
-                                }
-                            }
-                        }
-                        if ((Controllers.returnJ1X() < .3) && (Controllers.returnJ1X() > -.3) || (Controllers.returnJ2X() < .3) && (Controllers.returnJ2X() > -.3)) {
-                            if (straight == false) {
-                                if (jRudder.getValue() != 50) {
-                                    if (jRudder.getValue() > 50) {
-                                        jRudder.setValue(jRudder.getValue() - 1);
-                                    }
-                                    if (jRudder.getValue() < 50) {
-                                        jRudder.setValue(jRudder.getValue() + 1);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }).start();
-        }
-    }
-
-    public static boolean controllerConnected() {
-
-        for (Controller c : ControllerEnvironment.getDefaultEnvironment().getControllers()) {
-            if (c.getType() == Controller.Type.STICK) {
-                Joystick = c;
-                System.out.println(Joystick.getName() + " via " + Joystick.getPortType());
-//                System.out.println(Joystick.getName() + "is connected");//System.out.println(Joystick.getName())
-            }
-        }
-        try {
-            return Joystick.poll();
-        } catch (Exception e) {
-//                System.out.println("not connected");
-            return false;
-        }
-    }
+//    public static boolean controllerConnected() {
+//
+//        for (Controller c : ControllerEnvironment.getDefaultEnvironment().getControllers()) {
+//            if (c.getType() == Controller.Type.STICK) {
+//                Joystick = c;
+//                System.out.println(Joystick.getName() + " via " + Joystick.getPortType());
+////                System.out.println(Joystick.getName() + "is connected");//System.out.println(Joystick.getName())
+//            }
+//        }
+//        try {
+//            return Joystick.poll();
+//        } catch (Exception e) {
+////                System.out.println("not connected");
+//            return false;
+//        }
+//    }
     public static void ps3HelpFrame() 
     {
         System.out.println(System.getProperty("user.dir")+"/src/edu/cmu/ri/airboat/client/controller.png");
