@@ -1,1 +1,0 @@
-rule java.beans.** edu.cmu.ri.airboat.beans.@1

@@ -1,83 +1,0 @@
-10
-
-dir
-996
-http://crw-cmu.googlecode.com/svn/client/tags/pre_ROS_final/lib
-http://crw-cmu.googlecode.com/svn
-
-
-
-2011-06-08T17:28:55.957449Z
-52
-psigen@gmail.com
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-b8193c68-4c09-43fb-e0d1-26853b6b58d3
-
-swing-layout
-dir
-
-CopyLibs
-dir
-
-robotutils
-dir
-
-nblibraries.properties
-file
-
-
-
-
-2013-06-18T15:46:56.000000Z
-bc0ad1418761b2df810632f2039b6aeb
-2011-05-14T05:20:50.708355Z
-3
-psigen@gmail.com
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1189
-
-junit
-dir
-
-worldwind
-dir
-
-rox-xmlrpc
-dir
-
-junit_4
-dir
-

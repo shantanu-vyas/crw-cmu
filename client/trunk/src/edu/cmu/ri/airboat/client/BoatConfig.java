@@ -4,8 +4,8 @@
  */
 
 package edu.cmu.ri.airboat.client;
+
 import edu.cmu.ri.airboat.client.gui.PidPanel;
-import edu.cmu.ri.airboat.client.gui.DrivePanel;
 import edu.cmu.ri.airboat.client.gui.DrivePanel;
 import edu.cmu.ri.crw.AsyncVehicleServer;
 import edu.cmu.ri.crw.CrwNetworkUtils;
@@ -73,8 +73,7 @@ public class BoatConfig {
 
             // Create a ROS proxy server that accesses the same object
             try {
-//                SocketAddress serverAddr = CrwNetworkUtils.toInetSocketAddress(ipAddrStr);
-                SocketAddress serverAddr = new InetSocketAddress("localhost",((InetSocketAddress)testServer.getSocketAddress()).getPort());
+                SocketAddress serverAddr = CrwNetworkUtils.toInetSocketAddress(ipAddrStr);
                 final AsyncVehicleServer vehicle = new UdpVehicleServer(serverAddr);
 
                 // Connect the new controller to the GUI panels

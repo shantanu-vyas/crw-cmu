@@ -50,24 +50,31 @@ public class DrivePanel extends AbstractAirboatPanel {
     public static final double RUDDER_MIN = 1.0;
     public static final double RUDDER_MAX = -1.0;
     // Key codes for arrow keys
-    Timer timer = new Timer();
-    static Timer timekeep = new Timer();
+    
+    static int keyCode; //key codes for keyboard
     static final int UP = 38;
     static final int DOWN = 40;
     static final int LEFT = 37;
     static final int RIGHT = 39;
-    static int keyCode;
-    static boolean inBox;
+    int[] keyArray; 
+    
+
+    int tempThrustMax = 40; //keep temp max for joystick at 40%
+    
+    static boolean inBox; //if you clicked i the box
     DrivePanel _DrivePanel = this; //non-static pointer 
-    int[] keyArray;
-    int tempThrustMax = 40;
-    boolean keyboardMode = true;
+
+    boolean keyboardMode = false; // for seeing if the last used input was keyboard on controller
     boolean controllerMode = false;
+    
     static Controller Joystick;
+    
     JButton ps3help;
     
-    static boolean straight = false;
+    static boolean straight = false; //for the left bumper going straight
     static boolean left = true;
+    
+    
     // Sets up a flag limiting the rate of velocity command transmission
     public AtomicBoolean _sentVelCommand = new AtomicBoolean(false);
     public AtomicBoolean _queuedVelCommand = new AtomicBoolean(false);
@@ -339,6 +346,9 @@ public class DrivePanel extends AbstractAirboatPanel {
         jThrust.setFocusable(false);
         jRudder.setFocusable(false);
         keyArray = new int[4];
+        
+        //makes an array with 4 places and constantly sees which ones are pressed down
+        //this lets you have multiple keyinput
         keyArray[0] = 0; //up
         keyArray[1] = 0; //down
         keyArray[2] = 0; //left
@@ -361,7 +371,7 @@ public class DrivePanel extends AbstractAirboatPanel {
                 output(e);
             }
 
-            void output(MouseEvent e) {
+            void output(MouseEvent e) { //if you clicked in the box set inBox to true
                 //System.out.println("this is the frame" + e.getSource()); 
                 if (e.getSource() == _DrivePanel) {
                     _DrivePanel.requestFocus();
@@ -411,7 +421,7 @@ public class DrivePanel extends AbstractAirboatPanel {
             }
 
             public void displayInfo(KeyEvent e) {
-                if (inBox == true)
+                if (inBox == true) //if you clicked in the box allow key input
                 {  //makes sure you are in the box
                     if (keyArray[0] == 1 && keyArray[1] != 1) {  //up
                         jThrust.setValue(jThrust.getValue() + 2);
@@ -432,25 +442,27 @@ public class DrivePanel extends AbstractAirboatPanel {
                 }
             }
         });
-//        if (controllerConnected() == true) 
+        if (controllerConnected() == true) //checks to see if a controller is connected
         {
-            Controllers.init();
-            new javax.swing.Timer(35, new ActionListener() {
+            Controllers.init(); //sets up some stuff for the controller
+            
+            new javax.swing.Timer(35, new ActionListener() { //event listener
                 public void actionPerformed(ActionEvent e) {
-                    Controllers.loop();
-                    if (Controllers.isLeftBumperPressed()) {
+                    
+                    Controllers.loop(); //sets the constant loop
+                    if (Controllers.isLeftBumperPressed()) { //go straight stuff will turn left then right over and over
                         straight = true;
                         if (left == true) {
 
                             if (jRudder.getValue() != 25) {
                                 if (jRudder.getValue() > 25) {
                                     jRudder.setValue(jRudder.getValue() - 1);
-
+                                }
                                     if (jRudder.getValue() == 25) {
                                         left = false;
                                     }
-                                }
                             }
+                            
                         } else if (left == false) {
                             if (jRudder.getValue() != 75) {
                                 if (jRudder.getValue() != 75) {
@@ -467,16 +479,16 @@ public class DrivePanel extends AbstractAirboatPanel {
                         straight = false;
                     }
 
-                    if (!Controllers.isLeftTriggerPressed()) {
+                    if (!Controllers.isLeftTriggerPressed()) { //while the left trigger is not pressed, this allows you to hold the thrust
 
-                        if (Controllers.isRightTriggerPressed()) {
+                        if (Controllers.isRightTriggerPressed()) { //accelerate to 80% using right trigger
                             if (jThrust.getValue() != 80) {
                                 if (jThrust.getValue() <= 80) {
                                     jThrust.setValue(jThrust.getValue() + 2);
                                 }
                             }
                         }
-                        if (jThrust.getValue() <= tempThrustMax) {
+                        if (jThrust.getValue() <= tempThrustMax) { 
                             if (Controllers.returnJ1Y() < -.3) { //y ais is flippsed
                                 jThrust.setValue(jThrust.getValue() + 1);
                                 controllerMode = true;
@@ -497,6 +509,7 @@ public class DrivePanel extends AbstractAirboatPanel {
                     }
                     //////////////////////////////////////////////////////////////
                     if (controllerMode) {
+                        //resets thrust for when no input is given
                         if (!Controllers.isLeftTriggerPressed()) {
                             if ((Controllers.returnJ1Y() < .3) && (Controllers.returnJ1Y() > -.3)) {
                                 if (jThrust.getValue() != 0) {
@@ -504,6 +517,7 @@ public class DrivePanel extends AbstractAirboatPanel {
                                 }
                             }
                         }
+                        //resets the rudder when no input is given for joysticks
                         if ((Controllers.returnJ1X() < .3) && (Controllers.returnJ1X() > -.3) || (Controllers.returnJ2X() < .3) && (Controllers.returnJ2X() > -.3)) {
                             if (straight == false) {
                                 if (jRudder.getValue() != 50) {
@@ -521,7 +535,7 @@ public class DrivePanel extends AbstractAirboatPanel {
             }).start();
         }
     }
-    public static boolean controllerConnected() {
+    public static boolean controllerConnected() { //polls controller to see if it is connected
 
         for (Controller c : ControllerEnvironment.getDefaultEnvironment().getControllers()) {
             if (c.getType() == Controller.Type.STICK) {
@@ -538,7 +552,7 @@ public class DrivePanel extends AbstractAirboatPanel {
         }
     }
 
-    public static void ps3HelpFrame() 
+    public static void ps3HelpFrame() //code for the frame for the ps3 help frame
     {
         String path = System.getProperty("user.dir")+"/src/edu/cmu/ri/airboat/client/gui/controller.png";
         System.out.println(path);

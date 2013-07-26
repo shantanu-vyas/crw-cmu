@@ -1,6 +1,5 @@
 package edu.cmu.ri.crw.udp;
 
-import edu.cmu.ri.crw.CrwNetworkUtils;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
@@ -12,6 +11,7 @@ import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.SocketAddress;
 import java.net.SocketException;
+import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -126,12 +126,28 @@ public class UdpServer {
             stream = new DataInputStream(_buffer);
 
             // Extract the socket address data from the packet
-            InetAddress foo = packet.getAddress();
-            int bar = packet.getPort();
+//            InetAddress foo = packet.getAddress();
+//            int bar = packet.getPort();
+//            
+//            // Put in some dummy hostname and reconstruct
+//            CrwNetworkUtils.injectHostname(foo, "DO_NOT_RESOLVE");
+//            source = new InetSocketAddress(foo, bar);
+            // Extract the socket address data from the packet,
+            // put in a blank hostname and reconstruct (to avoid DNS lookups)
+            InetAddress addr = null;
+            int port = 9999;
+            try {
+                addr = InetAddress.getByAddress(null, packet.getAddress().getAddress());
+                port = packet.getPort();
+            } catch (UnknownHostException e) {
+                logger.log(Level.WARNING, "Failed to get valid source", e);
+            }
+            source = new InetSocketAddress(addr, port);
             
-            // Put in some dummy hostname and reconstruct
-            CrwNetworkUtils.injectHostname(foo, "DO_NOT_RESOLVE");
-            source = new InetSocketAddress(foo, bar);
+            
+            
+            
+            
             
             // Extract the ticket from the data payload
             long t = UdpConstants.NO_TICKET;

@@ -1,83 +1,0 @@
-10
-
-dir
-996
-http://crw-cmu.googlecode.com/svn/client/branches/controller_dev/lib
-http://crw-cmu.googlecode.com/svn
-
-
-
-2011-11-14T04:55:02.829010Z
-431
-psigen@gmail.com
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-b8193c68-4c09-43fb-e0d1-26853b6b58d3
-
-crwlib
-dir
-
-swing-layout
-dir
-
-CopyLibs
-dir
-
-robotutils
-dir
-
-nblibraries.properties
-file
-
-
-
-
-2013-06-18T15:46:34.000000Z
-bf7a7ab5fe7a8647dec7dab6232e7983
-2011-11-14T04:55:02.829010Z
-431
-psigen@gmail.com
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-961
-
-junit
-dir
-
-worldwind
-dir
-
-junit_4
-dir
-

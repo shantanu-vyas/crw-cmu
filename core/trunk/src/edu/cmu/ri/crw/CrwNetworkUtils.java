@@ -131,39 +131,38 @@ public class CrwNetworkUtils {
             return null;
         }
     }
-
-    /**
-     * Android's getByAddress function does not propagate the optional
-     * hostname parameter correctly, causing subsequent calls to possibly
-     * execute expensive reverse DNS lookups.  This function uses reflection
-     * to manually inject a hostname into an InetAddress.
-     * 
-     * @param addr
-     *            an InetAddress object with an unresolved hostname.
-     * @param hostName
-     *            string representation of hostname or IP address.
-     */
-    public static void injectHostname(InetAddress addr, String hostName) {
-        
-        // Use java reflection to inject the desired hostname into the address
+//
+//    /**
+//     * Android's getByAddress function does not propagate the optional
+//     * hostname parameter correctly, causing subsequent calls to possibly
+//     * execute expensive reverse DNS lookups.  This function uses reflection
+//     * to manually inject a hostname into an InetAddress.
+//     * 
+//     * @param addr
+//     *            an InetAddress object with an unresolved hostname.
+//     * @param hostName
+//     *            string representation of hostname or IP address.
+//     */
+//    public static void injectHostname(InetAddress addr, String hostName) {
+//        
+//        // Use java reflection to inject the desired hostname into the address
 //        try {
 //            hostNameField.set(addr, hostName);
 //        } catch (Exception e) {
 //            throw new RuntimeException("Could not inject hostname.", e);
 //        }
-    }
-
-    // Static initialization of reflection for injectHostname
-    private static final Field hostNameField;
-    static {
+//    }
+//
+//    // Static initialization of reflection for injectHostname
+//    private static final Field hostNameField;
+//    static {
 //        Field field = null;
 //        try {
-//            field = InetAddress.class.getDeclaredField("hostNaSme");
+//            field = InetAddress.class.getDeclaredField("hostName");
 //            field.setAccessible(true);
 //        } catch (NoSuchFieldException e) {
 //            throw new RuntimeException("Could not find hostname field.", e);
 //        }
-//        hostNameField = field;
-        hostNameField = null;
-    }
+//        hostNameField = null;
+//    }
 }

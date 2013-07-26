@@ -9,7 +9,7 @@ import net.java.games.input.*;
 
 /**
  *
- * @author AirBoats
+ * @author shantanu
  */
 public class Controllers {
     static int keyCode; //var for the current key code

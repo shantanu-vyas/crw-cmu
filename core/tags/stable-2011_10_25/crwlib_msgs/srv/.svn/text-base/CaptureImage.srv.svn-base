@@ -1,5 +1,0 @@
-int32 width
-int32 height
----
-#sensor_msgs/CompressedImage image
-int64 foobar

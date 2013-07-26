@@ -58,12 +58,12 @@ public class BoatDebugger extends javax.swing.JFrame {
         cmdScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         cmdScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         cmdScrollPane.setBorder(BorderFactory.createEmptyBorder());
-        cmdScrollPane.setFocusable(false);
+
         JScrollPane ctrlScrollPane = new JScrollPane(_ctrlPanel);
         ctrlScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         ctrlScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         ctrlScrollPane.setBorder(BorderFactory.createEmptyBorder());
-        ctrlScrollPane.setFocusable(false);
+
         JTabbedPane configPane = new JTabbedPane();
         configPane.addTab("Command", cmdScrollPane);
         configPane.addTab("Control", ctrlScrollPane);
