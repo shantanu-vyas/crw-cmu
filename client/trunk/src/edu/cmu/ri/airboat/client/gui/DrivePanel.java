@@ -453,24 +453,21 @@ public class DrivePanel extends AbstractAirboatPanel {
                     if (Controllers.isLeftBumperPressed()) { //go straight stuff will turn left then right over and over
                         straight = true;
                         if (left == true) {
-
-                            if (jRudder.getValue() != 25) {
-                                if (jRudder.getValue() > 25) {
+                            if (jRudder.getValue() != 0) {
+                                if (jRudder.getValue() > 0) {
                                     jRudder.setValue(jRudder.getValue() - 1);
                                 }
-                                    if (jRudder.getValue() == 25) {
+                                    if (jRudder.getValue() == 0) {
                                         left = false;
                                     }
                             }
                             
                         } else if (left == false) {
-                            if (jRudder.getValue() != 75) {
-                                if (jRudder.getValue() != 75) {
-                                    if (jRudder.getValue() < 75) {
+                                if (jRudder.getValue() != 100) {
+                                    if (jRudder.getValue() < 100) {
                                         jRudder.setValue(jRudder.getValue() + 1);
-                                        if (jRudder.getValue() == 75) {
+                                        if (jRudder.getValue() == 100) {
                                             left = true;
-                                        }
                                     }
                                 }
                             }
@@ -490,6 +487,7 @@ public class DrivePanel extends AbstractAirboatPanel {
                         }
                         if (jThrust.getValue() <= tempThrustMax) { 
                             if (Controllers.returnJ1Y() < -.3) { //y ais is flippsed
+
                                 jThrust.setValue(jThrust.getValue() + 1);
                                 controllerMode = true;
                             }
@@ -499,14 +497,58 @@ public class DrivePanel extends AbstractAirboatPanel {
                             controllerMode = true;
                         }
                     }
+                    /* original code
                     if (straight == false) {
                         if (Controllers.returnJ1X() < -.7 || Controllers.returnJ2X() < -.7) { //y ais is flippsed
-                            jRudder.setValue(jRudder.getValue() - 5);
+                            if (jRudder.getValue() >= 35)
+                            {
+                                jRudder.setValue(jRudder.getValue() - 5);
+                            }
+                            if (jRudder.getValue() < 35)
+                            {
+                                jRudder.setValue(jRudder.getValue() - 2);
+                            }
                         }
                         if (Controllers.returnJ1X() > .7 || Controllers.returnJ2X() > .7) { //y ais is flippsed
-                            jRudder.setValue(jRudder.getValue() + 5);
+                            if (jRudder.getValue() <= 60)
+                            {
+                                jRudder.setValue(jRudder.getValue() + 5);
+                            }
+                            if (jRudder.getValue() > 60)
+                            {
+                                jRudder.setValue(jRudder.getValue() + 2);
+                            }
                         }
                     }
+                     */
+                    
+                    //modified code
+                    
+                    if (straight == false) {
+                        
+                        //joystick 1
+                        if (Controllers.returnJ1X() < -.7) { //y ais is flippsed
+                            jRudder.setValue(jRudder.getValue() - 5);
+                        }
+                        if (Controllers.returnJ1X() > .7 ) { //y ais is flippsed
+                            jRudder.setValue(jRudder.getValue() + 5);
+                        }
+                        //joystick 2
+                        if (Controllers.returnJ2X() < -.7) { //y ais is flippsed
+                            if (jRudder.getValue() > 25)
+                            {
+                                jRudder.setValue(jRudder.getValue() - 5);
+                            }
+                        }
+                        if (Controllers.returnJ2X() > .7) { //y ais is flippsed
+                            if (jRudder.getValue() < 75)
+                                {
+                                    jRudder.setValue(jRudder.getValue() + 5);
+                                }
+                        }
+                    }
+                    
+                    
                     //////////////////////////////////////////////////////////////
                     if (controllerMode) {
                         //resets thrust for when no input is given
