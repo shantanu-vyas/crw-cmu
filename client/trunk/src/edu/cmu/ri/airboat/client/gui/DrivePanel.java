@@ -24,7 +24,6 @@ import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.atomic.AtomicBoolean;
 import javax.imageio.ImageIO;
@@ -58,6 +57,7 @@ public class DrivePanel extends AbstractAirboatPanel {
     static final int RIGHT = 39;
     int[] keyArray; 
     
+    static boolean currentJoystick; //true = 1, false = 2
 
     int tempThrustMax = 40; //keep temp max for joystick at 40%
     
@@ -65,9 +65,10 @@ public class DrivePanel extends AbstractAirboatPanel {
     DrivePanel _DrivePanel = this; //non-static pointer 
 
     boolean keyboardMode = false; // for seeing if the last used input was keyboard on controller
-    boolean controllerMode = false;
+    boolean controllerMode = true;
     
     static Controller Joystick;
+    static boolean overdriveMode = false;
     
     JButton ps3help;
     
@@ -342,7 +343,6 @@ public class DrivePanel extends AbstractAirboatPanel {
         }
     }
         public void controlSystem() { //possibly when mouse is in the field then apply the keys
-        controllerMode = true;
         jThrust.setFocusable(false);
         jRudder.setFocusable(false);
         keyArray = new int[4];
@@ -445,10 +445,8 @@ public class DrivePanel extends AbstractAirboatPanel {
         if (controllerConnected() == true) //checks to see if a controller is connected
         {
             Controllers.init(); //sets up some stuff for the controller
-            
             new javax.swing.Timer(35, new ActionListener() { //event listener
                 public void actionPerformed(ActionEvent e) {
-                    
                     Controllers.loop(); //sets the constant loop
                     if (Controllers.isLeftBumperPressed()) { //go straight stuff will turn left then right over and over
                         straight = true;
@@ -480,89 +478,87 @@ public class DrivePanel extends AbstractAirboatPanel {
 
                         if (Controllers.isRightTriggerPressed()) { //accelerate to 80% using right trigger
                             if (jThrust.getValue() != 80) {
+                                overdriveMode = true;
                                 if (jThrust.getValue() <= 80) {
                                     jThrust.setValue(jThrust.getValue() + 2);
                                 }
                             }
+                            
                         }
+                        else 
+                        {
+                            overdriveMode = false;
+                        }
+
                         if (jThrust.getValue() <= tempThrustMax) { 
                             if (Controllers.returnJ1Y() < -.3) { //y ais is flippsed
-
                                 jThrust.setValue(jThrust.getValue() + 1);
                                 controllerMode = true;
                             }
                         }
+                        /*
                         if (Controllers.returnJ1Y() > .3) { //y ais is flippsedÏ
                             jThrust.setValue(jThrust.getValue() - 1);
+                            System.out.println("going dowwwwn");
                             controllerMode = true;
                         }
+                         * 
+                         */
                     }
-                    /* original code
-                    if (straight == false) {
-                        if (Controllers.returnJ1X() < -.7 || Controllers.returnJ2X() < -.7) { //y ais is flippsed
-                            if (jRudder.getValue() >= 35)
-                            {
-                                jRudder.setValue(jRudder.getValue() - 5);
-                            }
-                            if (jRudder.getValue() < 35)
-                            {
-                                jRudder.setValue(jRudder.getValue() - 2);
-                            }
-                        }
-                        if (Controllers.returnJ1X() > .7 || Controllers.returnJ2X() > .7) { //y ais is flippsed
-                            if (jRudder.getValue() <= 60)
-                            {
-                                jRudder.setValue(jRudder.getValue() + 5);
-                            }
-                            if (jRudder.getValue() > 60)
-                            {
-                                jRudder.setValue(jRudder.getValue() + 2);
-                            }
-                        }
-                    }
-                     */
-                    
-                    //modified code
-                    
                     if (straight == false) {
                         
                         //joystick 1
                         if (Controllers.returnJ1X() < -.7) { //y ais is flippsed
+                            currentJoystick = true;
                             jRudder.setValue(jRudder.getValue() - 5);
                         }
                         if (Controllers.returnJ1X() > .7 ) { //y ais is flippsed
+                            currentJoystick = true;
                             jRudder.setValue(jRudder.getValue() + 5);
                         }
                         //joystick 2
-                        if (Controllers.returnJ2X() < -.7) { //y ais is flippsed
-                            if (jRudder.getValue() > 25)
-                            {
-                                jRudder.setValue(jRudder.getValue() - 5);
+                            if (Controllers.returnJ2X() < -.7)
+                            { //y ais is flippsed
+                                currentJoystick = false;
+                                if (jRudder.getValue() > 25)
+                                {
+                                    jRudder.setValue(jRudder.getValue() - 5);
+                                }
                             }
-                        }
-                        if (Controllers.returnJ2X() > .7) { //y ais is flippsed
-                            if (jRudder.getValue() < 75)
+                            if (Controllers.returnJ2X() > .7) { //y ais is flippsed
+                                currentJoystick = false;
+                                if (jRudder.getValue() < 75)
                                 {
                                     jRudder.setValue(jRudder.getValue() + 5);
                                 }
+                            }
                         }
-                    }
-                    
-                    
                     //////////////////////////////////////////////////////////////
                     if (controllerMode) {
+                        if (overdriveMode == true)
+                        {
+                            System.out.println("overdrive on");
+                        }
+                        else
+                        {
+                            System.out.println("overdrive off");
+                        }
+                        if (controllerMode == true)
                         //resets thrust for when no input is given
+                        {
                         if (!Controllers.isLeftTriggerPressed()) {
-                            if ((Controllers.returnJ1Y() < .3) && (Controllers.returnJ1Y() > -.3)) {
+                            if ((Controllers.returnJ1Y() < .3) && (Controllers.returnJ1Y() > -.3) && overdriveMode == false){
                                 if (jThrust.getValue() != 0) {
                                     jThrust.setValue(jThrust.getValue() - 1);
                                 }
                             }
                         }
-                        //resets the rudder when no input is given for joysticks
-                        if ((Controllers.returnJ1X() < .3) && (Controllers.returnJ1X() > -.3) || (Controllers.returnJ2X() < .3) && (Controllers.returnJ2X() > -.3)) {
-                            if (straight == false) {
-                                if (jRudder.getValue() != 50) {
+                        }
+                        if (currentJoystick == true)
+                        {
+                            if(Controllers.returnJ1X() < .3 && Controllers.returnJ1X() > -.3)
+                            {
+                                 if (jRudder.getValue() != 50) {
                                     if (jRudder.getValue() > 50) {
                                         jRudder.setValue(jRudder.getValue() - 1);
                                     }
@@ -572,11 +568,46 @@ public class DrivePanel extends AbstractAirboatPanel {
                                 }
                             }
                         }
+                        if (currentJoystick == false)
+                        {
+                            if(Controllers.returnJ2X() < .3 && Controllers.returnJ2X() > -.3)
+                            {
+                                 if (jRudder.getValue() != 50) {
+                                    if (jRudder.getValue() > 50) {
+                                        jRudder.setValue(jRudder.getValue() - 1);
+                                    }
+                                    if (jRudder.getValue() < 50) {
+                                        jRudder.setValue(jRudder.getValue() + 1);
+                                    }
+                                }
+                            }
+                        }
+                        //resets the rudder when no input is given for joysticks
+                        /*
+                        if ((Controllers.returnJ1X() < .3) && (Controllers.returnJ1X() > -.3) || (Controllers.returnJ2X() > .3) && (Controllers.returnJ2X() < -.3)) {
+                            if (straight == false) {
+
+                                if (jRudder.getValue() != 50) {
+                                    if (jRudder.getValue() > 50) {
+                                        jRudder.setValue(jRudder.getValue() - 1);
+                                    }
+                                    if (jRudder.getValue() < 50) {
+                                        jRudder.setValue(jRudder.getValue() + 1);
+                                    }
+                                }
+                                 * original code
+                          
+                            }
+                        }
+                         * 
+                         */
                     }
                 }
             }).start();
         }
     }
+        
+        //make current joystick then depending on which joysyick do that 
     public static boolean controllerConnected() { //polls controller to see if it is connected
 
         for (Controller c : ControllerEnvironment.getDefaultEnvironment().getControllers()) {
