@@ -496,63 +496,73 @@ public class DrivePanel extends AbstractAirboatPanel {
                                 controllerMode = true;
                             }
                         }
-                        /*
-                        if (Controllers.returnJ1Y() > .3) { //y ais is flippsedÏ
-                            jThrust.setValue(jThrust.getValue() - 1);
-                            System.out.println("going dowwwwn");
-                            controllerMode = true;
-                        }
-                         * 
-                         */
                     }
                     if (straight == false) {
                         
                         //joystick 1
-                        if (Controllers.returnJ1X() < -.7) { //y ais is flippsed
-                            currentJoystick = true;
-                            jRudder.setValue(jRudder.getValue() - 5);
-                        }
-                        if (Controllers.returnJ1X() > .7 ) { //y ais is flippsed
-                            currentJoystick = true;
-                            jRudder.setValue(jRudder.getValue() + 5);
-                        }
-                        //joystick 2
-                            if (Controllers.returnJ2X() < -.7)
+                           if (Controllers.returnJ1X() < -.7)
                             { //y ais is flippsed
-                                currentJoystick = false;
+                                controllerMode = true;
+                                currentJoystick = true;
                                 if (jRudder.getValue() > 25)
                                 {
                                     jRudder.setValue(jRudder.getValue() - 5);
                                 }
                             }
-                            if (Controllers.returnJ2X() > .7) { //y ais is flippsed
-                                currentJoystick = false;
+                            if (Controllers.returnJ1X() > .7) { //y ais is flippsed
+                                controllerMode = true;
+                                currentJoystick = true;
                                 if (jRudder.getValue() < 75)
                                 {
                                     jRudder.setValue(jRudder.getValue() + 5);
                                 }
                             }
+
+                        //joystick 2
+                            if (Controllers.returnJ2X() < -.7) { //y ais is flippsed
+                                controllerMode = true;
+                                currentJoystick = false;
+                                    if (jRudder.getValue() > 00)
+                                    {
+                                        if (jRudder.getValue() > 25)
+                                        {
+                                            jRudder.setValue(jRudder.getValue() - 5);
+                                        }
+
+                                        if (jRudder.getValue() < 25)
+                                        {
+                                            jRudder.setValue(jRudder.getValue() - 2);
+                                        }
+                                    }
+                                
+                            }
+                            if (Controllers.returnJ2X() > .7) { //y ais is flippsed
+                                controllerMode = true;
+                                currentJoystick = false;
+                                if (jRudder.getValue() > 00)
+                                {
+                                    if (jRudder.getValue() < 75)
+                                    {
+                                        jRudder.setValue(jRudder.getValue() + 5);
+                                    }
+                                    if (jRudder.getValue() > 75)
+                                    {
+                                        jRudder.setValue(jRudder.getValue() + 2);
+                                    }
+                                }
+                            }
                         }
                     //////////////////////////////////////////////////////////////
                     if (controllerMode) {
-                        if (overdriveMode == true)
-                        {
-                            System.out.println("overdrive on");
-                        }
-                        else
-                        {
-                            System.out.println("overdrive off");
-                        }
+                        
                         if (controllerMode == true)
                         //resets thrust for when no input is given
-                        {
                         if (!Controllers.isLeftTriggerPressed()) {
                             if ((Controllers.returnJ1Y() < .3) && (Controllers.returnJ1Y() > -.3) && overdriveMode == false){
                                 if (jThrust.getValue() != 0) {
                                     jThrust.setValue(jThrust.getValue() - 1);
                                 }
                             }
-                        }
                         }
                         if (currentJoystick == true)
                         {
@@ -582,25 +592,6 @@ public class DrivePanel extends AbstractAirboatPanel {
                                 }
                             }
                         }
-                        //resets the rudder when no input is given for joysticks
-                        /*
-                        if ((Controllers.returnJ1X() < .3) && (Controllers.returnJ1X() > -.3) || (Controllers.returnJ2X() > .3) && (Controllers.returnJ2X() < -.3)) {
-                            if (straight == false) {
-
-                                if (jRudder.getValue() != 50) {
-                                    if (jRudder.getValue() > 50) {
-                                        jRudder.setValue(jRudder.getValue() - 1);
-                                    }
-                                    if (jRudder.getValue() < 50) {
-                                        jRudder.setValue(jRudder.getValue() + 1);
-                                    }
-                                }
-                                 * original code
-                          
-                            }
-                        }
-                         * 
-                         */
                     }
                 }
             }).start();
