@@ -604,7 +604,7 @@ public class DrivePanel extends AbstractAirboatPanel {
 
     public static void ps3HelpFrame() //code for the frame for the ps3 help frame
     {
-        String path = System.getProperty("user.dir") + "/src/edu/cmu/ri/airboat/client/gui/controller.png";
+        String path = System.getProperty("user.dir") + "/src/edu/cmu/ri/airboat/client/gui/controllers.png";
         System.out.println(path);
         BufferedImage image = null;
         JFrame ps3HelpFrame = new JFrame("PS3 Controller Help");
