@@ -34,7 +34,6 @@ import javax.swing.JLabel;
 import net.java.games.input.Controller;
 import net.java.games.input.ControllerEnvironment;
 
-
 /**
  *
  * @author pkv
@@ -49,33 +48,23 @@ public class DrivePanel extends AbstractAirboatPanel {
     public static final double RUDDER_MIN = 1.0;
     public static final double RUDDER_MAX = -1.0;
     // Key codes for arrow keys
-    
     static int keyCode; //key codes for keyboard
     static final int UP = 38;
     static final int DOWN = 40;
     static final int LEFT = 37;
     static final int RIGHT = 39;
-    int[] keyArray; 
-    
+    int[] keyArray;
     static boolean currentJoystick; //true = 1, false = 2
-
     int tempThrustMax = 40; //keep temp max for joystick at 40%
-    
     static boolean inBox; //if you clicked i the box
     DrivePanel _DrivePanel = this; //non-static pointer 
-
     boolean keyboardMode = false; // for seeing if the last used input was keyboard on controller
     boolean controllerMode = true;
-    
     static Controller Joystick;
     static boolean overdriveMode = false;
-    
     JButton ps3help;
-    
     static boolean straight = false; //for the left bumper going straight
     static boolean left = true;
-    
-    
     // Sets up a flag limiting the rate of velocity command transmission
     public AtomicBoolean _sentVelCommand = new AtomicBoolean(false);
     public AtomicBoolean _queuedVelCommand = new AtomicBoolean(false);
@@ -84,7 +73,7 @@ public class DrivePanel extends AbstractAirboatPanel {
      * Creates new form DrivePanel
      */
     public DrivePanel() {
-        initComponents(); 
+        initComponents();
         setUpdateRate(DEFAULT_UPDATE_MS);
     }
 
@@ -106,26 +95,28 @@ public class DrivePanel extends AbstractAirboatPanel {
         ps3help = new JButton("Controller Help");
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        
+
         jThrust.setMinorTickSpacing(10); // move all this to init components 
         jThrust.setMajorTickSpacing(50);
         jRudder.setMajorTickSpacing(50); //put a tick so you know when the rudder is straight
         jRudder.setPaintTicks(true);
         jThrust.setPaintTicks(true);
-        
+
         controlSystem(); //keyboard control system 
-        
+
         add(ps3help);
         ps3help.addActionListener(new java.awt.event.ActionListener() {
-        public void actionPerformed(java.awt.event.ActionEvent evt) {
-          //     resetButtonActionPerformed(evt);
-          ps3HelpFrame();
-        }
-      });
-        
-        
-        
+
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                //     resetButtonActionPerformed(evt);
+                ps3HelpFrame();
+            }
+        });
+
+
+
         jRudder.addChangeListener(new javax.swing.event.ChangeListener() {
+
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 jRudderStateChanged(evt);
             }
@@ -134,6 +125,7 @@ public class DrivePanel extends AbstractAirboatPanel {
         jThrust.setOrientation(javax.swing.JSlider.VERTICAL);
         jThrust.setValue(0);
         jThrust.addChangeListener(new javax.swing.event.ChangeListener() {
+
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 jThrustStateChanged(evt);
             }
@@ -145,6 +137,7 @@ public class DrivePanel extends AbstractAirboatPanel {
 
         jAutonomyBox.setText("Autonomous");
         jAutonomyBox.addActionListener(new java.awt.event.ActionListener() {
+
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jAutonomyBoxActionPerformed(evt);
             }
@@ -160,55 +153,14 @@ public class DrivePanel extends AbstractAirboatPanel {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                .addComponent(jThrust, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jThrustBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jAutonomyBox))
-                .addComponent(jConnectedBox)))
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(12, 12, 12))))
-                .addComponent(ps3help, javax.swing.GroupLayout.Alignment.TRAILING) //i added this
-                .addComponent(jRudder, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE)
-                .addComponent(jRudderBar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE))
-                .addContainerGap()));
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addContainerGap().addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addComponent(jThrust, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent(jThrustBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addGap(12, 12, 12).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING).addGroup(layout.createSequentialGroup().addComponent(jLabel1).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE).addComponent(jAutonomyBox)).addComponent(jConnectedBox))).addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup().addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE).addComponent(jLabel2).addGap(12, 12, 12)))).addComponent(ps3help, javax.swing.GroupLayout.Alignment.TRAILING) //i added this
+                .addComponent(jRudder, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE).addComponent(jRudderBar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE)).addContainerGap()));
         layout.setVerticalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jThrustBar, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
-                .addComponent(jThrust, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
-                .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(jAutonomyBox)
-                .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jConnectedBox)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED) //i added this
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addContainerGap().addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(jThrustBar, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE).addComponent(jThrust, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE).addGroup(layout.createSequentialGroup().addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(jAutonomyBox).addComponent(jLabel1)).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent(jConnectedBox).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED) //i added this
                 .addComponent(ps3help) //i added this
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRudder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRudderBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap()));
-        
-        
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE).addComponent(jLabel2))).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent(jRudder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent(jRudderBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE).addContainerGap()));
+
+
     }// </editor-fold>                        
 
     private void jThrustStateChanged(javax.swing.event.ChangeEvent evt) {
@@ -223,6 +175,7 @@ public class DrivePanel extends AbstractAirboatPanel {
         if (_vehicle != null) {
             final boolean value = !jAutonomyBox.isSelected();
             _vehicle.setAutonomous(value, new FunctionObserver<Void>() {
+
                 public void completed(Void v) {
                     jAutonomyBox.setSelected(value);
                 }
@@ -296,6 +249,7 @@ public class DrivePanel extends AbstractAirboatPanel {
     public void setVehicle(AsyncVehicleServer vehicle) {
         super.setVehicle(vehicle);
         vehicle.addVelocityListener(new VelocityListener() {
+
             public void receivedVelocity(Twist twist) {
                 jThrustBar.setValue(fromRangeToProgress(twist.dx(), THRUST_MIN, THRUST_MAX));
                 jRudderBar.setValue(fromRangeToProgress(twist.drz(), RUDDER_MIN, RUDDER_MAX));
@@ -310,6 +264,7 @@ public class DrivePanel extends AbstractAirboatPanel {
     public void update() {
         if (_vehicle != null) {
             _vehicle.isAutonomous(new FunctionObserver<Boolean>() {
+
                 public void completed(Boolean v) {
                     jAutonomyBox.setEnabled(true);
                     jAutonomyBox.setSelected(v);
@@ -321,6 +276,7 @@ public class DrivePanel extends AbstractAirboatPanel {
             });
 
             _vehicle.isConnected(new FunctionObserver<Boolean>() {
+
                 public void completed(Boolean v) {
                     jConnectedBox.setEnabled(true);
                     jConnectedBox.setSelected(v);
@@ -338,15 +294,16 @@ public class DrivePanel extends AbstractAirboatPanel {
 
             if (jConnectedBox != null) {
                 jConnectedBox.setEnabled(false);
-                     jConnectedBox.setSelected(false);       
+                jConnectedBox.setSelected(false);
             }
         }
     }
-        public void controlSystem() { //possibly when mouse is in the field then apply the keys
+
+    public void controlSystem() { //possibly when mouse is in the field then apply the keys
         jThrust.setFocusable(false);
         jRudder.setFocusable(false);
         keyArray = new int[4];
-        
+
         //makes an array with 4 places and constantly sees which ones are pressed down
         //this lets you have multiple keyinput
         keyArray[0] = 0; //up
@@ -355,6 +312,7 @@ public class DrivePanel extends AbstractAirboatPanel {
         keyArray[3] = 0; //right
 
         _DrivePanel.addMouseListener(new MouseListener() { //mouse listener for making sure you click in the box before the key commands work
+
             public void mousePressed(MouseEvent e) {
             }
 
@@ -384,6 +342,7 @@ public class DrivePanel extends AbstractAirboatPanel {
 
         _DrivePanel.addKeyListener(new KeyListener() //key listener for updating thrust and rudder 
         {
+
             public void keyTyped(KeyEvent e) {
             }
 
@@ -446,8 +405,46 @@ public class DrivePanel extends AbstractAirboatPanel {
         {
             Controllers.init(); //sets up some stuff for the controller
             new javax.swing.Timer(35, new ActionListener() { //event listener
+
                 public void actionPerformed(ActionEvent e) {
                     Controllers.loop(); //sets the constant loop
+
+                    //// FOR DOING STUFF WHILE A KEY IS PRESSED
+
+
+                    //shape key pad
+                    if (Controllers.isCirclePressed() == true) {
+                    }
+                    if (Controllers.isxButtonPressed() == true) {
+                    }
+                    if (Controllers.isSquarePressed() == true) {
+                    }
+                    if (Controllers.isTrianglePressed() == true) {
+                    }
+
+                    //(d)irectional pad
+                    if (Controllers.isDupPressed() == true) {
+                    }
+                    if (Controllers.isDrightPressed() == true) {
+                    }
+                    if (Controllers.isDdownPressed() == true) {
+                    }
+                    if (Controllers.isDleftPressed() == true) {
+                    }
+
+                    //center buttons
+                    if (Controllers.isSelectPressed() == true) {
+                    }
+                    if (Controllers.isStartPressed() == true) {
+                    }
+                    if (Controllers.isPS3ButtonPressed() == true) {
+                    }
+
+                    //bumpers
+                    if (Controllers.isRightBumperPressed() == true) {
+                    }
+
+                    //the rest of the button code is scrambled and being used 
                     if (Controllers.isLeftBumperPressed()) { //go straight stuff will turn left then right over and over
                         straight = true;
                         if (left == true) {
@@ -455,17 +452,17 @@ public class DrivePanel extends AbstractAirboatPanel {
                                 if (jRudder.getValue() > 0) {
                                     jRudder.setValue(jRudder.getValue() - 1);
                                 }
-                                    if (jRudder.getValue() == 0) {
-                                        left = false;
-                                    }
+                                if (jRudder.getValue() == 0) {
+                                    left = false;
+                                }
                             }
-                            
+
                         } else if (left == false) {
-                                if (jRudder.getValue() != 100) {
-                                    if (jRudder.getValue() < 100) {
-                                        jRudder.setValue(jRudder.getValue() + 1);
-                                        if (jRudder.getValue() == 100) {
-                                            left = true;
+                            if (jRudder.getValue() != 100) {
+                                if (jRudder.getValue() < 100) {
+                                    jRudder.setValue(jRudder.getValue() + 1);
+                                    if (jRudder.getValue() == 100) {
+                                        left = true;
                                     }
                                 }
                             }
@@ -483,14 +480,12 @@ public class DrivePanel extends AbstractAirboatPanel {
                                     jThrust.setValue(jThrust.getValue() + 2);
                                 }
                             }
-                            
-                        }
-                        else 
-                        {
+
+                        } else {
                             overdriveMode = false;
                         }
 
-                        if (jThrust.getValue() <= tempThrustMax) { 
+                        if (jThrust.getValue() <= tempThrustMax) {
                             if (Controllers.returnJ1Y() < -.3) { //y ais is flippsed
                                 jThrust.setValue(jThrust.getValue() + 1);
                                 controllerMode = true;
@@ -498,77 +493,67 @@ public class DrivePanel extends AbstractAirboatPanel {
                         }
                     }
                     if (straight == false) {
-                        
+
                         //joystick 1
-                           if (Controllers.returnJ1X() < -.7)
-                            { //y ais is flippsed
-                                controllerMode = true;
-                                currentJoystick = true;
-                                if (jRudder.getValue() > 25)
-                                {
-                                    jRudder.setValue(jRudder.getValue() - 5);
-                                }
+                        if (Controllers.returnJ1X() < -.7) { //y ais is flippsed
+                            controllerMode = true;
+                            currentJoystick = true;
+                            if (jRudder.getValue() > 25) {
+                                jRudder.setValue(jRudder.getValue() - 5);
                             }
-                            if (Controllers.returnJ1X() > .7) { //y ais is flippsed
-                                controllerMode = true;
-                                currentJoystick = true;
-                                if (jRudder.getValue() < 75)
-                                {
-                                    jRudder.setValue(jRudder.getValue() + 5);
-                                }
+                        }
+                        if (Controllers.returnJ1X() > .7) { //y ais is flippsed
+                            controllerMode = true;
+                            currentJoystick = true;
+                            if (jRudder.getValue() < 75) {
+                                jRudder.setValue(jRudder.getValue() + 5);
                             }
+                        }
 
                         //joystick 2
-                            if (Controllers.returnJ2X() < -.7) { //y ais is flippsed
-                                controllerMode = true;
-                                currentJoystick = false;
-                                    if (jRudder.getValue() > 00)
-                                    {
-                                        if (jRudder.getValue() > 25)
-                                        {
-                                            jRudder.setValue(jRudder.getValue() - 5);
-                                        }
-
-                                        if (jRudder.getValue() < 25)
-                                        {
-                                            jRudder.setValue(jRudder.getValue() - 2);
-                                        }
-                                    }
-                                
+                        if (Controllers.returnJ2X() < -.7) { //y ais is flippsed
+                            controllerMode = true;
+                            currentJoystick = false;
+                            if (jRudder.getValue() > 00) {
+                                if (jRudder.getValue() >= 25) {
+                                    jRudder.setValue(jRudder.getValue() - 5);
+                                }
+//                                        if (jRudder.getValue() < 25)
+//                                        {
+//                                            jRudder.setValue(jRudder.getValue() - 2);
+                                //                                       }
                             }
-                            if (Controllers.returnJ2X() > .7) { //y ais is flippsed
-                                controllerMode = true;
-                                currentJoystick = false;
-                                if (jRudder.getValue() > 00)
-                                {
-                                    if (jRudder.getValue() < 75)
-                                    {
-                                        jRudder.setValue(jRudder.getValue() + 5);
-                                    }
-                                    if (jRudder.getValue() > 75)
-                                    {
-                                        jRudder.setValue(jRudder.getValue() + 2);
-                                    }
+
+                        }
+                        if (Controllers.returnJ2X() > .7) { //y ais is flippsed
+                            controllerMode = true;
+                            currentJoystick = false;
+                            if (jRudder.getValue() > 00) {
+                                if (jRudder.getValue() < 75) {
+                                    jRudder.setValue(jRudder.getValue() + 5);
+                                }
+                                if (jRudder.getValue() > 75) {
+                                    jRudder.setValue(jRudder.getValue() + 2);
                                 }
                             }
                         }
+                    }
                     //////////////////////////////////////////////////////////////
                     if (controllerMode) {
-                        
-                        if (controllerMode == true)
-                        //resets thrust for when no input is given
-                        if (!Controllers.isLeftTriggerPressed()) {
-                            if ((Controllers.returnJ1Y() < .3) && (Controllers.returnJ1Y() > -.3) && overdriveMode == false){
-                                if (jThrust.getValue() != 0) {
-                                    jThrust.setValue(jThrust.getValue() - 1);
+
+                        if (controllerMode == true) //resets thrust for when no input is given
+                        {
+                            if (!Controllers.isLeftTriggerPressed()) {
+                                if ((Controllers.returnJ1Y() < .3) && (Controllers.returnJ1Y() > -.3) && overdriveMode == false) {
+                                    if (jThrust.getValue() != 0) {
+                                        jThrust.setValue(jThrust.getValue() - 1);
+                                    }
                                 }
                             }
                         }
-                        if (currentJoystick == true)
-                        {
-                            if(Controllers.returnJ1X() < .3 && Controllers.returnJ1X() > -.3)
-                            {
-                                 if (jRudder.getValue() != 50) {
+                        if (currentJoystick == true) {
+                            if (Controllers.returnJ1X() < .3 && Controllers.returnJ1X() > -.3) {
+                                if (jRudder.getValue() != 50) {
                                     if (jRudder.getValue() > 50) {
                                         jRudder.setValue(jRudder.getValue() - 1);
                                     }
@@ -578,11 +563,9 @@ public class DrivePanel extends AbstractAirboatPanel {
                                 }
                             }
                         }
-                        if (currentJoystick == false)
-                        {
-                            if(Controllers.returnJ2X() < .3 && Controllers.returnJ2X() > -.3)
-                            {
-                                 if (jRudder.getValue() != 50) {
+                        if (currentJoystick == false) {
+                            if (Controllers.returnJ2X() < .3 && Controllers.returnJ2X() > -.3) {
+                                if (jRudder.getValue() != 50) {
                                     if (jRudder.getValue() > 50) {
                                         jRudder.setValue(jRudder.getValue() - 1);
                                     }
@@ -597,14 +580,17 @@ public class DrivePanel extends AbstractAirboatPanel {
             }).start();
         }
     }
-        
-        //make current joystick then depending on which joysyick do that 
+
     public static boolean controllerConnected() { //polls controller to see if it is connected
 
         for (Controller c : ControllerEnvironment.getDefaultEnvironment().getControllers()) {
             if (c.getType() == Controller.Type.STICK) {
                 Joystick = c;
                 System.out.println(Joystick.getName() + " via " + Joystick.getPortType());
+                if ("Unknown".equals(Joystick.getPortType().toString())) //bluetooth shows up as unknown
+                {
+                    System.out.println("\"Unkown\" may be connecting via bluetooth");
+                }
 //                System.out.println(Joystick.getName() + "is connected");//System.out.println(Joystick.getName())
             }
         }
@@ -618,14 +604,14 @@ public class DrivePanel extends AbstractAirboatPanel {
 
     public static void ps3HelpFrame() //code for the frame for the ps3 help frame
     {
-        String path = System.getProperty("user.dir")+"/src/edu/cmu/ri/airboat/client/gui/controller.png";
+        String path = System.getProperty("user.dir") + "/src/edu/cmu/ri/airboat/client/gui/controller.png";
         System.out.println(path);
         BufferedImage image = null;
         JFrame ps3HelpFrame = new JFrame("PS3 Controller Help");
         try {
             image = ImageIO.read(new File(path));
         } catch (IOException e) {
-            System.out.println("not found");
+            System.out.println("image not found");
         }
         JLabel picLabel = new JLabel(new ImageIcon(image));
         ps3HelpFrame.add(picLabel);

@@ -38,11 +38,24 @@ public class Controllers {
 	static Component leftTrigger;
         
         static Component leftBumper;
+        static Component rightBumper;
+        
+        static Component dUP;
+        static Component dDOWN;
+        static Component dLEFT;
+        static Component dRIGHT;
+        
+        static Component select;
+        static Component start;
+        static Component ps3Button;
 
+        
     public Controllers(DrivePanel panel){
         _panel = panel;
 	
     }
+    
+    //keyboard stuff
     public static boolean inBox() {
         if (inBox == true) {
             return true;
@@ -111,6 +124,7 @@ public class Controllers {
 			for (Controller c : ControllerEnvironment.getDefaultEnvironment().getControllers()) {
 				System.out.println(c.getName());
 			}
+
 			triangle = Joystick.getComponent(Component.Identifier.Button._12);
 			circle = Joystick.getComponent(Component.Identifier.Button._13);
 			xButton = Joystick.getComponent(Component.Identifier.Button._14);
@@ -123,7 +137,12 @@ public class Controllers {
 			
 			rightTrigger = Joystick.getComponent(Component.Identifier.Button._9); //right trigger
 			leftTrigger = Joystick.getComponent(Component.Identifier.Button._8);
-			while(true)
+                        
+                        
+                        
+                        
+                        
+                        while(true)
 			{
 				if (isControllerConnected())
 				{
@@ -166,9 +185,23 @@ public class Controllers {
 			yAxis = Joystick.getComponent(Component.Identifier.Axis.Y); //y axis for second joy stick (left)
 			ZAxis = Joystick.getComponent(Component.Identifier.Axis.Z); //x axis for second joystick (right)
 			rzAxis = Joystick.getComponent(Component.Identifier.Axis.RZ); //y axis for second joystick (right)
+                        
 			rightTrigger = Joystick.getComponent(Component.Identifier.Button._9); //right trigger
 			leftTrigger = Joystick.getComponent(Component.Identifier.Button._8); //left trigger
+                        
                         leftBumper = Joystick.getComponent(Component.Identifier.Button._10);
+                        rightBumper = Joystick.getComponent(Component.Identifier.Button._11);
+                        
+                        dUP = Joystick.getComponent(Component.Identifier.Button._4);
+                        dRIGHT = Joystick.getComponent(Component.Identifier.Button._5);
+                        dDOWN = Joystick.getComponent(Component.Identifier.Button._6);
+                        dLEFT = Joystick.getComponent(Component.Identifier.Button._7);
+                        
+                        select = Joystick.getComponent(Component.Identifier.Button._0);
+                        start = Joystick.getComponent(Component.Identifier.Button._3);
+                        ps3Button = Joystick.getComponent(Component.Identifier.Button._16);
+                        
+                        
 		}
 	}
 		public static void loop() {
@@ -205,23 +238,78 @@ public class Controllers {
 	{
 		if (square.getPollData() != 0.0){return true;}
 		else {return false;}
-	}
-	public static boolean isRightTriggerPressed()
-	{
-		if (rightTrigger.getPollData() != 0.0) {return true;}
-		else {return false;}
-	}
-	public static boolean isLeftTriggerPressed()
-	{
-		if (leftTrigger.getPollData() != 0.0) {return true;}
-		else {return false;}
-	}
+        }
         
+        //triggers
+        public static boolean isRightTriggerPressed()
+        {
+            if (rightTrigger.getPollData() != 0.0) {return true;}
+                else {return false;}
+        }
+        public static boolean isLeftTriggerPressed()
+        {
+            if (leftTrigger.getPollData() != 0.0) {return true;}
+                else {return false;}
+        }
+        
+        
+        //dpad controls
+        public static boolean isDupPressed()
+                {
+            if (dUP.getPollData() != 0.0) {return true;}
+            else {return false;}
+	}
+                
+    	public static boolean isDrightPressed()
+        {
+            if (dRIGHT.getPollData() != 0.0) {return true;}
+            else {return false;}
+        }
+        public static boolean isDdownPressed()
+        {
+            if (dDOWN.getPollData() != 0.0) {return true;}
+            else {return false;}
+        }
+        public static boolean isDleftPressed()
+	{
+            if (dLEFT.getPollData() != 0.0) {return true;}
+            else {return false;}
+        }
+        
+        //center buttons
+        public static boolean isSelectPressed()
+        {
+            if(select.getPollData() != 0.0) {return true;}
+            else {return false;}
+        }
+        
+        public static boolean isStartPressed()
+        {
+            if(start.getPollData() != 0.0) {return true;}
+            else {return false;}
+        }
+        
+        public static boolean isPS3ButtonPressed()
+        {
+            if(ps3Button.getPollData() != 0.0) {return true;}
+            else {return false;}
+        }
+        
+        //bumpers
         public static boolean isLeftBumperPressed()
         {
             if(leftBumper.getPollData() != 0.0) {return true;}
             else {return false;}
         }
+        public static boolean isRightBumperPressed()
+        {
+     if(rightBumper.getPollData() != 0.0) {return true;}
+     
+            else {return false;}
+        }
+        
+        
+        // joystick
 	public static double returnJ1X() //returns a double with the value of the X-Axis on the left joystick
 	{
 		return xAxis.getPollData();
