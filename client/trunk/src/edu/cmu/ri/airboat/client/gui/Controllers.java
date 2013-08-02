@@ -106,11 +106,14 @@ public class Controllers {
 	        }	
 	    }	
 	public static void main(String[] args)
-	{
+        {
+            
+           
 		Joystick = null;
 		for (Controller c : ControllerEnvironment.getDefaultEnvironment().getControllers()) {
 			if (c.getType()== Controller.Type.STICK)
 			{
+                            System.out.println("controller connected");
 				Joystick = c;
 				//System.out.println(Joystick.getName());
 			}
@@ -137,10 +140,6 @@ public class Controllers {
 			
 			rightTrigger = Joystick.getComponent(Component.Identifier.Button._9); //right trigger
 			leftTrigger = Joystick.getComponent(Component.Identifier.Button._8);
-                        
-                        
-                        
-                        
                         
                         while(true)
 			{
@@ -173,9 +172,9 @@ public class Controllers {
 		}
 		if (Joystick != null)
 		{
-		//	for (Controller c : ControllerEnvironment.getDefaultEnvironment().getControllers()) {
-			//	System.out.println(c.getName());
-	//		}
+//                    if ("PLAYSTATION(R)3 Controller".equals(Joystick.getType().toString()))
+                    {
+                
 			triangle = Joystick.getComponent(Component.Identifier.Button._12);
 			circle = Joystick.getComponent(Component.Identifier.Button._13);
 			xButton = Joystick.getComponent(Component.Identifier.Button._14);
@@ -200,25 +199,27 @@ public class Controllers {
                         select = Joystick.getComponent(Component.Identifier.Button._0);
                         start = Joystick.getComponent(Component.Identifier.Button._3);
                         ps3Button = Joystick.getComponent(Component.Identifier.Button._16);
-                        
-                        
+                }
+                    
+                    // else
+                    //{
+                    //      System.out.println("Unsupported Controller Type, contact us for request to make your controller type work");
+                    //} 
 		}
 	}
 		public static void loop() {
 		if (isControllerConnected())
 		{
-	//	System.out.println("Triangle: " + isTrianglePressed() + " Circle: " + isCirclePressed() + " xButton: " + isxButtonPressed() + " Square: " + isSquarePressed());
-	//		System.out.println("1X: " + returnJ1X() + " 1Y: " + returnJ1Y() + " 2X: " + returnJ2X() + " 2Y: " + returnJ2Y());
-		Joystick.poll();
-		}
+                    //	System.out.println("Triangle: " + isTrianglePressed() + " Circle: " + isCirclePressed() + " xButton: " + isxButtonPressed() + " Square: " + isSquarePressed());
+                    //		System.out.println("1X: " + returnJ1X() + " 1Y: " + returnJ1Y() + " 2X: " + returnJ2X() + " 2Y: " + returnJ2Y());
+                    Joystick.poll(); 
+                }
 		else 
 		{
 			System.out.println("Controller Disconnected");
 		}
 	}
-		
-
-	
+                
 	public static boolean isTrianglePressed() //checks to see if triangle is pressed
 	{
 		if (triangle.getPollData() != 0.0){return true;}

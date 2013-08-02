@@ -401,6 +401,13 @@ public class DrivePanel extends AbstractAirboatPanel {
                 }
             }
         });
+        
+        /*
+         * Notes about the controller
+         * controller mode allows for the reset, (going back to 0 for thrust and 50 for rudder when you let go)
+         * when you use a joystick it puts the gui into controller mode when you use the keyboard it turns it off
+         * by being off the keyboard given values will not reset
+         */
         if (controllerConnected() == true) //checks to see if a controller is connected
         {
             Controllers.init(); //sets up some stuff for the controller
@@ -442,8 +449,14 @@ public class DrivePanel extends AbstractAirboatPanel {
 
                     //bumpers
                     if (Controllers.isRightBumperPressed() == true) {
+                        if (jThrust.getValue() != 80) {
+                            overdriveMode = true;
+                            if (jThrust.getValue() <= 80) {
+                                jThrust.setValue(jThrust.getValue() + 2);
+                            }
+                        }
                     }
-
+                    
                     //the rest of the button code is scrambled and being used 
                     if (Controllers.isLeftBumperPressed()) { //go straight stuff will turn left then right over and over
                         straight = true;
@@ -471,13 +484,14 @@ public class DrivePanel extends AbstractAirboatPanel {
                         straight = false;
                     }
 
-                    if (!Controllers.isLeftTriggerPressed()) { //while the left trigger is not pressed, this allows you to hold the thrust
+                    if (!Controllers.isLeftTriggerPressed()) { //while the left trigger is not pressed,
+                        //this will only let thrust values change when the left trigger isnt pressed, this allows for the "hold thrust" feature 
 
                         if (Controllers.isRightTriggerPressed()) { //accelerate to 80% using right trigger
-                            if (jThrust.getValue() != 80) {
+                            if (jThrust.getValue() != 40) {
                                 overdriveMode = true;
-                                if (jThrust.getValue() <= 80) {
-                                    jThrust.setValue(jThrust.getValue() + 2);
+                                if (jThrust.getValue() <= 40) {
+                                    jThrust.setValue(jThrust.getValue() + 1);
                                 }
                             }
 
@@ -485,16 +499,22 @@ public class DrivePanel extends AbstractAirboatPanel {
                             overdriveMode = false;
                         }
 
-                        if (jThrust.getValue() <= tempThrustMax) {
+                        if (jThrust.getValue() <= tempThrustMax) { //acceleration for thrust
                             if (Controllers.returnJ1Y() < -.3) { //y ais is flippsed
                                 jThrust.setValue(jThrust.getValue() + 1);
                                 controllerMode = true;
                             }
                         }
+                        if (Controllers.returnJ1Y() > .3) { //y ais is flippsed
+                            jThrust.setValue(jThrust.getValue() - 1);
+                            controllerMode = true;
+                        }
+                        
                     }
-                    if (straight == false) {
+                    if (straight == false) { //this is for some code that will later be implemented to help the boat go straight
 
-                        //joystick 1
+                        //
+                        //joystick 1 - rudder
                         if (Controllers.returnJ1X() < -.7) { //y ais is flippsed
                             controllerMode = true;
                             currentJoystick = true;
@@ -510,7 +530,7 @@ public class DrivePanel extends AbstractAirboatPanel {
                             }
                         }
 
-                        //joystick 2
+                        //joystick 2 - rudder (can be combined with joystick 1, but in the case that you want to modify one i seperated them
                         if (Controllers.returnJ2X() < -.7) { //y ais is flippsed
                             controllerMode = true;
                             currentJoystick = false;
@@ -518,32 +538,25 @@ public class DrivePanel extends AbstractAirboatPanel {
                                 if (jRudder.getValue() >= 25) {
                                     jRudder.setValue(jRudder.getValue() - 5);
                                 }
-//                                        if (jRudder.getValue() < 25)
-//                                        {
-//                                            jRudder.setValue(jRudder.getValue() - 2);
-                                //                                       }
                             }
 
                         }
-                        if (Controllers.returnJ2X() > .7) { //y ais is flippsed
+                        if (Controllers.returnJ2X() > .7) { 
                             controllerMode = true;
                             currentJoystick = false;
                             if (jRudder.getValue() > 00) {
                                 if (jRudder.getValue() < 75) {
                                     jRudder.setValue(jRudder.getValue() + 5);
                                 }
-                                if (jRudder.getValue() > 75) {
-                                    jRudder.setValue(jRudder.getValue() + 2);
-                                }
                             }
                         }
                     }
                     //////////////////////////////////////////////////////////////
                     if (controllerMode) {
-
-                        if (controllerMode == true) //resets thrust for when no input is given
+                        
+                        if (controllerMode == true) //resets thrust for when no input is given but not if you are using the trigger to accelerate
                         {
-                            if (!Controllers.isLeftTriggerPressed()) {
+                            if (!Controllers.isLeftTriggerPressed()) { //reset thrust
                                 if ((Controllers.returnJ1Y() < .3) && (Controllers.returnJ1Y() > -.3) && overdriveMode == false) {
                                     if (jThrust.getValue() != 0) {
                                         jThrust.setValue(jThrust.getValue() - 1);
@@ -551,7 +564,7 @@ public class DrivePanel extends AbstractAirboatPanel {
                                 }
                             }
                         }
-                        if (currentJoystick == true) {
+                        if (currentJoystick == true) { //reset if you are using first joystick - rudder
                             if (Controllers.returnJ1X() < .3 && Controllers.returnJ1X() > -.3) {
                                 if (jRudder.getValue() != 50) {
                                     if (jRudder.getValue() > 50) {
@@ -563,7 +576,7 @@ public class DrivePanel extends AbstractAirboatPanel {
                                 }
                             }
                         }
-                        if (currentJoystick == false) {
+                        if (currentJoystick == false) { //reset if you are using second joystick -rudder
                             if (Controllers.returnJ2X() < .3 && Controllers.returnJ2X() > -.3) {
                                 if (jRudder.getValue() != 50) {
                                     if (jRudder.getValue() > 50) {
@@ -604,7 +617,7 @@ public class DrivePanel extends AbstractAirboatPanel {
 
     public static void ps3HelpFrame() //code for the frame for the ps3 help frame
     {
-        String path = System.getProperty("user.dir") + "/src/edu/cmu/ri/airboat/client/gui/controllers.png";
+        String path = System.getProperty("user.dir") + "/src/edu/cmu/ri/airboat/client/gui/controller.png";
         System.out.println(path);
         BufferedImage image = null;
         JFrame ps3HelpFrame = new JFrame("PS3 Controller Help");
