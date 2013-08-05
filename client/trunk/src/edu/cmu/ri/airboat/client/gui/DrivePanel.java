@@ -37,6 +37,7 @@ import net.java.games.input.ControllerEnvironment;
 /**
  *
  * @author pkv
+ * @author svs 
  */
 public class DrivePanel extends AbstractAirboatPanel {
 
@@ -418,33 +419,44 @@ public class DrivePanel extends AbstractAirboatPanel {
 
                     //// FOR DOING STUFF WHILE A KEY IS PRESSED
 
-
+                    // NOTE THAT THIS IS GRABBED IN AN EVENT LOOP SO IT WILL PERFORM THE ACTIONS MULTIPLE TIMES
                     //shape key pad
                     if (Controllers.isCirclePressed() == true) {
+//                        System.out.println("circle");
                     }
                     if (Controllers.isxButtonPressed() == true) {
+//                        System.out.println("x button");
                     }
                     if (Controllers.isSquarePressed() == true) {
+//                        System.out.println("square");
                     }
                     if (Controllers.isTrianglePressed() == true) {
+//                        System.out.println("triangle");
                     }
 
                     //(d)irectional pad
                     if (Controllers.isDupPressed() == true) {
+//                      System.out.println("up");
                     }
                     if (Controllers.isDrightPressed() == true) {
+//                        System.out.println("right");
                     }
                     if (Controllers.isDdownPressed() == true) {
+//                        System.out.println("down");
                     }
                     if (Controllers.isDleftPressed() == true) {
+//                        System.out.println("left");
                     }
 
                     //center buttons
                     if (Controllers.isSelectPressed() == true) {
+//                        System.out.println("select");
                     }
                     if (Controllers.isStartPressed() == true) {
+//                        System.out.println("start");
                     }
-                    if (Controllers.isPS3ButtonPressed() == true) {
+                    if (Controllers.isPS3ButtonPressed() == true) { //dont bind this the controller uses this for connecting
+//                        System.out.println("ps3button");
                     }
 
                     //bumpers
@@ -488,9 +500,9 @@ public class DrivePanel extends AbstractAirboatPanel {
                         //this will only let thrust values change when the left trigger isnt pressed, this allows for the "hold thrust" feature 
 
                         if (Controllers.isRightTriggerPressed()) { //accelerate to 80% using right trigger
-                            if (jThrust.getValue() != 40) {
+                            if (jThrust.getValue() != tempThrustMax) {
                                 overdriveMode = true;
-                                if (jThrust.getValue() <= 40) {
+                                if (jThrust.getValue() <= tempThrustMax) {
                                     jThrust.setValue(jThrust.getValue() + 1);
                                 }
                             }
@@ -614,7 +626,7 @@ public class DrivePanel extends AbstractAirboatPanel {
             return false;
         }
     }
-
+    
     public static void ps3HelpFrame() //code for the frame for the ps3 help frame
     {
         String path = System.getProperty("user.dir") + "/src/edu/cmu/ri/airboat/client/gui/controller.png";
