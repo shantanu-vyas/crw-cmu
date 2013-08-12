@@ -23,36 +23,36 @@ public class Controllers {
     
     static boolean inBox;
     
-     private static Controller Joystick;
-	static Component triangle; 
-	static Component circle;  
-	static Component xButton; 
-	static Component square; 
-
-	static Component xAxis; 
-	static Component yAxis; 
-	static Component ZAxis; 
-	static Component rzAxis; 
+    private static Controller Joystick;
+    static Component triangle; 
+    static Component circle;  
+    static Component xButton; 
+    static Component square; 
+    
+    static Component xAxis; 
+    static Component yAxis; 
+    static Component ZAxis; 
+    static Component rzAxis; 
 	
-	static Component rightTrigger;
-	static Component leftTrigger;
+    static Component rightTrigger;
+    static Component leftTrigger;
         
-        static Component leftBumper;
-        static Component rightBumper;
-        
-        static Component dUP;
-        static Component dDOWN;
-        static Component dLEFT;
-        static Component dRIGHT;
-        
-        static Component select;
-        static Component start;
-        static Component ps3Button;
-
-        
+    static Component leftBumper;
+    static Component rightBumper;
+    
+    static Component dUP;
+    static Component dDOWN;
+    static Component dLEFT;
+    static Component dRIGHT;
+    
+    static Component select;
+    static Component start;
+    static Component ps3Button;
+    
+    
     public Controllers(DrivePanel panel){
         _panel = panel;
-	
+        
     }
     
     //keyboard stuff
@@ -99,64 +99,62 @@ public class Controllers {
     
     public static boolean isControllerConnected()
 	{
-		try {
-			return Joystick.poll();
-	        	} catch (Exception e) {
-	        		return false;
-	        }	
-	    }	
-	public static void main(String[] args)
-        {
-            
-           
-		Joystick = null;
-		for (Controller c : ControllerEnvironment.getDefaultEnvironment().getControllers()) {
-			if (c.getType()== Controller.Type.STICK)
-			{
-                            System.out.println("controller connected");
-				Joystick = c;
-				//System.out.println(Joystick.getName());
-			}
-		}
-		if (Joystick == null)
-		{
-			System.err.println("No Joystick Found");
-		}
-		if (Joystick != null)
-		{
-			for (Controller c : ControllerEnvironment.getDefaultEnvironment().getControllers()) {
-				System.out.println(c.getName());
-			}
-
-			triangle = Joystick.getComponent(Component.Identifier.Button._12);
-			circle = Joystick.getComponent(Component.Identifier.Button._13);
-			xButton = Joystick.getComponent(Component.Identifier.Button._14);
-			square = Joystick.getComponent(Component.Identifier.Button._15);
-		
-			xAxis = Joystick.getComponent(Component.Identifier.Axis.X); //x axis for first joy stick (left)
-			yAxis = Joystick.getComponent(Component.Identifier.Axis.Y); //y axis for second joy stick (left)
-			ZAxis = Joystick.getComponent(Component.Identifier.Axis.Z); //x axis for second joystick (right)
-			rzAxis = Joystick.getComponent(Component.Identifier.Axis.RZ); //y axis for second joystick (right)
-			
-			rightTrigger = Joystick.getComponent(Component.Identifier.Button._9); //right trigger
-			leftTrigger = Joystick.getComponent(Component.Identifier.Button._8);
-                        
-                        while(true)
-			{
-				if (isControllerConnected())
-				{
-					System.out.println(isLeftTriggerPressed());
-					//	System.out.println("Triangle: " + isTrianglePressed() + " Circle: " + isCirclePressed() + " xButton: " + isxButtonPressed() + " Square: " + isSquarePressed());
-			//		System.out.println("1X: " + returnJ1X() + " 1Y: " + returnJ1Y() + " 2X: " + returnJ2X() + " 2Y: " + returnJ2Y());
-				Joystick.poll();
-				}
-				else {
-					System.out.println("Controller Disconnected");
-					break;
-				}
-			}	
-		}
-	}	
+            try {
+                return Joystick.poll();
+            } catch (Exception e) {
+                return false;
+            }	
+        }	
+//	public static void main(String[] args)
+//        {
+//		Joystick = null;
+//		for (Controller c : ControllerEnvironment.getDefaultEnvironment().getControllers()) {
+//			if (c.getType()== Controller.Type.STICK)
+//			{
+//                            System.out.println("controller connected");
+//				Joystick = c;
+//				//System.out.println(Joystick.getName());
+//			}
+//		}
+//		if (Joystick == null)
+//		{
+//			System.err.println("No Joystick Found");
+//		}
+//		if (Joystick != null)
+//		{
+//			for (Controller c : ControllerEnvironment.getDefaultEnvironment().getControllers()) {
+//				System.out.println(c.getName());
+//			}
+//
+//			triangle = Joystick.getComponent(Component.Identifier.Button._12);
+//			circle = Joystick.getComponent(Component.Identifier.Button._13);
+//			xButton = Joystick.getComponent(Component.Identifier.Button._14);
+//			square = Joystick.getComponent(Component.Identifier.Button._15);
+//		
+//			xAxis = Joystick.getComponent(Component.Identifier.Axis.X); //x axis for first joy stick (left)
+//			yAxis = Joystick.getComponent(Component.Identifier.Axis.Y); //y axis for second joy stick (left)
+//			ZAxis = Joystick.getComponent(Component.Identifier.Axis.Z); //x axis for second joystick (right)
+//			rzAxis = Joystick.getComponent(Component.Identifier.Axis.RZ); //y axis for second joystick (right)
+//			
+//			rightTrigger = Joystick.getComponent(Component.Identifier.Button._9); //right trigger
+//			leftTrigger = Joystick.getComponent(Component.Identifier.Button._8);
+//                        
+//                        while(true)
+//			{
+//				if (isControllerConnected())
+//				{
+//					System.out.println(isLeftTriggerPressed());
+//					//	System.out.println("Triangle: " + isTrianglePressed() + " Circle: " + isCirclePressed() + " xButton: " + isxButtonPressed() + " Square: " + isSquarePressed());
+//			//		System.out.println("1X: " + returnJ1X() + " 1Y: " + returnJ1Y() + " 2X: " + returnJ2X() + " 2Y: " + returnJ2Y());
+//				Joystick.poll();
+//				}
+    //				else {
+//					System.out.println("Controller Disconnected");
+//					break;
+//				}
+//			}	
+//		}
+//	}	
 	public static void init() {
 		Joystick = null;
 		for (Controller c : ControllerEnvironment.getDefaultEnvironment().getControllers()) {
@@ -175,10 +173,10 @@ public class Controllers {
 //                    if ("PLAYSTATION(R)3 Controller".equals(Joystick.getType().toString()))
                     {
                 
-			triangle = Joystick.getComponent(Component.Identifier.Button._12);
-			circle = Joystick.getComponent(Component.Identifier.Button._13);
-			xButton = Joystick.getComponent(Component.Identifier.Button._14);
-			square = Joystick.getComponent(Component.Identifier.Button._15);
+			triangle = Joystick.getComponent(Component.Identifier.Button._12); //triangle
+			circle = Joystick.getComponent(Component.Identifier.Button._13); //circle 
+			xButton = Joystick.getComponent(Component.Identifier.Button._14); //xbutton 
+			square = Joystick.getComponent(Component.Identifier.Button._15); //square
 		
 			xAxis = Joystick.getComponent(Component.Identifier.Axis.X); //x axis for first joy stick (left)
 			yAxis = Joystick.getComponent(Component.Identifier.Axis.Y); //y axis for second joy stick (left)
@@ -188,17 +186,17 @@ public class Controllers {
 			rightTrigger = Joystick.getComponent(Component.Identifier.Button._9); //right trigger
 			leftTrigger = Joystick.getComponent(Component.Identifier.Button._8); //left trigger
                         
-                        leftBumper = Joystick.getComponent(Component.Identifier.Button._10);
-                        rightBumper = Joystick.getComponent(Component.Identifier.Button._11);
+                        leftBumper = Joystick.getComponent(Component.Identifier.Button._10); //left bumper 
+                        rightBumper = Joystick.getComponent(Component.Identifier.Button._11); //right bumper 
                         
-                        dUP = Joystick.getComponent(Component.Identifier.Button._4);
-                        dRIGHT = Joystick.getComponent(Component.Identifier.Button._5);
-                        dDOWN = Joystick.getComponent(Component.Identifier.Button._6);
-                        dLEFT = Joystick.getComponent(Component.Identifier.Button._7);
+                        dUP = Joystick.getComponent(Component.Identifier.Button._4); //dpad up
+                        dRIGHT = Joystick.getComponent(Component.Identifier.Button._5); //dpad right
+                        dDOWN = Joystick.getComponent(Component.Identifier.Button._6); //dpad down
+                        dLEFT = Joystick.getComponent(Component.Identifier.Button._7); //dpad left
                         
-                        select = Joystick.getComponent(Component.Identifier.Button._0);
-                        start = Joystick.getComponent(Component.Identifier.Button._3);
-                        ps3Button = Joystick.getComponent(Component.Identifier.Button._16);
+                        select = Joystick.getComponent(Component.Identifier.Button._0); //select button
+                        start = Joystick.getComponent(Component.Identifier.Button._3); //start button 
+                        ps3Button = Joystick.getComponent(Component.Identifier.Button._16); //ps3 button (dont use)
                 }
                     
                     // else
@@ -207,20 +205,18 @@ public class Controllers {
                     //} 
 		}
 	}
-		public static void loop() {
-		if (isControllerConnected())
-		{
-                    //	System.out.println("Triangle: " + isTrianglePressed() + " Circle: " + isCirclePressed() + " xButton: " + isxButtonPressed() + " Square: " + isSquarePressed());
-                    //		System.out.println("1X: " + returnJ1X() + " 1Y: " + returnJ1Y() + " 2X: " + returnJ2X() + " 2Y: " + returnJ2Y());
-                    Joystick.poll(); 
-                }
-		else 
-		{
-			System.out.println("Controller Disconnected");
+        public static void loop() {
+            if (isControllerConnected())
+            {
+                Joystick.poll(); 
+            }
+            else 
+            {
+                System.out.println("Controller Disconnected");
 		}
-	}
-                
-	public static boolean isTrianglePressed() //checks to see if triangle is pressed
+        }
+        
+        public static boolean isTrianglePressed() //checks to see if triangle is pressed
 	{
 		if (triangle.getPollData() != 0.0){return true;}
 		else {return false;}
@@ -252,8 +248,7 @@ public class Controllers {
             if (leftTrigger.getPollData() != 0.0) {return true;}
                 else {return false;}
         }
-        
-        
+
         //dpad controls
         public static boolean isDupPressed()
                 {
@@ -304,7 +299,7 @@ public class Controllers {
         }
         public static boolean isRightBumperPressed()
         {
-     if(rightBumper.getPollData() != 0.0) {return true;}
+            if(rightBumper.getPollData() != 0.0) {return true;}
      
             else {return false;}
         }
@@ -313,18 +308,18 @@ public class Controllers {
         // joystick
 	public static double returnJ1X() //returns a double with the value of the X-Axis on the left joystick
 	{
-		return xAxis.getPollData();
+            return xAxis.getPollData();
 	}
 	public static double returnJ1Y() //returns a double with the value of the Y-Axis on the left joystick
 	{
-		return yAxis.getPollData();
+            return yAxis.getPollData();
 	}
 	public static double returnJ2X() //returns a double with the value of the X-Axis on the right joystick
 	{
-		return ZAxis.getPollData();
-	}
+            return ZAxis.getPollData();
+        }
 	public static double returnJ2Y() //returns a double with the value of the Y-Axis the on right joystick
 	{
-		return rzAxis.getPollData();
-	}
-   }
+            return rzAxis.getPollData();
+        }
+}

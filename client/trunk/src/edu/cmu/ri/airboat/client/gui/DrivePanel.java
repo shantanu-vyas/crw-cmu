@@ -41,6 +41,8 @@ import net.java.games.input.ControllerEnvironment;
  */
 public class DrivePanel extends AbstractAirboatPanel {
 
+    public boolean circlePressed = false;
+    public int counter = 0;
     public static final int DEFAULT_UPDATE_MS = 750;
     public static final int DEFAULT_COMMAND_MS = 200;
     // Ranges for thrust and rudder signals
@@ -180,12 +182,12 @@ public class DrivePanel extends AbstractAirboatPanel {
                 public void completed(Void v) {
                     jAutonomyBox.setSelected(value);
                 }
-
                 public void failed(FunctionError fe) {
                 }
             });
         }
     }
+
     // Variables declaration - do not modify                     
     private javax.swing.JCheckBox jAutonomyBox;
     private javax.swing.JCheckBox jConnectedBox;
@@ -268,7 +270,7 @@ public class DrivePanel extends AbstractAirboatPanel {
 
                 public void completed(Boolean v) {
                     jAutonomyBox.setEnabled(true);
-                    jAutonomyBox.setSelected(v);
+                    //jAutonomyBox.setSelected(v);
                 }
 
                 public void failed(FunctionError fe) {
@@ -316,16 +318,16 @@ public class DrivePanel extends AbstractAirboatPanel {
 
             public void mousePressed(MouseEvent e) {
             }
-
+            
             public void mouseReleased(MouseEvent e) {
             }
-
+            
             public void mouseEntered(MouseEvent e) {
             }
-
+            
             public void mouseExited(MouseEvent e) {
             }
-
+            
             public void mouseClicked(MouseEvent e) {
                 output(e);
             }
@@ -408,6 +410,8 @@ public class DrivePanel extends AbstractAirboatPanel {
          * controller mode allows for the reset, (going back to 0 for thrust and 50 for rudder when you let go)
          * when you use a joystick it puts the gui into controller mode when you use the keyboard it turns it off
          * by being off the keyboard given values will not reset
+         * 
+         * overdrive is just right trigger and isnt actually overdrive 
          */
         if (controllerConnected() == true) //checks to see if a controller is connected
         {
@@ -417,18 +421,25 @@ public class DrivePanel extends AbstractAirboatPanel {
                 public void actionPerformed(ActionEvent e) {
                     Controllers.loop(); //sets the constant loop
 
-                    //// FOR DOING STUFF WHILE A KEY IS PRESSED
-
-                    // NOTE THAT THIS IS GRABBED IN AN EVENT LOOP SO IT WILL PERFORM THE ACTIONS MULTIPLE TIMES
+                    // to do stuff one time follow the example used for triangle
                     //shape key pad
-                    if (Controllers.isCirclePressed() == true) {
-//                        System.out.println("circle");
+                    
+                    if (Controllers.isCirclePressed() == true) {circlePressed = true;}
+                    
+                    if (Controllers.isCirclePressed() == false && circlePressed == true)
+                    {
+                        if (jAutonomyBox.isSelected()) {jAutonomyBox.setSelected(false);}
+                        else {jAutonomyBox.setSelected(true);}
+                        circlePressed = false;
                     }
+                    // ^^ is code so on release it will run something not continous 
+                    
                     if (Controllers.isxButtonPressed() == true) {
-//                        System.out.println("x button");
+                            //System.out.println("x button");
                     }
                     if (Controllers.isSquarePressed() == true) {
 //                        System.out.println("square");
+                        
                     }
                     if (Controllers.isTrianglePressed() == true) {
 //                        System.out.println("triangle");
@@ -438,12 +449,15 @@ public class DrivePanel extends AbstractAirboatPanel {
                     if (Controllers.isDupPressed() == true) {
 //                      System.out.println("up");
                     }
+                    
                     if (Controllers.isDrightPressed() == true) {
 //                        System.out.println("right");
                     }
+                    
                     if (Controllers.isDdownPressed() == true) {
 //                        System.out.println("down");
                     }
+                    
                     if (Controllers.isDleftPressed() == true) {
 //                        System.out.println("left");
                     }
@@ -452,13 +466,15 @@ public class DrivePanel extends AbstractAirboatPanel {
                     if (Controllers.isSelectPressed() == true) {
 //                        System.out.println("select");
                     }
+                    
                     if (Controllers.isStartPressed() == true) {
 //                        System.out.println("start");
                     }
+                    
                     if (Controllers.isPS3ButtonPressed() == true) { //dont bind this the controller uses this for connecting
 //                        System.out.println("ps3button");
                     }
-
+                    
                     //bumpers
                     if (Controllers.isRightBumperPressed() == true) {
                         if (jThrust.getValue() != 80) {
@@ -517,7 +533,7 @@ public class DrivePanel extends AbstractAirboatPanel {
                                 controllerMode = true;
                             }
                         }
-                        if (Controllers.returnJ1Y() > .3) { //y ais is flippsed
+                        if (Controllers.returnJ1Y() > .3 && overdriveMode == false) { //y ais is flippsed
                             jThrust.setValue(jThrust.getValue() - 1);
                             controllerMode = true;
                         }
@@ -570,8 +586,12 @@ public class DrivePanel extends AbstractAirboatPanel {
                         {
                             if (!Controllers.isLeftTriggerPressed()) { //reset thrust
                                 if ((Controllers.returnJ1Y() < .3) && (Controllers.returnJ1Y() > -.3) && overdriveMode == false) {
-                                    if (jThrust.getValue() != 0) {
-                                        jThrust.setValue(jThrust.getValue() - 1);
+                                    if (Controllers.isRightBumperPressed() == false )
+                                        
+                                    {
+                                        if (jThrust.getValue() != 0) {
+                                            jThrust.setValue(jThrust.getValue() - 1);
+                                        }
                                     }
                                 }
                             }
@@ -629,7 +649,7 @@ public class DrivePanel extends AbstractAirboatPanel {
     
     public static void ps3HelpFrame() //code for the frame for the ps3 help frame
     {
-        String path = System.getProperty("user.dir") + "/src/edu/cmu/ri/airboat/client/gui/controller.png";
+        String path = System.getProperty("user.dir") + "/lib/controller.png";
         System.out.println(path);
         BufferedImage image = null;
         JFrame ps3HelpFrame = new JFrame("PS3 Controller Help");

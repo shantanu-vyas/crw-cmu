@@ -18,7 +18,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <Component id="currWaypointLabel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="87" max="32767" attributes="0"/>
+              <EmptySpace pref="99" max="32767" attributes="0"/>
               <Component id="completedBox" min="-2" max="-2" attributes="0"/>
           </Group>
           <Component id="currWaypointText" alignment="0" pref="250" max="32767" attributes="0"/>

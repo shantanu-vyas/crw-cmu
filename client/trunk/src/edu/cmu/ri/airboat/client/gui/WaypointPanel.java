@@ -176,7 +176,6 @@ public class WaypointPanel extends AbstractAirboatPanel {
             }
         });
     }//GEN-LAST:event_sendButtonActionPerformed
-
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
         if (_vehicle == null)
             return;
